@@ -1,0 +1,82 @@
+{
+    "easycom": {
+        "autoscan": true,
+        "custom": {
+            "^tn-(.*)-(item|group)$": "~/uni_modules/tuniaoui-vue3/components/$1/src/$1-$2.vue",
+            "^tn-(.*)": "~/uni_modules/tuniaoui-vue3/components/$1/src/$1.vue"
+        }
+    },
+    "pages": [
+        {
+            "name": "首页",
+            "path": "pages/tabbar/home/index",
+            "style": {
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "name": "个人中心",
+            "path": "pages/tabbar/mine/index",
+            "style": {
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "name": "登录",
+            "path": "pages/login/index",
+            "style": {
+                "enablePullDownRefresh": false
+            }
+        }
+    ],
+    "subPackages": [
+        {
+            "root": "pages/common",
+            "pages": [
+                {
+                    "name": "用户协议",
+                    "path": "agreement/index",
+                    "style": {
+                        "enablePullDownRefresh": false,
+                        "navigationBarBackgroundColor": "#F8F5F1"
+                    }
+                },
+                {
+                    "name": "Not Found",
+                    "path": "notFound/index",
+                    "style": {
+                        "navigationBarTitleText": "Not Found"
+                    }
+                }
+            ]
+        }
+    ],
+    "globalStyle": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "backgroundColor": "#F8F5F1",
+        "navigationStyle": "custom",
+        "renderingMode": "seperated",
+        "pageOrientation": "portrait",
+        "backgroundTextStyle": "light",
+        "softinputNavBar": "none"
+    },
+    "tabBar": {
+        "custom": true,
+        "color": "#ABAAA8",
+        "selectedColor": "#FE923E",
+        "borderStyle": "white",
+        "backgroundColor": "#FFFFFF",
+        "iconWidth": "24px",
+        "list": [
+            {
+                "pagePath": "pages/tabbar/home/index",
+                "text": "Home"
+            },
+            {
+                "pagePath": "pages/tabbar/mine/index",
+                "text": "Mine"
+            }
+        ]
+    }
+}

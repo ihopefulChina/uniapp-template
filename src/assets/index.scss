@@ -1,0 +1,324 @@
+view,
+scroll-view,
+swiper,
+match-media,
+movable-area,
+movable-view,
+cover-view,
+cover-image,
+icon,
+text,
+rich-text,
+progress,
+button,
+checkboxe,
+ditor,
+form,
+input,
+label,
+picker,
+picker-view,
+radio,
+slider,
+switch,
+textarea,
+navigator,
+audio,
+camera,
+image,
+video,
+live-player,
+live-pusher,
+map,
+canvas,
+web-view,
+:before,
+:after {
+    padding: 0;
+    margin: 0;
+}
+view,
+text {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+/* 隐藏scroll-view的滚动条 */
+::-webkit-scrollbar {
+    display: none;
+    width: 0 !important;
+    height: 0 !important;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+// @font-face {
+//     font-family: AlibabaPuHuiTi_2_105_Heavy;
+//     src: url('https://yundongpinggu.oss-cn-beijing.aliyuncs.com/static/fonts/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-105-Heavy/AlibabaPuHuiTi-3-105-Heavy.ttf');
+// }
+
+page,
+page {
+    background-color: #f8f5f1;
+}
+
+// 全局背景样式
+.allPageBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 750rpx;
+    background: url(https://puhu-bid.oss-cn-shanghai.aliyuncs.com/assets/page_bg_yellow.png) no-repeat;
+    background-size: 100% 100%;
+
+    &.whiteBg {
+        background: url(https://puhu-bid.oss-cn-shanghai.aliyuncs.com/assets/page_bg_white.png) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    &.zindex0 {
+        z-index: 0;
+    }
+
+    &.zindex1 {
+        z-index: 1;
+    }
+
+    &.zindex-1 {
+        z-index: -1;
+    }
+}
+
+.isFlexd {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    padding: 20rpx 30rpx;
+    padding-bottom: calc(12px + constant(safe-area-inset-bottom));
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    // box-shadow: 0 -6rpx 20rpx 0rpx rgba(31, 67, 100, 0.06);
+    box-shadow: 0rpx 0rpx 10rpx 0rpx rgba(0, 0, 0, 0.05);
+    // border-radius: 24rpx 24rpx 0px 0px;
+    background-color: #ffffff;
+}
+
+.isFlexdHome {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    padding: 20rpx 30rpx;
+    padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+    // box-shadow: 0 -6rpx 20rpx 0rpx rgba(31, 67, 100, 0.06);
+    box-shadow: 0rpx 0rpx 10rpx 0rpx rgba(0, 0, 0, 0.05);
+    // border-radius: 24rpx 24rpx 0px 0px;
+    background-color: #ffffff;
+}
+
+// 全局按钮样式
+.publicButton {
+    width: 100%;
+    display: flex;
+
+    &.noFlex {
+        display: block !important;
+    }
+
+    .btn {
+        // margin-bottom: env(safe-area-inset-bottom);
+        // text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 96rpx;
+        // line-height: 96rpx;
+        font-size: 30rpx;
+        font-family: ' MYingHeiPRC-W7';
+        font-weight: bold;
+        border-radius: 200rpx;
+        color: #ffffff;
+        flex: 1;
+        font-family: PingFangSC-Semibold, PingFang SC;
+        font-weight: 600;
+
+        &.default {
+            background: #fc9240;
+        }
+
+        &.gary {
+            background-color: #bdbdbd;
+        }
+
+        &.black {
+            background-color: #2a2827;
+        }
+
+        &.hollow {
+            background: rgba(255, 255, 255, 0.6);
+            border: 2rpx solid #008bd0;
+            color: #008bd0;
+        }
+
+        &.garyHollow {
+            background: rgba(255, 255, 255, 1);
+            border: 2rpx solid #d7d4d2;
+            color: #2a2827;
+        }
+
+        &.garyHollow2 {
+            background: transparent;
+            border: 2rpx solid #d7d4d2;
+            color: #2a2827;
+        }
+
+        &.yellowHollow {
+            background: rgba(255, 255, 255, 0);
+            border: 2rpx solid #fa9240;
+            font-size: 28rpx;
+            font-weight: 600;
+            color: #fa9240 !important;
+            line-height: 40rpx;
+        }
+
+        &.ml18 {
+            margin-left: 18rpx;
+        }
+
+        &.fs24 {
+            font-size: 24rpx;
+        }
+
+        &.ht64 {
+            height: 64rpx !important;
+        }
+
+        &.ht80 {
+            height: 80rpx !important;
+        }
+
+        &.ht88 {
+            height: 88rpx !important;
+        }
+    }
+}
+
+.image-24 {
+    width: 24rpx;
+    height: 24rpx;
+    flex-shrink: 0;
+}
+
+.image-32 {
+    width: 32rpx;
+    height: 32rpx;
+    flex-shrink: 0;
+}
+
+.image-48 {
+    width: 48rpx;
+    height: 48rpx;
+    flex-shrink: 0;
+}
+
+.image-40 {
+    width: 40rpx;
+    height: 40rpx;
+    flex-shrink: 0;
+}
+
+.image-60 {
+    width: 60rpx;
+    height: 60rpx;
+    flex-shrink: 0;
+}
+
+.image-80 {
+    width: 80rpx;
+    height: 80rpx;
+    flex-shrink: 0;
+}
+
+.image-104 {
+    width: 104rpx;
+    height: 104rpx;
+    flex-shrink: 0;
+}
+
+.image-120 {
+    width: 120rpx;
+    height: 120rpx;
+    flex-shrink: 0;
+}
+
+.image-160 {
+    width: 160rpx;
+    height: 160rpx;
+    flex-shrink: 0;
+}
+
+.image-208 {
+    width: 208rpx;
+    height: 208rpx;
+    flex-shrink: 0;
+}
+
+.icon_arrow_img {
+    width: 16rpx;
+    height: 24rpx;
+    flex-shrink: 0;
+}
+
+.pageCard {
+    padding: 24rpx 30rpx 30rpx;
+}
+
+.phcolor {
+    color: #abaaa8;
+}
+
+// 弹窗公共样式
+.picker_dv_box {
+    position: relative;
+    width: 630rpx;
+    margin: 60rpx;
+}
+
+.picker_view {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 630rpx;
+    min-height: 428rpx;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 1);
+    // background: #f8f5f1;
+    // border-radius: 16rpx;
+}
+
+.picker_item {
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    word-break: break-word;
+    text-align: center;
+    height: 70rpx;
+    align-items: center;
+    font-size: 32rpx;
+    color: #555352;
+}
+
+.picker_item_on {
+    color: #2a2827;
+    font-weight: bold;
+    // background: #f8f5f1;
+}
+
+.pickerCenter {
+    position: relative;
+}
+
+@import './_tools.scss';

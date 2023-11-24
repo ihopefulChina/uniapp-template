@@ -1,0 +1,68 @@
+.tabbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 8rpx 40rpx 0px fade(#e6e6e6, 30%);
+}
+
+.content {
+    display: flex;
+    height: 100rpx;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: calc(0px + constant(safe-area-inset-bottom));
+}
+
+.item {
+    flex: 1;
+    margin-top: 8rpx;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 22rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    line-height: 32rpx;
+}
+
+.image {
+    width: 44rpx;
+    height: 44rpx;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.selected {
+    font-size: 22rpx;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: red;
+    line-height: 32rpx;
+}
+
+.redDot {
+    position: absolute;
+    top: 0;
+    right: -8rpx;
+    border-radius: 50%;
+    width: 16rpx;
+    height: 16rpx;
+    background-color: red;
+}
+
+.count {
+    position: absolute;
+    top: 6rpx;
+    right: 0;
+}
+
+.text {
+    margin-top: 4rpx;
+    font-size: 22rpx;
+    line-height: 32rpx;
+    height: 32rpx;
+}

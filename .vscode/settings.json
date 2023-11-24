@@ -1,0 +1,40 @@
+////////////////////////////////////////////////////////////////////////////
+// vscode 编辑器和插件的配置 ////////////////////////////////////////////////
+// 参考：https://blog.csdn.net/weixin_46238462/article/details/125867532 //
+//////////////////////////////////////////////////////////////////////////
+
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.autoSave": "off",
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.stylelint": "explicit"
+    },
+    "files.eol": "auto",
+    "eslint.enable": true,
+
+    //////////////////////////////////////////////////////////////////
+    // 官网参考：https://prettier.io/docs/en/options.html#tab-width //
+    ////////////////////////////////////////////////////////////////
+    "prettier.enable": true,
+    "prettier.semi": true,
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 200,
+    "prettier.endOfLine": "auto",
+    "prettier.singleQuote": true,
+    "prettier.ignorePath": ".prettierignore",
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "i18n-ally.localesPaths": ["src/locale", "src/uni_modules/tuniaoui-vue3/libs/dayjs/locale"],
+    "i18n-ally.keystyle": "nested",
+    "vue-i18n-op.localeDir": "src/locale",
+    "vue-i18n.i18nPaths": "src/locale,dist/dev/mp-weixin/locale,src/uni_modules/tuniaoui-vue3/libs/dayjs/locale"
+}

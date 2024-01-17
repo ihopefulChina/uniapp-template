@@ -1,3 +1,3 @@
-import type CountTo from './count-to.vue';
+import type CountTo from './count-to.vue'
 
-export type TnCountToInstance = InstanceType<typeof CountTo>;
+export type TnCountToInstance = InstanceType<typeof CountTo>

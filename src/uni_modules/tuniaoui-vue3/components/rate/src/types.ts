@@ -1,12 +1,12 @@
 export interface RateItemData {
-    active: RateItem;
-    inactive: RateItem;
+  active: RateItem
+  inactive: RateItem
 }
 
 export interface RateItem {
-    icon: string;
-    color: {
-        class: string;
-        style: string;
-    };
+  icon: string
+  color: {
+    class: string
+    style: string
+  }
 }

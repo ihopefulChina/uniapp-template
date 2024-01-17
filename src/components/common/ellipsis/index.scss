@@ -1,0 +1,35 @@
+.ellipsis {
+    position: relative;
+    font-size: 26rpx;
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 400;
+    color: #666666;
+    line-height: 36rpx;
+    text-shadow: 0px 14px 38px rgba(0, 0, 0, 0.02);
+}
+.ellipsis_text_all {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ellipsis_expand {
+    .ellipsis_text_overflow {
+        display: inline;
+    }
+}
+
+.ellipsis_action {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.75), #fff 20px, #fff);
+
+    .ellipsis_action_text {
+        color: #497cd8;
+    }
+}
+.ellipsis_action_block {
+    color: #666666;
+}

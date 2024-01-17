@@ -12,13 +12,13 @@ module.exports = {
     output: path.resolve(process.cwd(), './src/request'),
     /** swagger api 配置选项 */
     swaggerOption: {
-        host: 'http://aiduo.t3.wmeimob.cn/wechat/',
+        host: '',
         basePath: '',
         // basePath: '/heading/cx/main'
     },
     apifoxOption: {
         //p2
-        projects: [{ name: '', url: 'http://127.0.0.1:4523/export/openapi?projectId=3060542&version=2.0' }],
+        projects: [{ name: '', url: 'http://127.0.0.1:4523/export/openapi?projectId=3690044&version=2.0' }],
         //p1
         // projects: [{ name: '', url: 'http://127.0.0.1:4523/export/openapi?projectId=3345192&version=2.0' }],
     },

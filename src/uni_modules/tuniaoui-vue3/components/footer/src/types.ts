@@ -1,12 +1,12 @@
 export interface FooterNavigatorItem {
-    title: string;
-    url: string;
-    color: FooterNavigatorColor;
+  title: string
+  url: string
+  color: FooterNavigatorColor
 }
 
 export interface FooterNavigatorColor {
-    class: string;
-    style: string;
+  class: string
+  style: string
 }
 
-export type FooterNavigatorData = FooterNavigatorItem[];
+export type FooterNavigatorData = FooterNavigatorItem[]

@@ -1,2 +1,2 @@
-export * from './sticky-custom';
-export * from './use-sticky';
+export * from './sticky-custom'
+export * from './use-sticky'

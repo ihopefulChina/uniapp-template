@@ -1,1 +1,1 @@
-export * from './loadmore-custom';
+export * from './loadmore-custom'

@@ -1,3 +1,3 @@
-import type Title from './title.vue';
+import type Title from './title.vue'
 
-export type TnTitleInstance = InstanceType<typeof Title>;
+export type TnTitleInstance = InstanceType<typeof Title>

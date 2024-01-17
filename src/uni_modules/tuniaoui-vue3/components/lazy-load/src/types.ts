@@ -1,1 +1,1 @@
-export type LazyLoadStatus = 'waiting' | 'loading' | 'loaded' | 'error';
+export type LazyLoadStatus = 'waiting' | 'loading' | 'loaded' | 'error'

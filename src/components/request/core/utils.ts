@@ -136,7 +136,6 @@ export function extend(target: any, obj: any, thisArg?: any) {
 
 export function extendByOwnPropertyNames(target: any, obj: any, thisArg?: any, ignoreKeys: string[] = []) {
     const ignores = ['constructor', ...ignoreKeys];
-    // console.log(Object.getOwnPropertyNames(obj))
     Object.getOwnPropertyNames(obj)
         .filter((key) => ignores.indexOf(key) === -1)
         .forEach((key) => {

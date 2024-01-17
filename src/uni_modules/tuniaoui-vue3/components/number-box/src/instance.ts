@@ -1,3 +1,3 @@
-import type NumberBox from './number-box.vue';
+import type NumberBox from './number-box.vue'
 
-export type TnNumberBoxInstance = InstanceType<typeof NumberBox>;
+export type TnNumberBoxInstance = InstanceType<typeof NumberBox>

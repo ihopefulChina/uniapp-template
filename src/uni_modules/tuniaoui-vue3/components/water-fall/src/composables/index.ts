@@ -1,1 +1,1 @@
-export * from './use-water-fall';
+export * from './use-water-fall'

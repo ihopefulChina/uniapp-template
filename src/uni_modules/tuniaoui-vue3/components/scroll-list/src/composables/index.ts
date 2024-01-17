@@ -1,2 +1,2 @@
-export * from './scroll-list-custom';
-export * from './use-scroll-list';
+export * from './scroll-list-custom'
+export * from './use-scroll-list'

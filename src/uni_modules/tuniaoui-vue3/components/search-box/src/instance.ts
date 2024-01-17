@@ -1,3 +1,3 @@
-import type SearchBox from './search-box.vue';
+import type SearchBox from './search-box.vue'
 
-export type TnSearchBoxInstance = InstanceType<typeof SearchBox>;
+export type TnSearchBoxInstance = InstanceType<typeof SearchBox>

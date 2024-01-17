@@ -1,1 +1,1 @@
-export * from './use-region-picker';
+export * from './use-region-picker'

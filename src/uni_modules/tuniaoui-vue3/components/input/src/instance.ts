@@ -1,3 +1,3 @@
-import type TnInput from './input.vue';
+import type TnInput from './input.vue'
 
-export type TnInputInstance = InstanceType<typeof TnInput>;
+export type TnInputInstance = InstanceType<typeof TnInput>

@@ -2,17 +2,16 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-09-04 18:31:58
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-16 10:16:55
- *  * @FilePath: /uniapp_template/src/pages/common/agreement/index.vue
+ * @LastEditTime: 2024-01-17 09:23:47
+ * @FilePath: /uniapp_template/src/pages/common/agreement/index.vue
  * @Description: 页面 - 用户协议
  * 
  * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
 -->
 <script setup lang="ts">
-import PageContainer from '~/layout/pageContainer/index.vue';
-import Navigation from '~/layout/navigation/index.vue';
-import { MMNavigationType } from '~/layout/navigation/const';
-import RichText from '~/components/common/richText/index.vue';
+import RichText from '~/components/common/richText/RichText.vue';
+import Navigation from '~/layout/navigation/Navigation.vue';
+import PageContainer from '~/layout/pageContainer/PageContainer.vue';
 import { useSystemInfo } from '~/state/useSystemInfo';
 
 const systemInfo = useSystemInfo();
@@ -22,7 +21,7 @@ const content =
 </script>
 <template>
     <PageContainer className="page_agreement p-3">
-        <Navigation title="用户协议" :type="MMNavigationType.Yellow" />
+        <Navigation title="协议" />
         <view class="common_agreement_box p-4" :style="{ minHeight: `${systemInfo?.bodyNoTabHeight - 30}px` }">
             <RichText :content="content || ''" />
         </view>

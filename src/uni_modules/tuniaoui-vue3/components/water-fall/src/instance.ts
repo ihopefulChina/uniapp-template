@@ -1,3 +1,3 @@
-import type WaterFall from './water-fall.vue';
+import type WaterFall from './water-fall.vue'
 
-export type TnWaterFallInstance = InstanceType<typeof WaterFall>;
+export type TnWaterFallInstance = InstanceType<typeof WaterFall>

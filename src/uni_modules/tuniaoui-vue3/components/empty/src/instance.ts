@@ -1,3 +1,3 @@
-import type Empty from './empty.vue';
+import type Empty from './empty.vue'
 
-export type TnEmptyInstance = InstanceType<typeof Empty>;
+export type TnEmptyInstance = InstanceType<typeof Empty>

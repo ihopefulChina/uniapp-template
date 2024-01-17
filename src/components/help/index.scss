@@ -6,7 +6,7 @@
     height: 56px;
     z-index: 9999;
     border-radius: 50%;
-    background-color: #fd9849;
+    background-color: #497cd8;
     color: #fff;
     font-size: 48rpx;
     display: flex;
@@ -20,16 +20,19 @@
     align-items: center;
     width: 100%;
     padding: 50rpx 30rpx 30rpx 30rpx;
+
     .modal_title {
         font-size: 34rpx;
         font-weight: 500;
         color: #2a2827;
         line-height: 48rpx;
     }
+
     .input {
         width: 100%;
         flex: 1;
     }
+
     .input_view {
         width: 100%;
         display: flex;
@@ -40,34 +43,40 @@
         border-radius: 16rpx;
         padding: 0 20rpx 0 30rpx;
     }
+
     .input_clear {
         width: 36rpx;
         height: 36rpx;
         margin-left: 30rpx;
     }
+
     .modal_input {
         flex: 1;
         font-size: 28rpx;
         color: #2a2827;
     }
+
     .radio_view {
         display: flex;
         align-items: center;
         width: 100%;
         padding: 50rpx 10rpx;
     }
+
     .btn_view {
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
+
     .placeholder {
         font-size: 28rpx;
         font-weight: 400;
         color: #abaaa8;
         line-height: 40rpx;
     }
+
     .btn {
         width: 254rpx;
         height: 88rpx;
@@ -77,12 +86,58 @@
         line-height: 88rpx;
         text-align: center;
     }
+
     .cancel_btn {
         border: 1rpx solid #d7d4d2;
         color: #2a2827;
     }
+
     .confim_btn {
-        background: #fa9240;
+        background: #497cd8;
         color: #ffffff;
+    }
+}
+
+.help_switch_tab {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    .modal_title {
+        font-size: 34rpx;
+        font-weight: 500;
+        color: #2a2827;
+        line-height: 48rpx;
+        width: 100%;
+        text-align: center;
+        padding: 30rpx 0;
+    }
+}
+.switchTab {
+    width: 100%;
+}
+.help_list {
+    padding: 30rpx;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .help_list_item {
+        height: 80rpx;
+        color: #333;
+        font-size: 28rpx;
+        padding: 0 30rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-bottom: 2rpx solid #e6e6e6;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    .help_list_item_current {
+        color: #497cd8;
     }
 }

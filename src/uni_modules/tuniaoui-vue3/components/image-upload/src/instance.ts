@@ -1,3 +1,3 @@
-import type ImageUpload from './image-upload.vue';
+import type ImageUpload from './image-upload.vue'
 
-export type TnImageUploadInstance = InstanceType<typeof ImageUpload>;
+export type TnImageUploadInstance = InstanceType<typeof ImageUpload>

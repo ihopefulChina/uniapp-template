@@ -1,3 +1,3 @@
-import type Rate from './rate.vue';
+import type Rate from './rate.vue'
 
-export type TnRateInstance = InstanceType<typeof Rate>;
+export type TnRateInstance = InstanceType<typeof Rate>

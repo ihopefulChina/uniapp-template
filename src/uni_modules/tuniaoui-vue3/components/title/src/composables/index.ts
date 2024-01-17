@@ -1,1 +1,1 @@
-export * from './title-custom';
+export * from './title-custom'

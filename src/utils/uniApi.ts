@@ -2,8 +2,8 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-09-17 15:21:25
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-23 13:15:48
- * @FilePath: /uniapp_template/src/utils/uniApi.ts
+ * @LastEditTime: 2024-01-15 12:03:31
+ * @FilePath: /LX001413-weiyunbao-app/src/utils/uniApi.ts
  * @Description:
  *
  * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
@@ -51,7 +51,6 @@ export const selectorQueryClientRect = (selector: string): Promise<UniApp.NodeIn
             query
                 .select(selector)
                 .boundingClientRect((res) => {
-                    console.log('res', res);
                     resolve(res as any);
                 })
                 .exec();
@@ -66,14 +65,14 @@ export const selectorQueryClientRect = (selector: string): Promise<UniApp.NodeIn
  * @param {*} scope
  * @returns
  */
-export function selectRect(name: string, scope: any) {
+export function selectRect(name: string, scope: any): Promise<UniApp.NodeInfo> {
     return new Promise((resolve) => {
         nextTick(() => {
             const query = uni.createSelectorQuery().in(scope);
             query
                 .select(name)
                 .boundingClientRect((res) => {
-                    resolve(res);
+                    resolve(res as UniApp.NodeInfo);
                 })
                 .exec();
         });
@@ -96,4 +95,36 @@ export const base64ToBlob = function (code: any) {
 // 解析rpx
 export function parseRpx(val: any): string {
     return isArray(val) ? val.map(parseRpx).join(' ') : isNumber(val) ? `${val}rpx` : val;
+}
+
+/** 切割 文字包含的手机号码或者包含固定号码，数组 */
+export function extractPhone(text?: string) {
+    if (!text) return [];
+    // 匹配手机号码和固定号码的正则表达式
+    const numberPattern = /\b\d{11}\b|\b\d{3}-\d{8}|\d{4}-\d{7}\b/g;
+
+    // 使用正则表达式进行匹配
+    const matches: any = text.match(numberPattern);
+
+    // 如果没有匹配到，返回原始字符串
+    if (!matches) {
+        return [{ text, isPhone: false }];
+    }
+
+    // 利用正则表达式将字符串切割成数组
+    const parts: any = text.split(numberPattern);
+
+    // 合并匹配到的号码和切割的部分
+    const result: string[] = [];
+    for (let i = 0; i < parts.length; i++) {
+        result.push(parts[i]);
+        if (i < matches.length) {
+            result.push(matches[i]);
+        }
+    }
+
+    // 过滤掉空字符串
+    const list = result.filter((part) => part.trim() !== '');
+
+    return list?.map((it) => ({ text: it, isPhone: (it.match(numberPattern) ?? [])?.length > 0 }));
 }

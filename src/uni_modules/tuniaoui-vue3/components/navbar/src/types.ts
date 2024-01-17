@@ -1,1 +1,1 @@
-export type NavbackButtonType = 'single' | 'multi' | 'text' | 'custom' | 'none';
+export type NavbackButtonType = 'single' | 'multi' | 'text' | 'custom' | 'none'

@@ -1,2 +1,2 @@
-export * from './count-to-custom';
-export * from './use-count-to';
+export * from './count-to-custom'
+export * from './use-count-to'

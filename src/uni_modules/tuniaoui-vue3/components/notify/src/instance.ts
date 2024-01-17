@@ -1,3 +1,3 @@
-import type Notify from './notify.vue';
+import type Notify from './notify.vue'
 
-export type TnNotifyInstance = InstanceType<typeof Notify>;
+export type TnNotifyInstance = InstanceType<typeof Notify>

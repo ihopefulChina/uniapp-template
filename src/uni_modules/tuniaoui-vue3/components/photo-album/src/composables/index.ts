@@ -1,1 +1,1 @@
-export * from './use-photo-album';
+export * from './use-photo-album'

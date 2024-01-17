@@ -11,7 +11,11 @@
             "name": "首页",
             "path": "pages/tabbar/home/index",
             "style": {
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+                "disableScroll": true,
+                "app-plus": {
+                    "bounce": "none"
+                }
             }
         },
         {
@@ -34,11 +38,11 @@
             "root": "pages/common",
             "pages": [
                 {
-                    "name": "用户协议",
+                    "name": "协议",
                     "path": "agreement/index",
                     "style": {
                         "enablePullDownRefresh": false,
-                        "navigationBarBackgroundColor": "#F8F5F1"
+                        "navigationBarBackgroundColor": "#F4F5FA"
                     }
                 },
                 {
@@ -51,10 +55,11 @@
             ]
         }
     ],
+
     "globalStyle": {
         "navigationBarTextStyle": "black",
         "navigationBarTitleText": "uni-app",
-        "backgroundColor": "#F8F5F1",
+        "backgroundColor": "#FFFFFF",
         "navigationStyle": "custom",
         "renderingMode": "seperated",
         "pageOrientation": "portrait",
@@ -62,20 +67,24 @@
         "softinputNavBar": "none"
     },
     "tabBar": {
-        "custom": true,
-        "color": "#ABAAA8",
-        "selectedColor": "#FE923E",
+        "color": "#A3B3CC",
+        "selectedColor": "#497CD8",
         "borderStyle": "white",
         "backgroundColor": "#FFFFFF",
-        "iconWidth": "24px",
+        "iconWidth": "22px",
+        "fontSize": "11px",
         "list": [
             {
                 "pagePath": "pages/tabbar/home/index",
-                "text": "Home"
+                "iconPath": "static/tabbar/home.png",
+                "selectedIconPath": "static/tabbar/homeActive.png",
+                "text": "首页"
             },
             {
                 "pagePath": "pages/tabbar/mine/index",
-                "text": "Mine"
+                "iconPath": "static/tabbar/mine.png",
+                "selectedIconPath": "static/tabbar/mineActive.png",
+                "text": "个人中心"
             }
         ]
     }

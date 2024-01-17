@@ -1,3 +1,3 @@
-import type Picker from './picker.vue';
+import type Picker from './picker.vue'
 
-export type TnPickerInstance = InstanceType<typeof Picker>;
+export type TnPickerInstance = InstanceType<typeof Picker>

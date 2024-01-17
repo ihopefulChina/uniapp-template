@@ -1,2 +1,2 @@
-export * from './week-calendar-custom';
-export * from './use-week-calendar';
+export * from './week-calendar-custom'
+export * from './use-week-calendar'

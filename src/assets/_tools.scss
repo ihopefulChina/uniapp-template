@@ -8,15 +8,18 @@ view {
 image {
     display: block;
 }
+
 .page-bg {
     /* #ifndef APP-NVUE */
     min-height: 100vh;
     /* #endif */
-    background-color: #f6f6f6;
+    background-color: #f4f5fa;
 }
+
 .inline-block {
     display: inline-block;
 }
+
 // FLEX 布局
 .flex {
     /* #ifndef APP-PLUS-NVUE */
@@ -26,13 +29,16 @@ image {
     flex-direction: row;
     /* #endif */
 }
+
 .flex-1 {
     flex: 1;
 }
+
 .flex-row {
     flex-direction: row;
     align-items: center;
 }
+
 .flex-column {
     /* #ifndef APP-PLUS-NVUE */
     display: flex;
@@ -40,42 +46,54 @@ image {
     flex-direction: column;
     // align-items: center;
 }
+
 /* #ifndef APP-PLUS-NVUE */
 .flex-shrink-0 {
     flex-shrink: 0;
 }
+
 /* #endif */
 .flex-center {
     justify-content: center;
     align-items: center;
 }
+
 .flex-jc-sb {
     justify-content: space-between;
 }
+
 .flex-jc-sa {
     justify-content: space-around;
 }
+
 .flex-jc-c {
     justify-content: center;
 }
+
 .flex-jc-fe {
     justify-content: flex-end;
 }
+
 .flex-jc-fs {
     justify-content: flex-start;
 }
+
 .flex-ai {
     align-items: center;
 }
+
 .flex-ai-fe {
     align-items: flex-end;
 }
+
 .flex-ai-fs {
     align-items: flex-start;
 }
+
 .flex-nowrap {
     flex-wrap: nowrap;
 }
+
 .flex-wrap {
     flex-wrap: wrap;
 }
@@ -83,19 +101,24 @@ image {
 .borderbox {
     box-sizing: border-box;
 }
+
 // 百分比
 .w-hundred {
     width: 100%;
 }
+
 .h-hundred {
     height: 100%;
 }
+
 .h-auto {
     height: auto;
 }
+
 .overflow-hidden {
     overflow: hidden;
 }
+
 // 居中
 .m-auto {
     margin: 0 auto;
@@ -106,45 +129,58 @@ image {
     .m-#{$i} {
         margin: torpx(5 * $i);
     }
+
     .mt-#{$i} {
         margin-top: torpx(5 * $i);
     }
+
     .mr-#{$i} {
         margin-right: torpx(5 * $i);
     }
+
     .mb-#{$i} {
         margin-bottom: torpx(5 * $i);
     }
+
     .ml-#{$i} {
         margin-left: torpx(5 * $i);
     }
+
     .mlr-#{$i} {
         margin-left: torpx(5 * $i);
         margin-right: torpx(5 * $i);
     }
+
     .mtb-#{$i} {
         margin-top: torpx(5 * $i);
         margin-bottom: torpx(5 * $i);
     }
+
     .p-#{$i} {
         padding: torpx(5 * $i);
     }
+
     .pt-#{$i} {
         padding-top: torpx(5 * $i);
     }
+
     .pr-#{$i} {
         padding-right: torpx(5 * $i);
     }
+
     .pb-#{$i} {
         padding-bottom: torpx(5 * $i);
     }
+
     .pl-#{$i} {
         padding-left: torpx(5 * $i);
     }
+
     .plr-#{$i} {
         padding-left: torpx(5 * $i);
         padding-right: torpx(5 * $i);
     }
+
     .ptb-#{$i} {
         padding-top: torpx(5 * $i);
         padding-bottom: torpx(5 * $i);
@@ -157,12 +193,14 @@ image {
         line-height: torpx($i);
     }
 }
+
 // font-weight
 @for $i from 4 through 8 {
     .fw-#{$i} {
         font-weight: (100 * $i);
     }
 }
+
 // 字体大小
 @for $i from 6 through 25 {
     .f-#{$i} {
@@ -185,6 +223,7 @@ image {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 @for $i from 2 through 5 {
     .text-overflow-#{$i} {
         display: -webkit-box;
@@ -195,21 +234,27 @@ image {
         overflow: hidden;
     }
 }
+
 .text-center {
     text-align: center;
 }
+
 .text-right {
     text-align: right;
 }
+
 .text-left {
     text-align: left;
 }
+
 .text-justify {
     text-align: justify;
 }
+
 .text-nowap {
     white-space: nowrap;
 }
+
 .text-break-all {
     /* #ifdef APP-PLUS-NVUE */
     word-break: break-word;
@@ -218,16 +263,20 @@ image {
     word-break: break-all;
     /* #endif */
 }
+
 .break-word {
     word-break: break-word;
 }
+
 .text-wrap {
     white-space: wrap;
 }
+
 // 删除线
 .text-through {
     text-decoration: line-through;
 }
+
 // iphone x
 .iphonex-padding-bottom {
     padding-bottom: env(safe-area-inset-bottom);
@@ -239,6 +288,7 @@ image {
         border-radius: torpx($i);
     }
 }
+
 .br-half {
     border-radius: 50%;
 }
@@ -247,45 +297,45 @@ image {
 .p-fiexd {
     position: fixed;
 }
+
 .p-relative {
     position: relative;
 }
+
 .p-absolute {
     position: absolute;
 }
+
 .p-sticky {
     position: sticky;
 }
+
 .P-static {
     position: static;
 }
+
 // 定位边距
 @for $i from 0 through 100 {
     .top-#{$i} {
         top: torpx($i);
     }
+
     .bottom-#{$i} {
         bottom: torpx($i);
     }
+
     .left-#{$i} {
         left: torpx($i);
     }
+
     .right-#{$i} {
         right: torpx($i);
     }
 }
+
 // z-index
 @for $i from 0 through 10 {
     .zi-#{$i} {
         z-index: $i;
     }
-}
-
-// 特殊边距
-.zx-mt-24 {
-    margin-top: 24rpx;
-}
-
-.zx-mb-24 {
-    margin-bottom: 24rpx;
 }

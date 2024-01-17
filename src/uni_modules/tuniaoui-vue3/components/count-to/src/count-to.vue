@@ -1,18 +1,18 @@
 <script lang="ts" setup>
-import { countToEmits, countToProps } from './count-to';
-import { useCountTo, useCountToCustomStyle } from './composables';
+import { countToEmits, countToProps } from './count-to'
+import { useCountTo, useCountToCustomStyle } from './composables'
 
-const props = defineProps(countToProps);
-const emits = defineEmits(countToEmits);
+const props = defineProps(countToProps)
+const emits = defineEmits(countToEmits)
 
-const { countToClass, countToStyle } = useCountToCustomStyle(props);
-const { content } = useCountTo(props, emits);
+const { countToClass, countToStyle } = useCountToCustomStyle(props)
+const { content } = useCountTo(props, emits)
 </script>
 
 <template>
-    <view :class="[countToClass]" :style="countToStyle">
-        {{ content }}
-    </view>
+  <view :class="[countToClass]" :style="countToStyle">
+    {{ content }}
+  </view>
 </template>
 
 <style lang="scss" scoped>

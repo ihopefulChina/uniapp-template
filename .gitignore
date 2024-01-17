@@ -11,5 +11,3 @@
 pnpm-lock.yaml
 /.eslintrc-auto-import.json
 /typings/
-/src/request/
-/scripts/swagerApi/config.private.js

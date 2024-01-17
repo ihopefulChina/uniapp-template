@@ -2,8 +2,8 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-09-16 09:51:12
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-10-15 07:08:07
- *  * @FilePath: /uniapp_template/src/layout/pageContainer/modal/type.ts
+ * @LastEditTime: 2023-12-18 12:57:01
+ * @FilePath: /LX001413-weiyunbao-app/src/layout/pageContainer/modal/type.ts
  * @Description:
  */
 
@@ -33,7 +33,7 @@ export interface ShowModalOptions {
      */
     confirmText?: string;
     /**
-     * 确定按钮的文字颜色，默认为"#FA9240"
+     * 确定按钮的文字颜色，默认为"#497cd8"
      */
     confirmColor?: string;
 

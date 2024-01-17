@@ -1,3 +1,3 @@
-import type Loading from './loading.vue';
+import type Loading from './loading.vue'
 
-export type LoadingInstance = InstanceType<typeof Loading>;
+export type LoadingInstance = InstanceType<typeof Loading>

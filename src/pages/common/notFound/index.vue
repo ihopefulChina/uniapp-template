@@ -2,15 +2,16 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-09-13 18:40:46
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-24 09:32:16
+ * @LastEditTime: 2024-01-17 09:24:32
  * @FilePath: /uniapp_template/src/pages/common/notFound/index.vue
  * @Description: 页面 - 404
 -->
 <script lang="ts" setup>
-import PageContainer from '~/layout/pageContainer/index.vue';
-import Navigation from '~/layout/navigation/index.vue';
-import Empty from '~/components/common/empty/index.vue';
+import Empty from '~/components/common/empty/Empty.vue';
 import { useMyRoute } from '~/hooks';
+import { MMNavigationType } from '~/layout/navigation/const';
+import Navigation from '~/layout/navigation/Navigation.vue';
+import PageContainer from '~/layout/pageContainer/PageContainer.vue';
 
 const { replace } = useMyRoute();
 
@@ -24,13 +25,11 @@ const backHome = () => {
 
 <template>
     <PageContainer>
-        <Navigation title="Not Found" />
-        <Empty :marginTop="240" emptyStr="页面找不到了" :iconPath="'./images/icon_empty.png'">
+        <Navigation title="Not Found" :type="MMNavigationType.Transparent" />
+        <Empty :marginTop="240" emptyStr="页面找不到了">
             <template #bottom>
-                <view class="m-auto mt-4">
-                    <view class="publicButton">
-                        <button class="backToHomePage btn yellowHollow ht80" @click="backHome">返回首页</button>
-                    </view>
+                <view class="publicButton">
+                    <button class="backToHomePage btn default ht80" @click="backHome">返回首页</button>
                 </view>
             </template>
         </Empty>
@@ -38,7 +37,5 @@ const backHome = () => {
 </template>
 
 <style lang="scss" scoped>
-.backToHomePage {
-    padding: 0 30rpx;
-}
+@import './index.scss';
 </style>

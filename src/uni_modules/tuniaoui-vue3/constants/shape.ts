@@ -1,3 +1,3 @@
-export const componentShapes = ['', 'circle', 'round'] as const;
+export const componentShapes = ['', 'circle', 'round'] as const
 
-export type ComponentShape = (typeof componentShapes)[number];
+export type ComponentShape = (typeof componentShapes)[number]

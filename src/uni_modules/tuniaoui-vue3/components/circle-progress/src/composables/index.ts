@@ -1,1 +1,1 @@
-export * from './use-circle-progress';
+export * from './use-circle-progress'

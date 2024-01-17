@@ -2,8 +2,8 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-09-04 17:12:41
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-20 11:44:46
- * @FilePath: /uniapp_demo/.eslintrc.cjs
+ * @LastEditTime: 2023-11-26 16:15:09
+ * @FilePath: /uniapp_template/.eslintrc.cjs
  * @Description:
  *
  * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
@@ -83,6 +83,6 @@ module.exports = {
         '**/*.config.js',
         '**/*.config.ts',
         '/src/manifest.json',
-        '**/uview-plus',
+        '**/tuniaoui-vue3',
     ],
 };

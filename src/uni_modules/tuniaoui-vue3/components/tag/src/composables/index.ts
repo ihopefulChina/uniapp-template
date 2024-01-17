@@ -1,2 +1,2 @@
-export * from './tag-custom';
-export * from './use-tag';
+export * from './tag-custom'
+export * from './use-tag'

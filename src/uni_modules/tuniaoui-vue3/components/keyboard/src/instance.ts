@@ -1,3 +1,3 @@
-import type Keyboard from './keyboard.vue';
+import type Keyboard from './keyboard.vue'
 
-export type TnKeyboardInstance = InstanceType<typeof Keyboard>;
+export type TnKeyboardInstance = InstanceType<typeof Keyboard>

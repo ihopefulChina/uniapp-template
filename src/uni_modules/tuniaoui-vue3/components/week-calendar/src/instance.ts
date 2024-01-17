@@ -1,3 +1,3 @@
-import type WeekCalendar from './week-calendar.vue';
+import type WeekCalendar from './week-calendar.vue'
 
-export type TnWeekCalendarInstance = InstanceType<typeof WeekCalendar>;
+export type TnWeekCalendarInstance = InstanceType<typeof WeekCalendar>

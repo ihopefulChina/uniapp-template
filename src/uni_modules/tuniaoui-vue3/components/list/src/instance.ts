@@ -1,3 +1,3 @@
-import type List from './list-item.vue';
+import type List from './list-item.vue'
 
-export type TnListItemInstance = InstanceType<typeof List>;
+export type TnListItemInstance = InstanceType<typeof List>

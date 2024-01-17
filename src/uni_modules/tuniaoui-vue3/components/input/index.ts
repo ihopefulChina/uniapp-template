@@ -1,9 +1,9 @@
-import { withInstall } from '../../utils';
-import Input from './src/input.vue';
+import { withInstall } from '../../utils'
+import Input from './src/input.vue'
 
-export const TnInput = withInstall(Input);
-export default TnInput;
+export const TnInput = withInstall(Input)
+export default TnInput
 
-export * from './src/input';
+export * from './src/input'
 
-export type { TnInputInstance } from './src/instance';
+export type { TnInputInstance } from './src/instance'

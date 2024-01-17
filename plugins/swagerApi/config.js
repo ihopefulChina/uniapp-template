@@ -12,7 +12,7 @@ module.exports = {
     output: path.resolve(process.cwd(), './src/request'),
     /** swagger api 配置选项 */
     swaggerOption: {
-        host: 'http://aiduo.t3.wmeimob.cn/wechat/',
+        host: '/',
         basePath: '',
         // basePath: '/heading/cx/main'
     },

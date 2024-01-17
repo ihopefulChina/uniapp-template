@@ -1,3 +1,3 @@
-import type SwitchTab from './switch-tab.vue';
+import type SwitchTab from './switch-tab.vue'
 
-export type TnSwitchTabInstance = InstanceType<typeof SwitchTab>;
+export type TnSwitchTabInstance = InstanceType<typeof SwitchTab>

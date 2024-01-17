@@ -1,3 +1,3 @@
-import type ActionSheet from './action-sheet.vue';
+import type ActionSheet from './action-sheet.vue'
 
-export type TnActionSheetInstance = InstanceType<typeof ActionSheet>;
+export type TnActionSheetInstance = InstanceType<typeof ActionSheet>

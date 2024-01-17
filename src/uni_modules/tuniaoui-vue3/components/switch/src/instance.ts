@@ -1,3 +1,3 @@
-import type Switch from './switch.vue';
+import type Switch from './switch.vue'
 
-export type TnSwitchInstance = InstanceType<typeof Switch>;
+export type TnSwitchInstance = InstanceType<typeof Switch>

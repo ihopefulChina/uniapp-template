@@ -1,3 +1,3 @@
-import type Navbar from './navbar.vue';
+import type Navbar from './navbar.vue'
 
-export type TnNavbarInstance = InstanceType<typeof Navbar>;
+export type TnNavbarInstance = InstanceType<typeof Navbar>

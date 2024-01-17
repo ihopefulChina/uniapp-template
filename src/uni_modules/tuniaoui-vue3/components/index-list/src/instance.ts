@@ -1,3 +1,3 @@
-import type IndexList from './index-list.vue';
+import type IndexList from './index-list.vue'
 
-export type TnIndexListInstance = InstanceType<typeof IndexList>;
+export type TnIndexListInstance = InstanceType<typeof IndexList>

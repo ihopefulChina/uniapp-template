@@ -2,14 +2,14 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-09-04 17:12:41
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-20 11:26:41
- * @FilePath: /uniapp_template/src/utils/index.ts
+ * @LastEditTime: 2024-01-16 16:45:22
+ * @FilePath: /LX001413-weiyunbao-app/src/utils/index.ts
  * @Description:
  *
  * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
  */
 import { isArray, isObject } from './is';
-
+import CryptoJS from 'crypto-js';
 /**
  * 深度合并
  * @param src
@@ -237,7 +237,7 @@ export function formatCurrency(amount?: number, decimalPlaces = 2): string {
  * @returns {string}
  */
 export function formatAddress(provinceName?: string, cityName?: string, areaName?: string, interval = '-'): string {
-    return provinceName ? [...new Set([provinceName, cityName, areaName].filter(Boolean))].join(interval) : '';
+    return provinceName ? [...new Set([provinceName, cityName && ['市辖区'].includes(cityName) ? '' : cityName, areaName].filter(Boolean))].join(interval) : '';
 }
 
 /** 金额保留2位小数 */
@@ -264,3 +264,68 @@ export function getPdfName(url?: string): string {
 
     return `${modifiedString}.${suffix}`;
 }
+
+/**
+ * 电话号码脱敏
+ * @param tel
+ * @returns
+ */
+export function handlePhoneSensitive(tel: string) {
+    if (!tel) return tel;
+    const phone = tel.replace(tel.substring(3, 7), '****');
+    return phone;
+}
+
+/** 字符串数组是否包含某个值 */
+export function includesValue(arr?: any[], val?: string) {
+    return val && (arr ?? []).indexOf(val) > -1;
+}
+
+/**
+ * @description: 加密密码
+ * @param {*} ciphertext 密文
+ * @return {*} 加密后的密码
+ */
+
+const key = CryptoJS.enc.Utf8.parse('sdidASE5F41S5Dm7'); // 密钥
+export const encryptPassword = (password: string) => {
+    const srcs = CryptoJS.enc.Utf8.parse(password);
+    const encrypted = CryptoJS.AES.encrypt(srcs, key, {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7,
+    }).toString();
+
+    return encrypted;
+};
+
+/**
+ * @description: 解密密码
+ * @param {*} ciphertext 密文
+ * @return {*}  解密后的密码
+ */
+export const decryptPassword = (ciphertext: string) => {
+    const decrypted = CryptoJS.AES.decrypt(ciphertext, key, {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7,
+    }).toString(CryptoJS.enc.Utf8);
+
+    return decrypted;
+};
+
+/** 根据年份获取最后一天最后一秒  */
+export function getLastDate(year: number | string) {
+    const lastDay = new Date(Number(year), 11, 31, 23, 59, 59).getTime();
+    return lastDay;
+}
+
+/** 解决 iphone 时间显示兼容性问题 */
+export const formatReplaceDate = (date?: string): string => {
+    return (date ?? '').replace(/-/g, '/');
+};
+
+/** 根据时间戳获取跟当前时间相差的时间戳 */
+export const getDiffTimeStamp = (time: string): number => {
+    const last = new Date(formatReplaceDate(time)).getTime();
+    const diff = (last - new Date().getTime()) / 1000;
+    return diff > 0 ? diff : 0;
+};

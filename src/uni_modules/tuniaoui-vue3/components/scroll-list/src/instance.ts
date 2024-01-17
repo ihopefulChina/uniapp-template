@@ -1,3 +1,3 @@
-import type ScrollList from './scroll-list.vue';
+import type ScrollList from './scroll-list.vue'
 
-export type TnScrollListInstance = InstanceType<typeof ScrollList>;
+export type TnScrollListInstance = InstanceType<typeof ScrollList>

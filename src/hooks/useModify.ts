@@ -2,8 +2,8 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2022-04-25 18:44:07
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-23 13:02:53
- * @FilePath: /uniapp_template/src/hooks/useModify.ts
+ * @LastEditTime: 2024-01-11 17:03:50
+ * @FilePath: /LX001413-weiyunbao-app/src/hooks/useModify.ts
  * @Description: hooks - 从详情页面返回列表页面后，更新或者删除列表中的数据
  *
  * Copyright (c) 2022 by huangpengfei 784667332@qq.com, All Rights Reserved.

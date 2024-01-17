@@ -1,6 +1,6 @@
 export interface SubsectionItemRect {
-    left: number;
-    width: number;
+  left: number
+  width: number
 }
 
-export type SubsectionSliderRect = SubsectionItemRect;
+export type SubsectionSliderRect = SubsectionItemRect

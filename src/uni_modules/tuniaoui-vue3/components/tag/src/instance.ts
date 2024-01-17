@@ -1,3 +1,3 @@
-import type Tag from './tag.vue';
+import type Tag from './tag.vue'
 
-export type TnTagInstance = InstanceType<typeof Tag>;
+export type TnTagInstance = InstanceType<typeof Tag>

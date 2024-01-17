@@ -1,2 +1,2 @@
-export * from './swiper-custom';
-export * from './use-swiper';
+export * from './swiper-custom'
+export * from './use-swiper'

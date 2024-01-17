@@ -1,3 +1,3 @@
-import type Loadmore from './loadmore.vue';
+import type Loadmore from './loadmore.vue'
 
-export type TnLoadmoreInstance = InstanceType<typeof Loadmore>;
+export type TnLoadmoreInstance = InstanceType<typeof Loadmore>

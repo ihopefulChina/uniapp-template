@@ -2,38 +2,46 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-09-04 18:31:58
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-24 09:31:37
+ * @LastEditTime: 2024-01-17 09:57:14
  * @FilePath: /uniapp_template/src/pages/tabbar/home/index.vue
  * @Description: 页面 - 首页
  * 
  * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
 -->
 <script setup lang="ts">
-import PageContainer from '~/layout/pageContainer/index.vue';
-import Help from '~/components/help/index.vue';
-import { useGlobalStore } from '~/state/useGlobalStore';
-import Navigation from '~/layout/navigation/index.vue';
-import { useLocale } from '~/hooks';
-import TabBar from '~/components/tabbar/index.vue';
-import ImageUpload from '~/components//common/imageUpload/index.vue';
 import { onShow } from '@dcloudio/uni-app';
+import Empty from '~/components/common/empty/Empty.vue';
+import Help from '~/components/help/Help.vue';
+import { NetworkStatus } from '~/enums/common';
+import { useNetworkStatus } from '~/hooks/useNetworkStatus';
+import Navigation from '~/layout/navigation/Navigation.vue';
+import PageContainer from '~/layout/pageContainer/PageContainer.vue';
+import { useGlobalStore } from '~/state/useGlobalStore';
+import List from './components/list/List.vue';
 
-const { t } = useLocale();
 const globalStore = useGlobalStore();
+/** 监听网络变化 */
+const networkStatus = useNetworkStatus();
+
+const condition = ref<string>();
 
 onShow(() => {
     globalStore.getUserInfo();
 });
 </script>
 <template>
-    <PageContainer>
-        <view class="home_page">
-            <Navigation isTab :title="t('common.home_title')" />
-            <ImageUpload />
+    <PageContainer isTab>
+        <view class="home">
+            <Navigation title="首页" isTab />
+            <!-- 列表 -->
+            <List :condition="condition" />
+
+            <!-- 网络连接失败 -->
+            <Empty :marginTop="440" emptyStr="网络连接失败" v-if="networkStatus.networkType?.value === NetworkStatus.NONE" />
+
             <Help />
         </view>
     </PageContainer>
-    <TabBar />
 </template>
 <style lang="scss" scoped>
 @import './index.scss';

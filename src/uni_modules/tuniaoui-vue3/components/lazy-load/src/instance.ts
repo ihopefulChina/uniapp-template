@@ -1,3 +1,3 @@
-import type LazyLoad from './lazy-load.vue';
+import type LazyLoad from './lazy-load.vue'
 
-export type TnLazyLoadInstance = InstanceType<typeof LazyLoad>;
+export type TnLazyLoadInstance = InstanceType<typeof LazyLoad>

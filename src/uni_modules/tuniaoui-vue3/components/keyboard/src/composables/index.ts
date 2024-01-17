@@ -1,2 +1,2 @@
-export * from './use-keyboard-data';
-export * from './use-keyboard';
+export * from './use-keyboard-data'
+export * from './use-keyboard'

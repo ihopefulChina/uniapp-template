@@ -1,1 +1,1 @@
-export * from './loading-custom';
+export * from './loading-custom'

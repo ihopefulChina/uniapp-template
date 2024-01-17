@@ -1,2 +1,2 @@
-export * from './notify-custom';
-export * from './use-notify';
+export * from './notify-custom'
+export * from './use-notify'

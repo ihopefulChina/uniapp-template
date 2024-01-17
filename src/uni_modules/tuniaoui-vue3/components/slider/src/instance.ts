@@ -1,3 +1,3 @@
-import type Slider from './slider.vue';
+import type Slider from './slider.vue'
 
-export type TnSliderInstance = InstanceType<typeof Slider>;
+export type TnSliderInstance = InstanceType<typeof Slider>

@@ -3,7 +3,7 @@
 const fs = require('fs');
 const pagesJson = require('../src/pages.json');
 
-const tabBar = pagesJson?.tabBar?.list.map((item) => ({ url: `/${item.pagePath}` }));
+const tabBar = (pagesJson?.tabBar ?? [])?.list.map((item) => ({ url: `/${item.pagePath}` }));
 
 const mainPages = pagesJson?.pages?.map((it) => ({ name: it.name || '', path: it.path }));
 

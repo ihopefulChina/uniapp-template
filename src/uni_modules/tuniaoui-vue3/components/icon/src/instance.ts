@@ -1,3 +1,3 @@
-import type Icon from './icon.vue';
+import type Icon from './icon.vue'
 
-export type IconInstance = InstanceType<typeof Icon>;
+export type IconInstance = InstanceType<typeof Icon>

@@ -1,3 +1,3 @@
-import type Button from './button.vue';
+import type Button from './button.vue'
 
-export type TnButtonInstance = InstanceType<typeof Button>;
+export type TnButtonInstance = InstanceType<typeof Button>

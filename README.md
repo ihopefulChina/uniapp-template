@@ -1,4 +1,4 @@
-# 🌈 uni-app Vue3 Vite4 pinia2 TypeScript 基础框架
+# uni-app Vue3 Vite4 pinia2 TypeScript 基础框架
 
 ## 目录结构
 

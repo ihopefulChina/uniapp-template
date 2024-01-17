@@ -2,15 +2,15 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-01-23 09:41:13
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-23 13:03:00
- * @FilePath: /uniapp_template/src/hooks/useMutate.ts
+ * @LastEditTime: 2023-12-12 14:39:24
+ * @FilePath: /LX001413-weiyunbao-app/src/hooks/useMutate.ts
  * @Description: 对于简单的获取数据方法的一个封装
  *
  * Copyright (c) 2023 by huangpengfei 784667332@qq.com, All Rights Reserved.
  */
 
-import { useLockFn } from './useLockFn';
 import { onMounted, ref } from 'vue';
+import { useLockFn } from './useLockFn';
 
 interface IMutateOption<T> {
     /** 默认数据 */
@@ -48,6 +48,7 @@ export function useMutate<T>(config: IMutateOption<T>) {
 
             /**暂无数据 */
             let blo = false;
+
             if (newData !== undefined) {
                 if (newData instanceof Array) {
                     blo = newData.length === 0;
@@ -57,10 +58,11 @@ export function useMutate<T>(config: IMutateOption<T>) {
             } else {
                 blo = true;
             }
+
             noData.value = blo;
-            return false;
         } catch (error) {
             console.log(error);
+            noData.value = true;
         }
     }, 500);
 

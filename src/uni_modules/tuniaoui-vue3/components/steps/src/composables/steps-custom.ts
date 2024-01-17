@@ -1,9 +1,9 @@
-import { useNamespace } from '../../../../hooks';
+import { useNamespace } from '../../../../hooks'
 
 export const useStepsCustomStyle = () => {
-    const ns = useNamespace('steps');
+  const ns = useNamespace('steps')
 
-    return {
-        ns,
-    };
-};
+  return {
+    ns,
+  }
+}

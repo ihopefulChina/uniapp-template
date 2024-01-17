@@ -1,6 +1,6 @@
-import { removeRepetition } from '~/utils';
-import { useLockFn } from '~/hooks';
 import { computed, onMounted, ref } from 'vue';
+import { useLockFn } from '~/hooks';
+import { removeRepetition } from '~/utils';
 
 export enum MMPullToRefreshState {
     /**
@@ -116,7 +116,8 @@ export default function useMMPullToRefresh<T>(config: IUseMMPullToRefreshOption<
     function updateById(updatedata: T, key = 'id') {
         const newList = [...list.value]?.map((value) => {
             if ((value as any)[key] === (updatedata as any)[key]) {
-                return { ...value, ...updatedata };
+                /** 改成替换更新 */
+                return { ...updatedata };
             }
             return { ...value };
         });
@@ -163,30 +164,6 @@ export default function useMMPullToRefresh<T>(config: IUseMMPullToRefreshOption<
     }
 
     const isEmpty = computed(() => list?.value.length === 0 && pullToRefreshState?.value === MMPullToRefreshState.none);
-
-    // const info = {
-    //     list,
-    //     total: total,
-    //     updateById,
-    //     pageNum,
-    //     updateLisItem,
-    //     /**
-    //      * 根据索引删除某条数据
-    //      * @param index
-    //      * @returns
-    //      */
-    //     deleteByIndex: (index: number) => (list.value = list.value?.filter((__, idx) => idx !== index)),
-    //     /** 根据传入的标识删除对应的数据，传入标识值和标识字段，默认id */
-    //     deleteById,
-    // };
-
-    // const pullToRefreshProps = {
-    //     state: pullToRefreshState,
-    //     noMore,
-    //     onRefresh,
-    //     isEmpty,
-    //     onReachBottom: () => getListData(),
-    // };
 
     return {
         list,

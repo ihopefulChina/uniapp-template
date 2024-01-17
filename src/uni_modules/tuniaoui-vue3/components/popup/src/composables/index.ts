@@ -1,2 +1,2 @@
-export * from './popup-custom';
-export * from './use-popup';
+export * from './popup-custom'
+export * from './use-popup'

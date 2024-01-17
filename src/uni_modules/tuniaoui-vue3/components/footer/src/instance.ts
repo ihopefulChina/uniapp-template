@@ -1,3 +1,3 @@
-import type Footer from './footer.vue';
+import type Footer from './footer.vue'
 
-export type TnFooterInstance = InstanceType<typeof Footer>;
+export type TnFooterInstance = InstanceType<typeof Footer>

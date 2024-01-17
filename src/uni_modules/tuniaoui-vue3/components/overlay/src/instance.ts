@@ -1,3 +1,3 @@
-import type Overlay from './overlay.vue';
+import type Overlay from './overlay.vue'
 
-export type TnOverlayInstance = InstanceType<typeof Overlay>;
+export type TnOverlayInstance = InstanceType<typeof Overlay>

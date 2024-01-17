@@ -1,8 +1,8 @@
-import type { ExtractPropTypes, PropType } from 'vue';
-import type { tnPropKey } from './runtime';
-import type { IfNever, UnknowToNever, WriteableArray } from './util';
+import type { ExtractPropTypes, PropType } from 'vue'
+import type { tnPropKey } from './runtime'
+import type { IfNever, UnknowToNever, WriteableArray } from './util'
 
-type Value<T> = T[keyof T];
+type Value<T> = T[keyof T]
 
 /**
  * 提取单个 prop 的参数类型
@@ -12,7 +12,9 @@ type Value<T> = T[keyof T];
  * ExtractPropType<{ type: StringConstructor, required: true }> => string
  * ExtractPropType<{ type: BooleanConstructor }> => boolean
  */
-export type ExtractPropType<T extends object> = Value<ExtractPropTypes<{ key: T }>>;
+export type ExtractPropType<T extends object> = Value<
+  ExtractPropTypes<{ key: T }>
+>
 
 /**
  * 通过 `ExtractPropTypes` 提取类型，接受 `PropType<T>`、`XXXConstructor`、`never`...
@@ -22,13 +24,13 @@ export type ExtractPropType<T extends object> = Value<ExtractPropTypes<{ key: T 
  * ResolvePropType<PropType<T>> => T
  */
 export type ResolvePropType<T> = IfNever<
-    T,
-    never,
-    ExtractPropType<{
-        type: WriteableArray<T>;
-        required: true;
-    }>
->;
+  T,
+  never,
+  ExtractPropType<{
+    type: WriteableArray<T>
+    required: true
+  }>
+>
 
 /**
  * 合并 Type、Value、Validator 的类型
@@ -37,18 +39,32 @@ export type ResolvePropType<T> = IfNever<
  * EpPropMergeType<StringConstructor, '1', 1> =>  1 | "1" // ignores StringConstructor
  * EpPropMergeType<StringConstructor, never, number> =>  string | number
  */
-export type TnPropMergeType<Type, Value, Validator> = IfNever<UnknowToNever<Value>, ResolvePropType<Type>, never> | UnknowToNever<Value> | UnknowToNever<Validator>;
+export type TnPropMergeType<Type, Value, Validator> =
+  | IfNever<UnknowToNever<Value>, ResolvePropType<Type>, never>
+  | UnknowToNever<Value>
+  | UnknowToNever<Validator>
 
 /**
  * 处理输入参数的默认值（约束）
  */
-export type TnPropInputDefault<Required extends boolean, Default> = Required extends true ? never : Default extends Record<string, unknown> | Array<any> ? () => Default : (() => Default) | Default;
+export type TnPropInputDefault<
+  Required extends boolean,
+  Default
+> = Required extends true
+  ? never
+  : Default extends Record<string, unknown> | Array<any>
+  ? () => Default
+  : (() => Default) | Default
 
 /**
  * 原生 prop `类型，BooleanConstructor`、`StringConstructor`、`null`、`undefined` 等
  */
-export type NativePropType = ((...args: any) => any) | { new (...args: any): any } | undefined | null;
-export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N;
+export type NativePropType =
+  | ((...args: any) => any)
+  | { new (...args: any): any }
+  | undefined
+  | null
+export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N
 
 /**
  * prop 输入参数（约束）
@@ -63,13 +79,19 @@ export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N;
     default?: undefined;
   }
  */
-export type TnPropInput<Type, Value, Validator, Default extends TnPropMergeType<Type, Value, Validator>, Required extends boolean> = {
-    type?: Type;
-    required?: Required;
-    values?: readonly Value[];
-    validator?: ((val: any) => val is Validator) | ((val: any) => boolean);
-    default?: TnPropInputDefault<Required, Default>;
-};
+export type TnPropInput<
+  Type,
+  Value,
+  Validator,
+  Default extends TnPropMergeType<Type, Value, Validator>,
+  Required extends boolean
+> = {
+  type?: Type
+  required?: Required
+  values?: readonly Value[]
+  validator?: ((val: any) => val is Validator) | ((val: any) => boolean)
+  default?: TnPropInputDefault<Required, Default>
+}
 
 /**
  * prop 输出参数（约束）
@@ -85,17 +107,27 @@ export type TnPropInput<Type, Value, Validator, Default extends TnPropMergeType<
   }
  */
 export type TnProp<Type, Default, Required> = {
-    readonly type: PropType<Type>;
-    readonly required: [Required] extends [true] ? true : false;
-    readonly validator: ((val: unknown) => boolean) | undefined;
-    [tnPropKey]: true;
-} & IfNever<Default, unknown, { readonly default: Default }>;
-export type IfTnProp<T, Y, N> = T extends { [tnPropKey]: true } ? Y : N;
+  readonly type: PropType<Type>
+  readonly required: [Required] extends [true] ? true : false
+  readonly validator: ((val: unknown) => boolean) | undefined
+  [tnPropKey]: true
+} & IfNever<Default, unknown, { readonly default: Default }>
+export type IfTnProp<T, Y, N> = T extends { [tnPropKey]: true } ? Y : N
 
-export type TnPropConvert<Input> = Input extends TnPropInput<infer Type, infer Value, infer Validator, any, infer Required>
-    ? TnPropFinalized<Type, Value, Validator, Input['default'], Required>
-    : never;
+export type TnPropConvert<Input> = Input extends TnPropInput<
+  infer Type,
+  infer Value,
+  infer Validator,
+  any,
+  infer Required
+>
+  ? TnPropFinalized<Type, Value, Validator, Input['default'], Required>
+  : never
 
-export type TnPropFinalized<Type, Value, Validator, Default, Required> = TnProp<TnPropMergeType<Type, Value, Validator>, UnknowToNever<Default>, Required>;
+export type TnPropFinalized<Type, Value, Validator, Default, Required> = TnProp<
+  TnPropMergeType<Type, Value, Validator>,
+  UnknowToNever<Default>,
+  Required
+>
 
-export {};
+export {}

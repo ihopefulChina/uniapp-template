@@ -1,2 +1,2 @@
-export * from './number-box-custom';
-export * from './use-number-box';
+export * from './number-box-custom'
+export * from './use-number-box'

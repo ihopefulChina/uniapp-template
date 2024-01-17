@@ -1,3 +1,3 @@
-import type Popup from './popup.vue';
+import type Popup from './popup.vue'
 
-export type TnPopupInstance = InstanceType<typeof Popup>;
+export type TnPopupInstance = InstanceType<typeof Popup>

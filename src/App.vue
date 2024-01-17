@@ -2,7 +2,7 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-11-09 12:48:26
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-23 12:45:28
+ * @LastEditTime: 2024-01-17 09:36:22
  * @FilePath: /uniapp_template/src/App.vue
  * @Description: 
  * 
@@ -10,7 +10,7 @@
 -->
 <script setup lang="ts">
 import { useBaseUrlStore } from './state/useBaseUrlStore';
-import { initRequest } from './components/request/utils';
+import { initRequest } from '~/components/request/utils';
 import { isDev } from './config';
 import { toRefs, watchEffect } from 'vue';
 

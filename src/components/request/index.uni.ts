@@ -8,7 +8,6 @@ import { ITaroRequestConfig, ITaroResponse } from './types/taro-type';
 import { IRequestOption } from './types';
 import { createInstance } from './helper/createInstance';
 import { normalizationUrl } from './core/utils';
-import i18n from '~/locale';
 export interface ITaroInstance extends Omit<TaroRequest, 'request'> {
     create: (config?: IRequestOption) => ITaroInstance;
 
@@ -150,10 +149,10 @@ export async function requestInterceptorHanlder(res: any, option: IResOption) {
 
         onLoginLock(() =>
             uni.showModal({
-                title: i18n.global.t('common.sorroy'),
-                content: i18n.global.t('common.account_disable'),
+                title: '抱歉',
+                content: '该账号已被禁用，无法登录',
                 showCancel: false,
-                confirmColor: '#FA9240',
+                confirmColor: '#497cd8',
                 success: () => {
                     authorizationLogin?.();
                 },
@@ -171,7 +170,7 @@ export async function requestInterceptorHanlder(res: any, option: IResOption) {
         //     uni.showModal({
         //         title: '网络连接失败',
         //         content: '关闭无线数据时，部分功能可能无法使用，请允许应用使用无线数据',
-        //         confirmColor: '#FA9240',
+        //         confirmColor: '#497cd8',
         //         confirmText: '前往设置',
         //         success: (res) => {
         //             if (res.confirm) {
@@ -201,8 +200,9 @@ export async function requestInterceptorHanlder(res: any, option: IResOption) {
 /** 给跳转登录加一个锁 */
 const onLoginLock = (fn: Function) => {
     if (!uni.getStorageSync('loginLock')) {
-        setTimeout(function () {
-            fn?.();
+        setTimeout(async () => {
+            await fn?.();
+            uni.removeStorageSync('loginLock');
         }, 500);
         uni.setStorageSync('loginLock', true);
     }

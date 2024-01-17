@@ -2,14 +2,12 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-01-18 17:18:06
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-03-02 14:04:40
- * @FilePath: /equipment-home-miniprogram/src/components/refreshList/const.tsx
+ * @LastEditTime: 2024-01-10 09:43:25
+ * @FilePath: /LX001413-weiyunbao-app/src/components/pullToRefresh/const.ts
  * @Description:
  *
  * Copyright (c) 2023 by huangpengfei 784667332@qq.com, All Rights Reserved.
  */
-
-import { IMMPullToRefreshProps } from '../refreshList/index.vue';
 
 export interface IMMPullToRefreshState {
     pulling: boolean;
@@ -44,8 +42,4 @@ export interface IMMPullRefreshHookRefreshParams {
      * @default false
      */
     clearList?: boolean;
-}
-
-export interface IMMPullRefreshHookReturn extends Omit<IMMPullToRefreshProps, 'onRefresh'> {
-    onRefresh: (params?: IMMPullRefreshHookRefreshParams) => void;
 }

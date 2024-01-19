@@ -2,17 +2,16 @@
  * @Author: huangpengfei 784667332@qq.com
  * @Date: 2023-09-12 18:04:41
  * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-23 18:13:03
+ * @LastEditTime: 2024-01-19 15:45:27
  * @FilePath: /uniapp_template/src/state/useSystemInfo.ts
  * @Description: 获取设备信息
  *
  * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
  */
-import { onLoad } from '@dcloudio/uni-app';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
-const newPhoneList = [/iPhone X/, /iPhone 1/, /iPhone 2/, /unknown.*iPhone/];
+const newPhoneList = [/iPhone X/, /iPhone 1/, /iPhone 2/, /iPhone 3/, /unknown.*iPhone/];
 
 export const useSystemInfo = defineStore('systemInfo', () => {
     /** isNewIphone */
@@ -30,30 +29,33 @@ export const useSystemInfo = defineStore('systemInfo', () => {
     // 底部 tabbar 菜单部分高度
     const tabbarMenuHeight = 50;
 
-    onLoad(() => {
-        uni.getSystemInfo({
-            success: (systemInfo) => {
-                // 小程序右上角的胶囊布局数据
-                // #ifdef MP-WEIXIN || MP-ALIPAY || MP-BAIDU || MP_TOUTIAO || MP-QQ
-                const capsule = uni.getMenuButtonBoundingClientRect();
-                // 胶囊顶部减去状态栏高度可以得到导航栏菜单的 paddintTop，上下内边距 + 胶囊高度 = 导航栏菜单高度
-                navMenuHeight.value = (capsule.top - (systemInfo.statusBarHeight || 0)) * 2 + capsule.height;
-                // #endif
+    const getSystemRectInfo = () => {
+        try {
+            const systemInfo = uni.getSystemInfoSync();
 
-                // 屏幕高度
-                screenHeight.value = systemInfo.screenHeight;
-                // 屏幕宽度
-                screenWidth.value = systemInfo.screenWidth;
-                // 状态栏的高度
-                statusBarHeight.value = systemInfo.statusBarHeight || 0;
-                isNewIphone.value = newPhoneList.some((item) => item.test(systemInfo.model));
+            // 小程序右上角的胶囊布局数据
+            // #ifdef MP-WEIXIN || MP-ALIPAY || MP-BAIDU || MP_TOUTIAO || MP-QQ
+            const capsule = uni.getMenuButtonBoundingClientRect();
+            // 胶囊顶部减去状态栏高度可以得到导航栏菜单的 paddintTop，上下内边距 + 胶囊高度 = 导航栏菜单高度
+            navMenuHeight.value = (capsule.top - (systemInfo?.statusBarHeight || 0)) * 2 + capsule.height;
+            // #endif
 
-                const host = systemInfo?.host as any;
-                const env = host?.env;
-                isWechat.value = env === 'WeChat'; // 是否微信环境
-            },
-        });
-    });
+            // 屏幕高度
+            screenHeight.value = systemInfo.screenHeight;
+            // 屏幕宽度
+            screenWidth.value = systemInfo.screenWidth;
+            // 状态栏的高度
+            statusBarHeight.value = systemInfo?.statusBarHeight || 0;
+            isNewIphone.value = newPhoneList.some((item) => item.test(systemInfo.model));
+
+            const host = systemInfo?.host as any;
+            const env = host?.env;
+            isWechat.value = env === 'WeChat'; // 是否微信环境
+        } catch {
+            // eslint-disable-next-line no-console
+        }
+    };
+    getSystemRectInfo();
 
     // 底部 tabbar 高度
     const tabbarHeight = computed(() => (isNewIphone?.value ? tabbarMenuHeight + 34 : tabbarMenuHeight));

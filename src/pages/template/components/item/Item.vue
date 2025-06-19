@@ -1,13 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-19 17:41:49
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-10 09:58:58
- * @FilePath: /LX001413-weiyunbao-app/src/pages/template/components/item/Item.vue
- * @Description:  组件 - item
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
 <script setup lang="ts">
 import { ref } from 'vue';
 import { UpWorkOrderWebListVo } from '~/request/data-contracts';

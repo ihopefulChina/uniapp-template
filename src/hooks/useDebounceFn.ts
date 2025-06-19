@@ -1,11 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-18 09:02:21
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-09-18 09:02:55
- *  * @FilePath: /uniapp_template/src/hooks/useDebounceFn.ts
- * @Description: 处理防抖函数的 Hook
- */
 import debounce from 'lodash/debounce';
 
 export interface DebounceOptions {

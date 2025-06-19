@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-04 17:12:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-21 09:18:11
- * @FilePath: /uniapp_template/.prettierrc.cjs
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 //////////////////////////////////////////////////////////////////
 // 官网参考：https://prettier.io/docs/en/options.html#tab-width //
 ////////////////////////////////////////////////////////////////

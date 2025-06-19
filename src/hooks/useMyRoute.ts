@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-01-18 17:18:44
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-09 09:44:44
- *  * @FilePath: /uniapp_template/src/hooks/useMyRoute.ts
- * @Description: 路由hooks
- *
- * Copyright (c) 2023 by huangpengfei 784667332@qq.com, All Rights Reserved.
- */
-
 import { routeNames, tabbar } from '../routes';
 
 const tabbarUrlList = tabbar.map((item) => item?.url);

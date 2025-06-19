@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-27 16:56:40
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:14:31
- * @FilePath: /uniapp_template/src/components/common/myTextarea/MyTextarea.vue
- * @Description: 组件 -  文本域（uniapp 有bug，层级高，）
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 

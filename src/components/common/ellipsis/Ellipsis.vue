@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-12-06 13:59:16
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:09:34
- * @FilePath: /uniapp_template/src/components/common/ellipsis/Ellipsis.vue
- * @Description: 组件 - 省略
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script setup lang="ts">
 import { CSSProperties, computed, getCurrentInstance, ref, watchEffect } from 'vue';
 import { selectRect } from '~/utils/uniApi';

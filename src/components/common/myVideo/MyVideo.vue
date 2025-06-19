@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-12 18:04:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-10 09:13:05
- * @FilePath: /LX001413-weiyunbao-app/src/components/common/myVideo/MyVideo.vue
- * @Description: 组件 - video
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { computed, getCurrentInstance, ref } from 'vue';
 import { useLockFn } from '~/hooks';

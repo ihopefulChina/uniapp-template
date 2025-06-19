@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-12 18:04:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-10 09:07:48
- * @FilePath: /LX001413-weiyunbao-app/src/components/common/picture/Picture.vue
- * @Description: 组件 - 图片展示 （解决图片尺寸太大，导致页面渲染卡顿问题）
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 import { assembleResizeUrl } from '~/utils/aliyun';

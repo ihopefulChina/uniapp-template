@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-08-31 09:18:37
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-10 10:08:41
- * @FilePath: /LX001413-weiyunbao-app/src/components/common/poster/Poster.vue
- * @Description: 组件 - Poster
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { CSSProperties, computed, getCurrentInstance, ref, watchEffect } from 'vue';
 import { drawImage, drawRect, drawText, getImageInfo, getStyle } from './tool';

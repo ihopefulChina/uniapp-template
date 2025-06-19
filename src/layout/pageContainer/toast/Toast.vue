@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-26 17:54:01
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-10 09:44:33
- * @FilePath: /LX001413-weiyunbao-app/src/layout/pageContainer/toast/Toast.vue
- * @Description: 组件 - 全局toast
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { ref } from 'vue';
 import TnOverlay from '~/uni_modules/tuniaoui-vue3/components/overlay/src/overlay.vue';

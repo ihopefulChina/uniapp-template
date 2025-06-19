@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-12 18:04:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-12-23 19:13:04
- * @FilePath: /LX001413-weiyunbao-app/src/state/useBaseUrlStore.ts
- * @Description: 切换后端接口hooks
- *
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { isDev, urls } from '~/config';

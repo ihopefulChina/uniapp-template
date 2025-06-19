@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2024-01-17 10:06:22
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 10:07:38
- * @FilePath: /uniapp_template/plugins/autoRoute.ts
- * @Description: 
- * 
- * Copyright (c) 2024 by 784667332@qq.com, All Rights Reserved. 
- */
-
 /* eslint-disable id-length */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const chokidar = require('chokidar');

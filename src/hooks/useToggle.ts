@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-21 11:17:23
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-09-21 11:17:29
- *  * @FilePath: /uniapp_template/src/hooks/useToggle.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 import { computed, Ref, ref, shallowReadonly, UnwrapRef } from 'vue';
 
 export interface UseToggleActions<T> {

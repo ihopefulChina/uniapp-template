@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-21 11:16:10
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-20 11:13:21
- * @FilePath: /uniapp_template/src/hooks/useBoolean.ts
- * @Description: hooks - boolean 切换
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 import type { Ref } from 'vue';
 import useToggle from './useToggle';
 

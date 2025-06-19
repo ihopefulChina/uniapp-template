@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-12 18:04:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-23 13:07:59
- * @FilePath: /uniapp_template/src/components/request/utils.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 import { setInstance } from '~/request/instance';
 import Request from '~/components/request/index.uni';
 import { loginUrl, urls, silentAuthorization, silentAuthorizationUrl, isDev } from '~/config';

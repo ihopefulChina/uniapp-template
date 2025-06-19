@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-11-23 14:09:32
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-10 09:00:31
- * @FilePath: /LX001413-weiyunbao-app/vite.config.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 import { UserConfig } from 'vite';
 import { resolve } from 'path';
 import uni from '@dcloudio/vite-plugin-uni';

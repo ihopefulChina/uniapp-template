@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-04 17:12:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-26 16:15:09
- * @FilePath: /uniapp_template/.eslintrc.cjs
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 // 参考：https://eslint.bootcss.com/docs/rules/
 // 参考：https://blog.csdn.net/x550392236/article/details/89497202
 // 参考：https://blog.csdn.net/brokenkay/article/details/111106266

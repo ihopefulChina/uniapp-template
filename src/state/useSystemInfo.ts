@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-12 18:04:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-19 15:45:27
- * @FilePath: /uniapp_template/src/state/useSystemInfo.ts
- * @Description: 获取设备信息
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 

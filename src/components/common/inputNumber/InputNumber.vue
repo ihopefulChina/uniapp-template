@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-19 15:16:46
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:13:49
- * @FilePath: /uniapp_template/src/components/common/inputNumber/InputNumber.vue
- * @Description: 组件 - 数字输入
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { CSSProperties, ref } from 'vue';
 import { isNumber } from '~/utils/is';

@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-12 18:04:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:57:24
- * @FilePath: /uniapp_template/src/pages/tabbar/home/components/list/List.vue
- * @Description: 页面 - 列表
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { nextTick, toRefs, watchEffect } from 'vue';
 import Empty from '~/components/common/empty/Empty.vue';

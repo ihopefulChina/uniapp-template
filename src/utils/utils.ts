@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-12-22 14:03:47
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-15 10:24:26
- * @FilePath: /LX001413-weiyunbao-app/src/utils/utils.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
-
 import { ESurveyStatus } from '~/enums/EIndustrialSurvey';
 import { EOnShelvesStatus } from '~/enums/EOnShelves';
 import { EStatusNormal } from '~/enums/common';

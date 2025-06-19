@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-20 13:18:55
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-11 17:24:58
- * @FilePath: /LX001413-weiyunbao-app/src/layout/pageContainer/PageContainer.vue
- * @Description: 组件 - 全局页面父组件
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { CSSProperties, ref, watchEffect } from 'vue';
 import Modal from './modal/Modal.vue';

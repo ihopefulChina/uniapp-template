@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-20 09:15:39
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-10-11 14:16:05
- *  * @FilePath: /uniapp_template/src/utils/aliyun.ts
- * @Description: 阿里云媒体文件处理
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
-
 const multiple = 2; //几倍图
 /** 整数 */
 const trunc = (nu: number) => {

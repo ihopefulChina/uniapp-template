@@ -1,11 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-13 18:40:46
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:24:32
- * @FilePath: /uniapp_template/src/pages/common/notFound/index.vue
- * @Description: 页面 - 404
--->
 <script lang="ts" setup>
 import Empty from '~/components/common/empty/Empty.vue';
 import { useMyRoute } from '~/hooks';

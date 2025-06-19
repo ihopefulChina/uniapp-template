@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2022-08-17 15:12:37
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-16 10:08:07
- * @FilePath: /LX001413-weiyunbao-app/src/hooks/useScroll.ts
- * @Description: useScroll
- *
- * Copyright (c) 2022 by huangpengfei 784667332@qq.com, All Rights Reserved.
- */
-
 import { IOptionItem } from '~/enums/type';
 import { useSystemInfo } from '~/state/useSystemInfo';
 import { selectorQueryClientRect } from '~/utils/uniApi';

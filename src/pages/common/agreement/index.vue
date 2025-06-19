@@ -1,13 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-04 18:31:58
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:23:47
- * @FilePath: /uniapp_template/src/pages/common/agreement/index.vue
- * @Description: 页面 - 用户协议
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
 <script setup lang="ts">
 import RichText from '~/components/common/richText/RichText.vue';
 import Navigation from '~/layout/navigation/Navigation.vue';

@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-10-11 12:21:45
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-10-11 12:21:49
- *  * @FilePath: /uniapp_template/src/utils/upload/config.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 export interface IUplodaOptions {
     /**
      * 自定义上传文件名称

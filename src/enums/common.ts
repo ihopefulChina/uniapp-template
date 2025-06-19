@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-22 18:37:56
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:18:35
- * @FilePath: /uniapp_template/src/enums/common.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
-
 import { converEnmuMap, converEnumArray } from './utils';
 
 /**   'none' | 'wifi' | '2g' | '3g' | '4g' | '5g' | 'ethernet' | 'unknown' */

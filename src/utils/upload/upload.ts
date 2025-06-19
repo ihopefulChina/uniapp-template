@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-25 17:55:04
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-11-23 18:10:12
- * @FilePath: /uniapp_template/src/utils/upload/upload.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
-
 import { guid } from '..';
 import { autobind, merge } from './decorator';
 

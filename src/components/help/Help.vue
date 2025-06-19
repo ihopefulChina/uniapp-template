@@ -1,13 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-12 18:04:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:21:01
- * @FilePath: /uniapp_template/src/components/help/Help.vue
- * @Description: 组件 - 开发调试工具
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
 <script lang="ts" setup>
 import { nextTick, ref, watchEffect } from 'vue';
 import { CUSTOM_ENVIRONMENT_TEXT, isDev, urls } from '~/config';

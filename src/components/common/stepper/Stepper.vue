@@ -1,13 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-12 18:04:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:16:41
- * @FilePath: /uniapp_template/src/components/common/stepper/Stepper.vue
- * @Description: 组件 - 步进器
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
 <script lang="ts" setup>
 import { computed, Ref, ref, nextTick, watch } from 'vue';
 

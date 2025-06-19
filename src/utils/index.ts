@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-04 17:12:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-16 16:45:22
- * @FilePath: /LX001413-weiyunbao-app/src/utils/index.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 import { isArray, isObject } from './is';
 import CryptoJS from 'crypto-js';
 /**

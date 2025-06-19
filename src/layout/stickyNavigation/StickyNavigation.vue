@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-13 17:45:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:43:02
- * @FilePath: /uniapp_template/src/layout/stickyNavigation/StickyNavigation.vue
- * @Description: 组件 -- 带背景图片的粘性布局导航栏
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { MMNavigationType } from '~/layout/navigation/const';
 import Navigation from '~/layout/navigation/Navigation.vue';

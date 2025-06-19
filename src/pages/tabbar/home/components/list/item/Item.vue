@@ -1,13 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-19 17:41:49
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:53:26
- * @FilePath: /uniapp_template/src/pages/tabbar/home/components/list/item/Item.vue
- * @Description:  组件 -  item
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
 <script setup lang="ts">
 import dayjs from 'dayjs';
 import { useMutate, useMyRoute } from '~/hooks';

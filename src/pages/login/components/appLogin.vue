@@ -1,13 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-12 18:04:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:29:35
- * @FilePath: /uniapp_template/src/pages/login/components/appLogin.vue
- * @Description: 
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useLockFn, useMyRoute } from '~/hooks';

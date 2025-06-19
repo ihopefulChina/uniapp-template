@@ -1,13 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-04 18:31:58
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:57:14
- * @FilePath: /uniapp_template/src/pages/tabbar/home/index.vue
- * @Description: 页面 - 首页
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
 <script setup lang="ts">
 import { onShow } from '@dcloudio/uni-app';
 import Empty from '~/components/common/empty/Empty.vue';

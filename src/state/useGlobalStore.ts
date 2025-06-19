@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-12 18:04:41
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-12 09:12:13
- * @FilePath: /LX001413-weiyunbao-app/src/state/useGlobalStore.ts
- * @Description: globalStore
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { api } from '~/request';

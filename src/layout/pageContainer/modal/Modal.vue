@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-26 17:54:01
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:22:58
- * @FilePath: /uniapp_template/src/layout/pageContainer/modal/Modal.vue
- * @Description:  组件 - 全局对话框
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { nextTick, ref } from 'vue';
 import Gap from '~/components/common/gap/Gap.vue';

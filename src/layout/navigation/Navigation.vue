@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-27 10:10:14
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-10 09:41:41
- * @FilePath: /LX001413-weiyunbao-app/src/layout/navigation/Navigation.vue
- * @Description: 
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script setup lang="ts">
 import { computed } from 'vue';
 import { routeNames } from '~/routes';

@@ -1,12 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-16 09:51:12
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-12-18 12:57:01
- * @FilePath: /LX001413-weiyunbao-app/src/layout/pageContainer/modal/type.ts
- * @Description:
- */
-
 export interface ShowModalOptions {
     /**
      * 提示的标题

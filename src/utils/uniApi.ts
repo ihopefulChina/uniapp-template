@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-09-17 15:21:25
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-15 12:03:31
- * @FilePath: /LX001413-weiyunbao-app/src/utils/uniApi.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
-
 import { nextTick } from 'vue';
 import { isArray, isNumber } from './is';
 

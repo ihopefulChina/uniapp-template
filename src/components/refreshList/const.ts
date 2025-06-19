@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-01-18 17:18:06
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-10 09:42:40
- * @FilePath: /LX001413-weiyunbao-app/src/components/refreshList/const.ts
- * @Description:
- *
- * Copyright (c) 2023 by huangpengfei 784667332@qq.com, All Rights Reserved.
- */
-
 import { IMMPullToRefreshProps } from './RefreshList.vue';
 
 export interface IMMPullToRefreshState {

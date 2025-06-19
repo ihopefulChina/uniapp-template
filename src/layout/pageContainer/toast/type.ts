@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-10-10 15:09:37
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-12-05 17:00:24
- * @FilePath: /LX001413-weiyunbao-app/src/layout/pageContainer/toast/type.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
 /**
  * 
     message	显示的文本	String | Number	-	-

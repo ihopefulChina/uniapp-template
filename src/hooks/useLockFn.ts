@@ -1,13 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-01-18 17:18:45
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-09-25 13:18:21
- *  * @FilePath: /uniapp_template/src/hooks/useLockFn.ts
- * @Description: 用于给一个异步函数增加竞态锁，防止并发执行。
- *
- * Copyright (c) 2023 by huangpengfei 784667332@qq.com, All Rights Reserved.
- */
 import { ref } from 'vue';
 
 type ArgsAny = any[];

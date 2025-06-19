@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-08-22 15:33:32
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-08-31 14:40:27
- *  * @FilePath: /uniapp_template/enmus/utils.ts
- * @Description:
- *
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved.
- */
-
 /**
  * 根据枚举对象转换为optins数组
  *

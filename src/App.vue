@@ -1,13 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-11-09 12:48:26
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:36:22
- * @FilePath: /uniapp_template/src/App.vue
- * @Description: 
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
 <script setup lang="ts">
 import { useBaseUrlStore } from './state/useBaseUrlStore';
 import { initRequest } from '~/components/request/utils';

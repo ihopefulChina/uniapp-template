@@ -1,14 +1,3 @@
-/*
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-01-23 09:41:13
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2023-12-12 14:39:24
- * @FilePath: /LX001413-weiyunbao-app/src/hooks/useMutate.ts
- * @Description: 对于简单的获取数据方法的一个封装
- *
- * Copyright (c) 2023 by huangpengfei 784667332@qq.com, All Rights Reserved.
- */
-
 import { onMounted, ref } from 'vue';
 import { useLockFn } from './useLockFn';
 

@@ -1,14 +1,3 @@
-<!--
- * @Author: huangpengfei 784667332@qq.com
- * @Date: 2023-08-31 09:18:37
- * @LastEditors: huangpengfei 784667332@qq.com
- * @LastEditTime: 2024-01-17 09:12:01
- * @FilePath: /uniapp_template/src/components/common/imageUpload/ImageUpload.vue
- * @Description: 组件 - 上传图片
- * 
- * Copyright (c) 2023 by 784667332@qq.com, All Rights Reserved. 
--->
-
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 import { noCameraPermission } from '~/js_sdk/wa-permission/permission';

@@ -1,17 +1,15 @@
 <script lang="ts" setup>
 import Empty from '~/components/common/empty/Empty.vue';
-import { useMyRoute } from '~/hooks';
+import { redirectTo } from '~/hooks/useNavigation';
 import { MMNavigationType } from '~/layout/navigation/const';
 import Navigation from '~/layout/navigation/Navigation.vue';
 import PageContainer from '~/layout/pageContainer/PageContainer.vue';
-
-const { replace } = useMyRoute();
 
 /**
  * 返回首页
  */
 const backHome = () => {
-    replace('pagesTabbarHomeIndex');
+    redirectTo('pagesTabbarHomeIndex');
 };
 </script>
 

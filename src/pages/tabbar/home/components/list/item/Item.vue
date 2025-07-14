@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
-import { useMutate, useMyRoute } from '~/hooks';
+import { useMutate } from '~/hooks';
+import { navTo } from '~/hooks/useNavigation';
 import { api } from '~/request';
 import { UpWorkOrderWebListVo } from '~/request/data-contracts';
 interface IProjectItemProps {
@@ -14,8 +15,6 @@ const emits = defineEmits<{
     (e: 'updateById', data?: UpWorkOrderWebListVo): void;
 }>();
 
-const { navigate } = useMyRoute();
-
 const { mutate } = useMutate({
     initRequest: false,
     getData: () => api['/wechat/api/upWorkOrder/{id}_GET'](props?.item?.id as number),
@@ -27,7 +26,7 @@ const { mutate } = useMutate({
 
 const jumpDetail = () => {
     mutate();
-    navigate('pagesLoginIndex', { id: props?.item?.id || '' });
+    navTo('pagesLoginIndex', { id: props?.item?.id || '' });
 };
 </script>
 <template>

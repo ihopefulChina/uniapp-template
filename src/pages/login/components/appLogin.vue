@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useLockFn, useMyRoute } from '~/hooks';
+import { useLockFn } from '~/hooks';
+import { navTo } from '~/hooks/useNavigation';
 
-const { navigate } = useMyRoute();
 const isAgree = ref(false); // 是否同意用户协议
 const tipsShow = ref(false); // 提示框是否显示
 const mobile = ref('');
 const verificationCode = ref('');
 
 const jumpAgreement = () => {
-    navigate('pagesCommonAgreementIndex');
+    navTo('pagesCommonAgreementIndex');
 };
 const handelerAgree = () => {
     isAgree.value = !isAgree.value;

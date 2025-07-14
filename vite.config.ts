@@ -1,9 +1,6 @@
 import { UserConfig } from 'vite';
 import { resolve } from 'path';
 import uni from '@dcloudio/vite-plugin-uni';
-import autoRoute from './plugins/autoRoute';
-// import vueSetupExtend from 'vite-plugin-vue-setup-extend';
-// import Components from 'unplugin-vue-components/vite';
 import AutoImport from 'unplugin-auto-import/vite';
 
 const { GitRevisionPlugin } = require('git-revision-webpack-plugin');
@@ -51,7 +48,6 @@ export default (): UserConfig => {
         // 插件
         plugins: [
             uni(),
-            autoRoute({ autoRoute: true }),
             AutoImport({
                 imports: ['vue', 'uni-app', 'pinia'],
                 dts: 'src/auto-imports.d.ts',

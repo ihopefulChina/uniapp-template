@@ -131,11 +131,11 @@ async function main() {
         routeLines.push(''); // 空行
 
         // ✅ 添加 tabbar 项
-        const tabbarItems = ['/pages/tabbar/home/index', '/pages/tabbar/mine/index'];
-
+        const tabBarList = json?.tabBar?.list;
+        const tabbarItems = tabBarList.map((it) => it?.pagePath);
         routeLines.push('export const tabbar = [');
         for (const url of tabbarItems) {
-            routeLines.push(`  { url: '${url}' },`);
+            routeLines.push(`  { url: '/${url}' },`);
         }
         routeLines.push('];');
 

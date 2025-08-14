@@ -13,7 +13,7 @@ const onChange = () => {
 </script>
 
 <template>
-  <PageContainer class-name="page">
+  <PageContainer className="page">
     <Navigation title="xxx" />
     <Item :item="detail" @on-change="onChange" />
   </PageContainer>

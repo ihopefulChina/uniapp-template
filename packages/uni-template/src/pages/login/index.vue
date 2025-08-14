@@ -9,7 +9,7 @@ onLoad(() => {
 </script>
 
 <template>
-  <PageContainer class-name="loginPage">
+  <PageContainer className="loginPage">
     <AppLogin />
   </PageContainer>
 </template>

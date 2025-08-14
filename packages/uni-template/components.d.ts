@@ -8,19 +8,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Ellipsis: typeof import('./src/components/common/ellipsis/Ellipsis.vue')['default']
-    Empty: typeof import('./src/components/common/empty/Empty.vue')['default']
-    Gap: typeof import('./src/components/common/gap/Gap.vue')['default']
     Help: typeof import('./src/components/help/Help.vue')['default']
     ImageUpload: typeof import('./src/components/common/imageUpload/ImageUpload.vue')['default']
-    InputNumber: typeof import('./src/components/common/inputNumber/InputNumber.vue')['default']
-    MyTextarea: typeof import('./src/components/common/myTextarea/MyTextarea.vue')['default']
-    MyVideo: typeof import('./src/components/common/myVideo/MyVideo.vue')['default']
     Node: typeof import('./src/components/common/richText/node/node.vue')['default']
-    Picture: typeof import('./src/components/common/picture/Picture.vue')['default']
     Poster: typeof import('./src/components/common/poster/Poster.vue')['default']
-    PullToRefresh: typeof import('./src/components/pullToRefresh/PullToRefresh.vue')['default']
-    RefreshList: typeof import('./src/components/refreshList/RefreshList.vue')['default']
+    PullToRefresh: typeof import('./src/components/common/pullToRefresh/PullToRefresh.vue')['default']
+    RefreshList: typeof import('./src/components/common/refreshList/RefreshList.vue')['default']
     RichText: typeof import('./src/components/common/richText/RichText.vue')['default']
-    Stepper: typeof import('./src/components/common/stepper/Stepper.vue')['default']
   }
 }

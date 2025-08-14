@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import Empty from '~/components/common/empty/Empty.vue';
 import { redirectTo } from '~/hooks/useNavigation';
 import { MMNavigationType } from '~/layout/navigation/const';
 import Navigation from '~/layout/navigation/Navigation.vue';
@@ -16,15 +15,12 @@ const backHome = () => {
 <template>
   <PageContainer>
     <Navigation title="Not Found" :type="MMNavigationType.Transparent" />
-    <Empty :margin-top="240" empty-str="页面找不到了">
-      <template #bottom>
-        <view class="publicButton">
-          <button class="backToHomePage btn default ht80" @click="backHome">
-            返回首页
-          </button>
-        </view>
-      </template>
-    </Empty>
+
+    <view class="publicButton">
+      <button class="backToHomePage btn default ht80" @click="backHome">
+        返回首页
+      </button>
+    </view>
   </PageContainer>
 </template>
 

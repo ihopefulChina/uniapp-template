@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 import { noCameraPermission } from '~/js_sdk/wa-permission/permission';
-import { useToast } from '~/layout/pageContainer/useToast';
 import { getResizeUrl, isImage } from '~/utils/aliyun';
 import { upload } from '~/utils/upload';
 
@@ -17,7 +16,7 @@ const props = defineProps<IDetailProps>();
 const emits = defineEmits<{
   (e: 'update:modelValue', data?: string[]): void;
 }>();
-const toastStore = useToast();
+
 // 图片 列表
 const list = ref<string[]>([]); // 已上传列表
 
@@ -33,7 +32,8 @@ const execFile = async (list_tmp: string[]) => {
   const verificat = list_tmp.every((it) => isImage(it));
 
   if (!verificat) {
-    toastStore.showToast({ content: '上传需要图片格式' });
+    uni.showToast({ title: '上传需要图片格式', icon: 'none' })
+
     return;
   }
 
@@ -50,7 +50,8 @@ const execFile = async (list_tmp: string[]) => {
       setList([...list.value, ...uploadList]);
       uni.hideLoading();
     } catch (error) {
-      toastStore.showToast({ content: '上传失败' });
+      uni.showToast({ title: '上传失败', icon: 'none' })
+
       uni.hideLoading();
     }
   }
@@ -104,7 +105,8 @@ watch(
     <view v-for="(item, index) in list" :key="item" class="common_uploadImages_item" @click.stop="handlePreview(item)">
       <image :src="item + getResizeUrl({ width: 160, height: 160 })" class="common_uploadImages_item_image" />
 
-      <image src="./images/icon_postsale_upload_close.png" class="icon_postsale_upload_close" @click.stop="del(index)" />
+      <image src="./images/icon_postsale_upload_close.png" class="icon_postsale_upload_close"
+        @click.stop="del(index)" />
     </view>
 
     <view v-if="list?.length < (props?.maxCount || 1)" class="common_uploadImages_item" @click="chooseImage">

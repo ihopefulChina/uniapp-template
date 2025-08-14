@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { nextTick, ref } from 'vue';
 import { isDev } from '~/config';
-import { useToast } from '~/layout/pageContainer/useToast';
 import { routeNames } from '~/routes';
 import { useGlobalStore } from '~/state/useGlobalStore';
 import WdSegmented from '~/uni_modules/wot-design-uni/components/wd-segmented/wd-segmented.vue';
@@ -9,7 +8,6 @@ import { cleanToken, copyToken } from './tool';
 import WdPopup from '~/uni_modules/wot-design-uni/components/wd-popup/wd-popup.vue';
 
 const globalStore = useGlobalStore(); // 全局状态
-const toastStore = useToast();
 
 /** 打开弹窗 */
 const visible = ref(false);
@@ -50,7 +48,7 @@ const changeUseId = async () => {
   nextTick(() => {
     globalStore?.getUserInfo();
   });
-  toastStore.showToast({ content: '切换成功', icon: 'success' });
+  uni.showToast({ title: '切换成功', icon: 'success' })
   uni.reLaunch({ url: routeNames.pagesTabbarHomeIndex });
 };
 </script>

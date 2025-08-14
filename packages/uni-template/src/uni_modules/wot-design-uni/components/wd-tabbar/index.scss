@@ -22,8 +22,8 @@
   }
 
   @include m(round) {
-    margin-left: 32rpx;
-    margin-right: 32rpx;
+    margin-left: 16px;
+    margin-right: 16px;
     border-radius: 999px;
     box-shadow: $-tabbar-box-shadow;
 

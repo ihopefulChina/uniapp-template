@@ -62,7 +62,7 @@ const acitonStyle = computed<CSSProperties>(() => {
   return {
     display: expand.value ? 'inline' : 'block',
     position: expand.value ? 'static' : 'absolute',
-    paddingLeft: expand.value ? '10rpx' : '10rpx'
+    paddingLeft: expand.value ? '5px' : '5px'
   };
 });
 

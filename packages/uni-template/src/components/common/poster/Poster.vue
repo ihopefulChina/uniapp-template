@@ -10,7 +10,7 @@ export interface IPosterProps {
 const dpr = 2;
 
 /** 父传子参数 */
-const { dataList = [], width = 350, height = 350 } = defineProps<IPosterProps>();
+const { dataList = [], width = 200, height = 200 } = defineProps<IPosterProps>();
 const emits = defineEmits<{
   (e: 'setImgSrc', data?: string): void;
 }>();
@@ -23,16 +23,16 @@ const src = ref('');
 // 图片尺寸
 const style = computed(() => {
   const sty: CSSProperties = {};
-  if (width) sty.width = `${width}rpx`;
-  if (height) sty.height = `${height}rpx`;
+  if (width) sty.width = `${width}px`;
+  if (height) sty.height = `${height}px`;
 
   return sty;
 });
 // canvas 尺寸，为了清晰度一般会比原图大
 const canvasStyle = computed(() => {
   const sty: CSSProperties = {};
-  if (width) sty.width = `${width * dpr}rpx`;
-  if (height) sty.height = `${height * dpr}rpx`;
+  if (width) sty.width = `${width * dpr}px`;
+  if (height) sty.height = `${height * dpr}px`;
 
   return sty;
 });

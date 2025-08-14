@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { CSSProperties, ComputedRef, Ref, computed, getCurrentInstance, onMounted, ref, toRefs } from 'vue';
-import Gap from '~/components/common/gap/Gap.vue';
 import { useLockFn } from '~/hooks';
 import { useSystemInfo } from '~/state/useSystemInfo';
+import WdGap from '~/uni_modules/wot-design-uni/components/wd-gap/wd-gap.vue';
 import WdLoadmore from '~/uni_modules/wot-design-uni/components/wd-loadmore/wd-loadmore.vue';
 import { selectRect } from '~/utils/uniApi';
 import { MMPullToRefreshState } from './const';
@@ -27,7 +27,7 @@ interface IMMPullToRefreshProps {
   isTab?: boolean;
   /** 背景颜色 */
   refresherBackground?: string;
-  /** 底部空间高度 rpx */
+  /** 底部空间高度 px */
   footerSpace?: number;
   /** 页面滚动回掉 */
   onScroll?: (e: any) => void;
@@ -67,7 +67,7 @@ onMounted(() => {
 });
 
 /** 加载更多status */
-const status = computed<'loading' | 'finished' |  undefined>(() => {
+const status = computed<'loading' | 'finished' | undefined>(() => {
   if (state?.value === MMPullToRefreshState.pushing) {
     return 'loading';
   } else if (state.value !== MMPullToRefreshState.refreshing && noMore) {
@@ -108,21 +108,11 @@ const scrolltolower = () => {
     <!-- <view class="pullHead" v-if="refresherTriggered">
           <WdLoadmore size="36" status="loading" color="#999" :loadingText="false" loadingIconMode="flower" />
         </view> -->
-    <scroll-view
-      scroll-y
-      scroll-with-animation
-      enable-back-to-top
-      refresher-enabled
-      refresher-default-style="black"
-      :refresher-threshold="REFRESHER_THRESHOLD"
-      :refresher-triggered="refresherTriggered"
-      :refresher-background="props?.refresherBackground ?? '#fff'"
-      class="simplePullToRefresh"
-      :style="{ ...props.styles }"
-      @refresherrefresh="refresherrefresh"
-      @scrolltolower="scrolltolower"
-      @scroll="onScroll"
-    >
+    <scroll-view scroll-y scroll-with-animation enable-back-to-top refresher-enabled refresher-default-style="black"
+      :refresher-threshold="REFRESHER_THRESHOLD" :refresher-triggered="refresherTriggered"
+      :refresher-background="props?.refresherBackground ?? '#fff'" class="simplePullToRefresh"
+      :style="{ ...props.styles }" @refresherrefresh="refresherrefresh" @scrolltolower="scrolltolower"
+      @scroll="onScroll">
       <!-- <slot name="refresher">
         <view class="pullHead">
           <WdLoadmore size="36" status="loading" color="#999" :loading-text="false" loading-icon-mode="flower" />
@@ -130,10 +120,12 @@ const scrolltolower = () => {
       </slot>  -->
       <slot />
 
-      <view v-if="!isEmpty && (status !== 'finished' || (status === 'finished' && !props.hiddeNoMoreText))" class="noMore">
+      <view v-if="!isEmpty && (status !== 'finished' || (status === 'finished' && !props.hiddeNoMoreText))"
+        class="noMore">
         <WdLoadmore v-if="status" :status="status" />
       </view>
-      <Gap v-if="props?.footerSpace" :height="props?.footerSpace" :styles="{ width: '100%' }" />
+
+      <WdGap v-if="props?.footerSpace" :height="props?.footerSpace" />
     </scroll-view>
   </view>
 </template>

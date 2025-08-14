@@ -20,18 +20,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 400rpx;
-  font-size: 34rpx;
+  width: 200px;
+  font-size: 17px;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
   color: #000000;
-  line-height: 48rpx;
+  line-height: 24px;
 }
 
 .left {
   height: 100%;
   position: absolute;
-  left: 30rpx;
+  left: 15px;
   top: 0;
   display: flex;
   align-items: center;
@@ -40,12 +40,12 @@
 }
 
 .icon_navbar_back_black {
-  width: 40rpx;
-  height: 40rpx;
+  width: 20px;
+  height: 20px;
 }
 
 .right {
   height: 100%;
   position: absolute;
-  right: 30rpx;
+  right: 15px;
 }

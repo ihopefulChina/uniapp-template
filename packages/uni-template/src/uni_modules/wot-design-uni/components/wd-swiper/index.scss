@@ -25,8 +25,8 @@
   @include e(text) {
     // 随便搞个样式，反正用户还是会覆盖的
     position: absolute;
-    right: 24rpx;
-    top: 24rpx;
+    right: 12px;
+    top: 12px;
     color: $-swiper-item-text-color;
     font-size: $-swiper-item-text-fs;
   }

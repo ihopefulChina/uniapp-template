@@ -226,7 +226,7 @@ $-calendar-range-color: var(--wot-calendar-range-color, rgba(#4d80f0, 0.09)) !de
 $-calendar-active-border: var(--wot-calendar-active-border, 8px) !default;
 $-calendar-info-fs: var(--wot-calendar-info-fs, 10px) !default;
 $-calendar-item-margin-bottom: var(--wot-calendar-item-margin-bottom, 4px) !default;
- 
+
 
 /* checkbox */
 $-checkbox-margin: var(--wot-checkbox-margin, 10px) !default; // 多个复选框距离
@@ -443,8 +443,7 @@ $-picker-loading-button-color: var(--wot-picker-loading-button-color, rgba(0, 0,
 $-picker-column-padding: var(--wot-picker-column-padding, 0 $-size-side-padding-small) !default; // 选项内间距
 
 $-picker-column-disabled-color: var(--wot-picker-column-disabled-color, rgba(0, 0, 0, 0.25)) !default; // 选择器选项禁用的颜色
-$-picker-mask: var(--wot-picker-mask, linear-gradient(180deg, hsla(0, 0%, 100%, 0.9), hsla(0, 0%, 100%, 0.25)))
-  linear-gradient(0deg, hsla(0, 0%, 100%, 0.9), hsla(0, 0%, 100%, 0.25)) !default; // 上下阴影
+$-picker-mask: var(--wot-picker-mask, linear-gradient(180deg, hsla(0, 0%, 100%, 0.9), hsla(0, 0%, 100%, 0.25))) linear-gradient(0deg, hsla(0, 0%, 100%, 0.9), hsla(0, 0%, 100%, 0.25)) !default; // 上下阴影
 $-picker-loading-bg: var(--wot-picker-loading-bg, rgba($-color-white, 0.8)) !default; // loading 背景颜色
 $-picker-region-separator-color: var(--wot-picker-region-separator-color, rgba(0, 0, 0, 0.65)) !default; // 区域选择文字颜色
 $-picker-cell-arrow-size-large: var(--wot-picker-cell-arrow-size-large, $-cell-icon-size) !default; // cell 类型的大尺寸 右侧icon尺寸
@@ -462,10 +461,8 @@ $-col-picker-selected-color: var(--wot-col-picker-selected-color, rgba(0, 0, 0, 
 $-col-picker-selected-fw: var(--wot-col-picker-selected-fw, 700) !default; // 弹框顶部值高亮字重
 $-col-picker-line-width: var(--wot-col-picker-line-width, 16px) !default; // 弹框顶部值高亮线条宽度
 $-col-picker-line-height: var(--wot-col-picker-line-height, 3px) !default; // 弹框顶部值高亮线条高度
-$-col-picker-line-color: var(
-  --wot-col-picker-line-color,
-  linear-gradient(315deg, rgba(81, 124, 240, 1), rgba(118, 158, 245, 1))
-) !default; // 弹框顶部值高亮线条颜色
+$-col-picker-line-color: var(--wot-col-picker-line-color,
+    linear-gradient(315deg, rgba(81, 124, 240, 1), rgba(118, 158, 245, 1))) !default; // 弹框顶部值高亮线条颜色
 $-col-picker-line-box-shadow: var(--wot-col-picker-line-box-shadow, 0px 1px 2px 0px rgba(1, 87, 255, 0.2)) !default; // 弹框顶部值高亮线条阴影
 $-col-picker-list-height: var(--wot-col-picker-list-height, 53vh) !default; // 弹框列表高度
 $-col-picker-list-padding-bottom: var(--wot-col-picker-list-padding-bottom, 30px) !default; // 弹框列表底部间距
@@ -555,10 +552,8 @@ $-slider-handle-bg: var(--wot-slider-handle-bg, resultColor(139deg, $-color-them
 $-slider-axie-height: var(--wot-slider-axie-height, 3px) !default; // 滑轴高度
 $-slider-color: var(--wot-slider-color, #333) !default; // 字体颜色
 $-slider-axie-bg: var(--wot-slider-axie-bg, #e5e5e5) !default; // 滑轴的默认背景色
-$-slider-line-color: var(
-  --wot-slider-line-color,
-  resultColor(315deg, $-color-theme, 'dark' 'light', #517cf0 #769ef5, 0% 100%)
-) !default; // 进度条颜色
+$-slider-line-color: var(--wot-slider-line-color,
+    resultColor(315deg, $-color-theme, 'dark' 'light', #517cf0 #769ef5, 0% 100%)) !default; // 进度条颜色
 $-slider-disabled-color: var(--wot-slider-disabled-color, rgba(0, 0, 0, 0.25)) !default; // 禁用状态下字体颜色
 
 /* sort-button */
@@ -610,10 +605,8 @@ $-tabs-nav-line-bg-color: var(--wot-tabs-nav-line-bg-color, $-color-theme) !defa
 $-tabs-nav-map-fs: var(--wot-tabs-nav-map-fs, $-fs-content) !default; // map 类型按钮字号
 $-tabs-nav-map-color: var(--wot-tabs-nav-map-color, rgba(0, 0, 0, 0.85)) !default; // map 类型按钮文字颜色
 $-tabs-nav-map-arrow-color: var(--wot-tabs-nav-map-arrow-color, rgba(0, 0, 0, 0.65)) !default; // map 类型箭头颜色
-$-tabs-nav-map-btn-before-bg: var(
-  --wot-tabs-nav-map-btn-before-bg,
-  linear-gradient(270deg, rgba(255, 255, 255, 1) 1%, rgba(255, 255, 255, 0) 100%)
-) !default; // 左侧map遮罩阴影
+$-tabs-nav-map-btn-before-bg: var(--wot-tabs-nav-map-btn-before-bg,
+    linear-gradient(270deg, rgba(255, 255, 255, 1) 1%, rgba(255, 255, 255, 0) 100%)) !default; // 左侧map遮罩阴影
 $-tabs-nav-map-button-back-color: var(--wot-tabs-nav-map-button-back-color, rgba(0, 0, 0, 0.04)) !default; // map 类型按钮边框颜色
 $-tabs-nav-map-button-radius: var(--wot-tabs-nav-map-button-radius, 16px) !default; // map 类型按钮圆角大小
 $-tabs-nav-map-modal-bg: var(--wot-tabs-nav-map-modal-bg, $-overlay-bg) !default; // map 类型蒙层背景色
@@ -776,17 +769,17 @@ $-swiper-item-text-fs: var(--wot-swiper-item-text-fs, $-fs-title);
 // dot & dots-bar
 $-swiper-nav-dot-color: var(--wot-swiper-nav-dot-color, $-font-white-2) !default;
 $-swiper-nav-dot-active-color: var(--wot-swiper-nav-dot-active-color, $-font-white-1) !default;
-$-swiper-nav-dot-size: var(--wot-swiper-nav-dot-size, 12rpx) !default;
-$-swiper-nav-dots-bar-active-width: var(--wot-swiper-nav-dots-bar-active-width, 40rpx) !default;
+$-swiper-nav-dot-size: var(--wot-swiper-nav-dot-size, 6px) !default;
+$-swiper-nav-dots-bar-active-width: var(--wot-swiper-nav-dots-bar-active-width, 20px) !default;
 // fraction
 $-swiper-nav-fraction-color: var(--wot-swiper-nav-fraction-color, $-font-white-1) !default;
 $-swiper-nav-fraction-bg-color: var(--wot-swiper-nav-fraction-bg-color, $-font-gray-3) !default;
-$-swiper-nav-fraction-height: var(--wot-swiper-nav-fraction-height, 48rpx) !default;
-$-swiper-nav-fraction-font-size: var(--wot-swiper-nav-fraction-font-size, 24rpx) !default;
+$-swiper-nav-fraction-height: var(--wot-swiper-nav-fraction-height, 24px) !default;
+$-swiper-nav-fraction-font-size: var(--wot-swiper-nav-fraction-font-size, 12px) !default;
 // button
 $-swiper-nav-btn-color: var(--wot-swiper-nav-btn-color, $-font-white-1) !default;
 $-swiper-nav-btn-bg-color: var(--wot-swiper-nav-btn-bg-color, $-font-gray-3) !default;
-$-swiper-nav-btn-size: var(--wot-swiper-nav-btn-size, 48rpx) !default;
+$-swiper-nav-btn-size: var(--wot-swiper-nav-btn-size, 24px) !default;
 
 /* segmented */
 $-segmented-padding: var(--wot-segmented-padding, 4px) !default; // 分段器padding
@@ -797,12 +790,10 @@ $-segmented-item-disabled-color: var(--wot-segmented-item-disabled-color, rgba(0
 
 /* tabbar */
 $-tabbar-height: var(--wot-tabbar-height, 50px) !default;
-$-tabbar-box-shadow: var(
-  --wot-tabbar-box-shadow,
-  0 6px 30px 5px rgba(0, 0, 0, 0.05),
-  0 16px 24px 2px rgba(0, 0, 0, 0.04),
-  0 8px 10px -5px rgba(0, 0, 0, 0.08)
-) !default; // round类型tabbar阴影
+$-tabbar-box-shadow: var(--wot-tabbar-box-shadow,
+    0 6px 30px 5px rgba(0, 0, 0, 0.05),
+    0 16px 24px 2px rgba(0, 0, 0, 0.04),
+    0 8px 10px -5px rgba(0, 0, 0, 0.08)) !default; // round类型tabbar阴影
 
 /* tabbar-item */
 $-tabbar-item-title-font-size: var(--wot-tabbar-item-title-font-size, 10px) !default; // tabbar选项文字大小
@@ -968,6 +959,3 @@ $-signature-radius: var(--wot-signature-radius, 4px) !default; // 圆角
 $-signature-border: var(--wot-signature-border, 1px solid $-color-gray-5) !default; // 边框圆角
 $-signature-footer-margin-top: var(--wot-signature-footer-margin-top, 8px) !default; // 底部按钮上边距
 $-signature-button-margin-left: var(--wot-signature-button-margin-left, 8px) !default; // 底部按钮左边距
-
-
-

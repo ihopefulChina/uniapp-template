@@ -62,7 +62,8 @@ const isDisabled = computed(() => {
         <input v-model="verificationCode" type="number" maxlength="6" placeholder="请输入验证码">
       </view>
 
-      <view class="mt-3 flex flex-start common_agreement" style="justify-content: flex-start" @click.prevent.stop="handelerAgree">
+      <view class="mt-3 flex flex-start common_agreement" style="justify-content: flex-start"
+        @click.prevent.stop="handelerAgree">
         <view class="common_login_label">
           我已阅读理解并同意
         </view>

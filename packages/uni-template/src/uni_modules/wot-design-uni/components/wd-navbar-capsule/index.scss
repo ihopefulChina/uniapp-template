@@ -4,7 +4,7 @@
 .wot-theme-dark {
   @include b(navbar-capsule) {
     &::before {
-      border: 2rpx solid $-dark-border-color;
+      border: 1px solid $-dark-border-color;
     }
 
     &::after {
@@ -38,7 +38,7 @@
     transform-origin: 0 0;
     box-sizing: border-box;
     border-radius: calc($-navbar-capsule-border-radius * 2);
-    border: 2rpx solid $-navbar-capsule-border-color;
+    border: 1px solid $-navbar-capsule-border-color;
   }
 
   &::after {
@@ -49,7 +49,7 @@
     top: 50%;
     transform: translateY(-50%);
     width: 1px;
-    height: 36rpx;
+    height: 18px;
     background: $-navbar-capsule-border-color;
   }
 

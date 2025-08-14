@@ -9,36 +9,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 260rpx 0 170rpx;
+  padding: 130px 0 85px;
 }
 
 .common_login_logo {
-  width: 204rpx;
-  height: 204rpx;
+  width: 102px;
+  height: 102px;
 }
 
 .common_login_agreement {
   color: #2a2827;
   font-weight: bold;
-  font-size: 24rpx;
+  font-size: 12px;
 }
 
 .common_login_label {
-  font-size: 24rpx;
+  font-size: 12px;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #7f7e7d;
-  line-height: 32rpx;
-  padding: 0 10rpx;
+  line-height: 16px;
+  padding: 0 5px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .common_agreement {
-  font-size: 24rpx;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 34rpx;
+  line-height: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,47 +49,47 @@
 
   .common_agree_tips {
     position: absolute;
-    width: 242rpx;
-    height: 64rpx;
-    top: 44rpx;
-    left: -16rpx;
+    width: 121px;
+    height: 32px;
+    top: 22px;
+    left: -8px;
     background-size: 100%;
-    font-size: 22rpx;
+    font-size: 11px;
     font-weight: 400;
     color: #ffffff;
     text-align: center;
-    line-height: 64rpx;
-    padding-top: 4rpx;
+    line-height: 32px;
+    padding-top: 2px;
   }
 }
 
 .login_btn {
   margin: 0;
   padding: 0;
-  height: 96rpx;
+  height: 48px;
   background: #fc9240;
-  border-radius: 200rpx;
-  font-size: 30rpx;
+  border-radius: 100px;
+  font-size: 15px;
   font-family: PingFangSC-Semibold, PingFang SC;
   font-weight: 600;
   color: #ffffff;
-  line-height: 96rpx;
+  line-height: 48px;
 }
 
 .wxapp_login {
-  width: 104rpx;
-  height: 104rpx;
+  width: 52px;
+  height: 52px;
   position: absolute;
   /* 将文本设置为绝对定位 */
   left: 50%;
   /* 将文本的左侧距离容器宽度的一半对齐 */
   transform: translateX(-50%);
   /* 将文本水平垂直居中 */
-  bottom: 100rpx;
+  bottom: 50px;
 }
 
 .login-container {
-  width: 590rpx;
+  width: 295px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -103,33 +103,33 @@
 }
 
 .input-container {
-  width: 590rpx;
-  height: 112rpx;
+  width: 295px;
+  height: 56px;
   background: #f8f5f1;
-  border-radius: 20rpx;
-  padding: 0 32rpx;
+  border-radius: 10px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
 
   .input-phone-type {
-    font-size: 36rpx;
+    font-size: 18px;
     font-weight: 600;
     color: #2a2827;
-    padding: 0 20rpx 0 0rpx;
+    padding: 0 10px 0 0px;
   }
 
   .input-phone-text {
-    font-size: 30rpx;
+    font-size: 15px;
     font-weight: 400;
     // color: #abaaa8;
   }
 
   .input-code {
-    font-size: 24rpx;
+    font-size: 12px;
     font-weight: 400;
     color: #2a2827;
     margin-left: auto;
-    min-width: 122rpx;
+    min-width: 61px;
     text-align: right;
   }
 }

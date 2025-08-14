@@ -19,29 +19,29 @@
         top: 50%;
         display: block;
         content: '';
-        width: 12rpx;
-        height: 12rpx;
+        width: 6px;
+        height: 6px;
         border-color: $-swiper-nav-btn-color;
         border-style: solid;
       }
     }
 
     @include m(prev) {
-      left: 30rpx;
+      left: 15px;
 
       &::after {
-        margin-left: 4rpx;
-        border-width: 2rpx 0 0 2rpx;
+        margin-left: 2px;
+        border-width: 1px 0 0 1px;
         transform: translate(-50%, -50%) rotateZ(-45deg);
       }
     }
 
     @include m(next) {
-      right: 30rpx;
+      right: 15px;
 
       &::after {
-        margin-left: -4rpx;
-        border-width: 2rpx 2rpx 0 0;
+        margin-left: -2px;
+        border-width: 1px 1px 0 0;
         transform: translate(-50%, -50%) rotateZ(45deg);
       }
     }
@@ -53,7 +53,7 @@
   }
 
   @include m(fraction) {
-    padding: 0 16rpx;
+    padding: 0 8px;
     height: $-swiper-nav-fraction-height;
     line-height: $-swiper-nav-fraction-height;
     border-radius: calc($-swiper-nav-fraction-height / 2);
@@ -69,11 +69,11 @@
       height: $-swiper-nav-dot-size;
       background: $-swiper-nav-dot-color;
       border-radius: 50%;
-      margin: 0 10rpx;
+      margin: 0 5px;
       transition: all 0.4s ease-in;
 
       @include when(vertical) {
-        margin: 10rpx 0;
+        margin: 5px 0;
       }
 
       @include when(active) {
@@ -102,54 +102,54 @@
 
   @include m(left) {
     position: absolute;
-    left: 24rpx;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
   }
 
   @include m(right) {
     position: absolute;
-    right: 24rpx;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
   }
 
   @include m(top-left) {
     position: absolute;
-    top: 24rpx;
-    left: 24rpx;
+    top: 12px;
+    left: 12px;
   }
 
   @include m(top) {
     position: absolute;
     left: 50%;
-    top: 24rpx;
+    top: 12px;
     transform: translateX(-50%);
   }
 
   @include m(top-right) {
     position: absolute;
-    top: 24rpx;
-    right: 24rpx;
+    top: 12px;
+    right: 12px;
   }
 
   @include m(bottom-left) {
     position: absolute;
-    left: 24rpx;
-    bottom: 24rpx;
+    left: 12px;
+    bottom: 12px;
   }
 
   @include m(bottom) {
     position: absolute;
     left: 50%;
-    bottom: 24rpx;
+    bottom: 12px;
     transform: translateX(-50%);
   }
 
   @include m(bottom-right) {
     position: absolute;
-    right: 24rpx;
-    bottom: 24rpx;
+    right: 12px;
+    bottom: 12px;
   }
 
   @include m(vertical) {

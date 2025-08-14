@@ -1,55 +1,23 @@
 <template>
   <view :class="`wd-table ${border ? 'is-border' : ''} ${customClass}`" :style="tableStyle">
     <template v-if="fixedHeader">
-      <scroll-view
-        :enable-flex="true"
-        :throttle="false"
-        :scrollLeft="state.scrollLeft"
-        :scroll-x="true"
-        class="wd-table__header"
-        @scroll="scroll"
-        v-if="showHeader"
-      >
+      <scroll-view :enable-flex="true" :throttle="false" :scrollLeft="state.scrollLeft" :scroll-x="true"
+        class="wd-table__header" @scroll="scroll" v-if="showHeader">
         <view id="table-header" class="wd-table__content wd-table__content--header" :style="realWidthStyle">
-          <view
-            :class="`wd-table__cell ${border ? 'is-border' : ''} ${column.fixed ? 'is-fixed' : ''} ${stripe ? 'is-stripe' : ''} is-${column.align} ${
-              getIsLastFixed(column) && state.scrollLeft ? 'is-shadow' : ''
-            }`"
-            :style="getCellStyle(index)"
-            v-for="(column, index) in children"
-            :key="index"
-          >
-            <wd-sort-button
-              v-model="column.$.exposed!.sortDirection.value"
-              allow-reset
-              :line="false"
-              :title="column.label"
-              @change="({ value }) => handleSortChange(value, index)"
-              v-if="column.sortable"
-            />
+          <view :class="`wd-table__cell ${border ? 'is-border' : ''} ${column.fixed ? 'is-fixed' : ''} ${stripe ? 'is-stripe' : ''} is-${column.align} ${getIsLastFixed(column) && state.scrollLeft ? 'is-shadow' : ''
+            }`" :style="getCellStyle(index)" v-for="(column, index) in children" :key="index">
+            <wd-sort-button v-model="column.$.exposed!.sortDirection.value" allow-reset :line="false"
+              :title="column.label" @change="({ value }) => handleSortChange(value, index)" v-if="column.sortable" />
             <text v-else :class="`wd-table__value ${ellipsis ? 'is-ellipsis' : ''}`">{{ column.label }}</text>
           </view>
         </view>
       </scroll-view>
-      <scroll-view
-        class="wd-table__body"
-        :style="bodyStyle"
-        :enable-flex="true"
-        :throttle="false"
-        :scroll-x="true"
-        @scroll="scroll"
-        :scrollLeft="state.scrollLeft"
-      >
+      <scroll-view class="wd-table__body" :style="bodyStyle" :enable-flex="true" :throttle="false" :scroll-x="true"
+        @scroll="scroll" :scrollLeft="state.scrollLeft">
         <view id="table-body" class="wd-table__content" :style="realWidthStyle">
-          <wd-table-col
-            v-if="index !== false"
-            :prop="indexColumn.prop"
-            :label="indexColumn.label"
-            :width="indexColumn.width"
-            :sortable="indexColumn.sortable"
-            :fixed="indexColumn.fixed"
-            :align="indexColumn.align"
-          >
+          <wd-table-col v-if="index !== false" :prop="indexColumn.prop" :label="indexColumn.label"
+            :width="indexColumn.width" :sortable="indexColumn.sortable" :fixed="indexColumn.fixed"
+            :align="indexColumn.align">
             <template #value="{ index }">
               <text>{{ index + 1 }}</text>
             </template>
@@ -60,41 +28,24 @@
     </template>
     <!-- 非固定表头时使用单个scroll-view -->
     <template v-else>
-      <scroll-view class="wd-table__wrapper" :enable-flex="true" :throttle="false" :scroll-x="true" @scroll="scroll" :scrollLeft="state.scrollLeft">
+      <scroll-view class="wd-table__wrapper" :enable-flex="true" :throttle="false" :scroll-x="true" @scroll="scroll"
+        :scrollLeft="state.scrollLeft">
         <view class="wd-table__inner" :style="realWidthStyle">
           <!-- 表头部分 -->
           <view v-if="showHeader" class="wd-table__header-row">
-            <view
-              v-for="(column, index) in children"
-              :key="index"
-              :class="`wd-table__cell ${border ? 'is-border' : ''} ${column.fixed ? 'is-fixed' : ''} ${stripe ? 'is-stripe' : ''} is-${
-                column.align
-              } ${getIsLastFixed(column) && state.scrollLeft ? 'is-shadow' : ''}`"
-              :style="getCellStyle(index)"
-            >
-              <wd-sort-button
-                v-if="column.sortable"
-                v-model="column.$.exposed!.sortDirection.value"
-                allow-reset
-                :line="false"
-                :title="column.label"
-                @change="({ value }) => handleSortChange(value, index)"
-              />
+            <view v-for="(column, index) in children" :key="index" :class="`wd-table__cell ${border ? 'is-border' : ''} ${column.fixed ? 'is-fixed' : ''} ${stripe ? 'is-stripe' : ''} is-${column.align
+              } ${getIsLastFixed(column) && state.scrollLeft ? 'is-shadow' : ''}`" :style="getCellStyle(index)">
+              <wd-sort-button v-if="column.sortable" v-model="column.$.exposed!.sortDirection.value" allow-reset
+                :line="false" :title="column.label" @change="({ value }) => handleSortChange(value, index)" />
               <text v-else :class="`wd-table__value ${ellipsis ? 'is-ellipsis' : ''}`">{{ column.label }}</text>
             </view>
           </view>
 
           <!-- 表格内容部分 -->
           <view class="wd-table__content" :style="bodyStyle">
-            <wd-table-col
-              v-if="index !== false"
-              :prop="indexColumn.prop"
-              :label="indexColumn.label"
-              :width="indexColumn.width"
-              :sortable="indexColumn.sortable"
-              :fixed="indexColumn.fixed"
-              :align="indexColumn.align"
-            >
+            <wd-table-col v-if="index !== false" :prop="indexColumn.prop" :label="indexColumn.label"
+              :width="indexColumn.width" :sortable="indexColumn.sortable" :fixed="indexColumn.fixed"
+              :align="indexColumn.align">
               <template #value="{ index }">
                 <text>{{ index + 1 }}</text>
               </template>
@@ -146,7 +97,7 @@ const indexUUID = uuid()
 const indexColumn = ref<TableColumnProps>({
   prop: indexUUID,
   label: translate('indexLabel'),
-  width: '100rpx',
+  width: '50px',
   sortable: false,
   fixed: false,
   align: 'left',

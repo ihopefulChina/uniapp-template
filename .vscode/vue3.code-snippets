@@ -1,0 +1,77 @@
+{
+  // Place your unibest 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "生成uni组件模板": {
+    "scope": "vue",
+    "prefix": "u3",
+    "body": [
+      "<template>",
+      "  <view class=\"$1Style\"></view>",
+      "</template>\n",
+      "<script lang=\"ts\" setup>",
+      "interface I$1props {}\n",
+      // "defineOptions({",
+      // "  name: '$1',",
+      // "  options: {",
+      // "    virtualHost: true,",
+      // "    styleIsolation: 'shared'",
+      // "  }",
+      // "})\n",
+      "defineProps<I$1props>()",
+      "</script>\n",
+      "<style lang=\"scss\" scoped>",
+      ".$1Style {\n",
+      "}",
+      "</style>\n"
+    ]
+  },
+  "生成Vue组件模板": {
+    "scope": "vue",
+    "prefix": "v3",
+    "body": [
+      "<template>",
+      "  <div class=\"$1Style\"></div>",
+      "</template>\n",
+      "<script lang=\"ts\" setup>",
+      "interface I$1props {}\n",
+      // "defineOptions({",
+      // "  name: '$1',",
+      // "})\n",
+      "const props = defineProps<I$1props>()",
+      "</script>\n",
+      "<style lang=\"scss\" scoped>",
+      ".$1Style {\n",
+      "}",
+      "</style>\n"
+    ]
+  },
+  "Print MM style": {
+    "scope": "vue",
+    "prefix": "st",
+    "body": ["<style lang=\"scss\" scoped>", "//", "</style>\n"]
+  },
+  "Print MM script": {
+    "scope": "vue",
+    "prefix": "sc",
+    "body": ["<script lang=\"ts\" setup>", "//$3", "</script>\n"]
+  },
+  "Print MM template": {
+    "scope": "vue",
+    "prefix": "te",
+    "body": ["<template>", "  <view class=\"\">$1</view>", "</template>\n"]
+  }
+}

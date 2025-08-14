@@ -1,0 +1,9 @@
+# prefer-workspace-packages: true
+packages:
+  # all packages in direct subdirs of packages/
+  - 'packages/*'
+  # all packages in subdirs of components/
+  - 'components/**'
+  - 'modules/**/**'
+  # exclude packages that are inside test directories
+  - '!**/test/**'

@@ -1,0 +1,139 @@
+<%
+const { utils, route, config, suffixMethod } = it;
+const { requestBodyInfo, responseBodyInfo, specificArgNameResolver } = route;
+const { _, getInlineParseContent, getParseContent, parseSchema, getComponentByRef, require } = utils;
+const { parameters, path, method, payload, query, formData, security, requestParams } = route.request;
+const { type, errorType, contentTypes } = route.response;
+const { HTTP_CLIENT, RESERVED_REQ_PARAMS_ARG_NAMES } = config.constants;
+const routeDocs = includeFile("./route-docs.eta", { config, route, utils });
+const queryName = (query && query.name) || "query";
+const pathParams = _.values(parameters);
+const pathParamsNames = _.map(pathParams, "name");
+
+const isFetchTemplate = config.httpClientType === HTTP_CLIENT.FETCH;
+
+const requestConfigParam = {
+    name: specificArgNameResolver.resolve(RESERVED_REQ_PARAMS_ARG_NAMES),
+    optional: true,
+    type: "RequestParams",
+    defaultValue: "{}",
+}
+
+const argToTmpl = ({ name, optional, type, defaultValue }) => `${name}${!defaultValue && optional ? '?' : ''}: ${type}${defaultValue ? ` = ${defaultValue}` : ''}`;
+
+let rawWrapperArgs = config.extractRequestParams ?
+    _.compact([
+        requestParams && {
+          // name: pathParams.length ? `{ ${_.join(pathParamsNames, ", ")}, ...${queryName} }` : queryName,
+          name: 'query',
+          optional: false,
+          type: getInlineParseContent(requestParams),
+        },
+        ...(!requestParams ? pathParams.length ? [{
+          name: 'query',
+          optional: false,
+          type: `{ ${_.map(pathParams,argToTmpl)} }`,
+        }]:[] : []),
+        payload,
+        requestConfigParam,
+    ]) :
+    _.compact([
+        ...pathParams,
+        query,
+        payload,
+        requestConfigParam,
+    ])
+
+rawWrapperArgs = _.filter(rawWrapperArgs,({type}) => type !== 'RequestParams')
+
+let wrapperArgs = _
+    // Sort by optionality
+    .sortBy(rawWrapperArgs, [o => o.optional])
+    .map(argToTmpl)
+    .join(', ')
+wrapperArgs = wrapperArgs ? wrapperArgs + ', ' : wrapperArgs
+
+const upperCaseMethod = _.upperCase(method)
+
+const queryArgs = _.find(rawWrapperArgs,({name}) => name === 'query')
+const bodyArgs = _.find(rawWrapperArgs,({name}) => ['data', 'body'].indexOf(name) !== -1)
+
+const originArgReg = /\{/gm; // { id: number } 结构
+const arrArgReg = /\(\s*(\w+)\s*\)\[\]/g; // (ReqConfigDTO)[] 这种结构
+const originArraryReg = /\(?(object|string|boolean|number)\)?\[/g // \(?object|string|boolean|number\)?[]
+
+function coverArgsType(args) {
+  if (!args) return '';
+  if (originArgReg.test(args) || originArraryReg.test(args) || args === 'object') return  args;
+  if (arrArgReg.test(args)) return args.replace(arrArgReg, '(DC.$1)[]');
+
+  return `DC.${args}`
+}
+
+const responseType = coverArgsType(type)
+const queryArgsType = coverArgsType(queryArgs?.type)
+const bodyArgsType = coverArgsType(bodyArgs?.type)
+// console.log(queryArgsType, bodyArgsType)
+
+// data: { requestConfig?: RequestConfig  }
+let dataString = ``
+//console.log(path,pathParams,pathParamsNames)
+if (queryArgs && bodyArgs) {
+  dataString = `body: ${bodyArgsType} & { query: ${queryArgsType}; requestConfig?: RequestConfig }`
+} else if(bodyArgs) {
+  dataString = `body: ${bodyArgsType} & { requestConfig?: RequestConfig }`
+} else if (queryArgs) {
+  // 这里稍微有点复杂，需要思考这么一种情况
+  if (upperCaseMethod === 'PUT' || upperCaseMethod === 'POST') {
+    dataString = `option: { query: ${queryArgsType}; requestConfig?: RequestConfig }`
+  } else {
+    dataString = `query: ${queryArgsType} & { requestConfig?: RequestConfig }`
+  }
+}  else {
+  dataString = `data?: { requestConfig?: RequestConfig }`
+}
+
+// RequestParams["type"]
+const requestContentKind = {
+    "JSON": "ContentType.Json",
+    "URL_ENCODED": "ContentType.UrlEncoded",
+    "FORM_DATA": "ContentType.FormData",
+}
+// RequestParams["format"]
+const responseContentKind = {
+    "JSON": '"json"',
+    "IMAGE": '"blob"',
+    "FORM_DATA": isFetchTemplate ? '"formData"' : '"document"'
+}
+
+const bodyTmpl = _.get(payload, "name") || null;
+const queryTmpl = (query != null && queryName) || null;
+const bodyContentKindTmpl = requestContentKind[requestBodyInfo.contentKind] || null;
+const responseFormatTmpl = responseContentKind[responseBodyInfo.success && responseBodyInfo.success.schema && responseBodyInfo.success.schema.contentKind] || null;
+const securityTmpl = security ? 'true' : null;
+
+const describeReturnType = () => {
+    if (!config.toJS) return "";
+
+    switch(config.httpClientType) {
+        case HTTP_CLIENT.AXIOS: {
+          return `Promise<AxiosResponse<${responseType}>>`
+        }
+        default: {
+          return `Promise<HttpResponse<${responseType}, ${errorType}>`
+        }
+    }
+}
+
+// 处理注释内容.去除无效注释保留关键内容
+const _routeDocsDescription = /@description/.test(routeDocs.description) ? routeDocs.description + '\n' : ''
+const _routeDocsLines = (routeDocs.lines || '').split('\n').filter(it => /@(summary|tags)/.test(it)).join('\n')
+%>
+/**
+<% if (suffixMethod) { %> <%~ `* @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.${method}方式调用\n` %> <% } %>
+<%~ _routeDocsDescription %>
+<% /* Here you can add some other JSDoc tags */ %>
+<%~ _routeDocsLines %>
+
+ */
+<%~ suffixMethod ? route.routeName.usage : route.routeName.usage.replace(/_[A-Z]+.$/, `'`) %> : (<%~ dataString  %>)<%~ config.toJS ? `: ${describeReturnType()}` : "" %> => Promise<<%~ responseType %>>

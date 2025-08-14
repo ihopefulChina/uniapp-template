@@ -1,13 +1,21 @@
-# 忽略目录
-/dist
-/node_modules
-.hbuilderx/*
-.idea/*
-
-# 忽略文件
+# Logs
+logs
 *.log
-**/*.tsbuildinfo
-.eslintcache
-pnpm-lock.yaml
-/.eslintrc-auto-import.json
-/typings/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+.DS_Store
+dist
+*.local
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

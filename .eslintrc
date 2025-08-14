@@ -1,0 +1,12 @@
+{
+  "extends": ["@template/eslint-config"],
+  "rules": {},
+  "globals": {
+    "REACT_APP_ENV": true,
+    "definePageConfig": true,
+    "defineAppConfig": true,
+    "IS_H5": true,
+    "IS_WEAPP": true,
+    "IS_RN": true
+  }
+}

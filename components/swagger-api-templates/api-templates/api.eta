@@ -1,0 +1,47 @@
+/* eslint-disable object-shorthand */
+/* eslint-disable max-lines */
+/* eslint-disable id-length */
+<%
+const { utils, route, config, modelTypes } = it;
+const { _, classNameCase, require } = utils;
+const apiClassName = "API";
+const routes = route.routes;
+const dataContracts = _.map(modelTypes, "name");
+
+const httpMethods = ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'];
+
+const routesObj = route.routes.reduce((obj, route) => {
+  const upperCaseMethod = _.upperCase(route.request.method)
+  obj[upperCaseMethod] = obj[upperCaseMethod] || []
+  obj[upperCaseMethod].push(route)
+
+  return obj
+}, httpMethods.reduce((obj, method) => {
+  obj[method] = []
+  return obj
+}, {}))
+
+%>
+import { IUniRequestConfig } from "@/components/request/types/uni-type";
+import * as DC from "./<%~ config.fileNames.dataContracts %>"
+<% if (dataContracts.length) { %>
+<% /* import { <%~ dataContracts.join(", ") %> } from "./<%~ config.fileNames.dataContracts %>" */ %>
+<% } %>
+<% if (config.httpClientType === config.constants.HTTP_CLIENT.AXIOS) { %> import { AxiosRequestConfig, AxiosResponse } from "axios"; <% } %>
+
+type RequestConfig = Partial<IUniRequestConfig>
+
+<% httpMethods.forEach(method => { %>
+export interface <%= apiClassName %><%= method %> {
+    <% routesObj[method].forEach((route) => { %>
+        <%~ includeFile('./procedure-call.eta', { ...it, route, suffixMethod: false }) %>
+    <% }) %>
+}
+
+<% }) %>
+
+export interface <%= apiClassName %> {
+    <% routes.forEach((route) => { %>
+        <%~ includeFile('./procedure-call.eta', { ...it, route, suffixMethod: true }) %>
+    <% }) %>
+}

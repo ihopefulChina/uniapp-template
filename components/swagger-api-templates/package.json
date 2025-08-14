@@ -1,0 +1,16 @@
+{
+  "name": "@template/swagger-api-templates",
+  "description": "swaggerApi生成模板",
+  "version": "3.1.0",
+  "bin": {
+    "mmapi": "./cli.js"
+  },
+  "dependencies": {
+    "commander": "^6.0.0",
+    "deepmerge": "^4.2.2",
+    "eta": "^1.12.3",
+    "fs-extra": "^10.0.0",
+    "got": "^11.8.2",
+    "swagger-typescript-api": "13.0.3"
+  }
+}

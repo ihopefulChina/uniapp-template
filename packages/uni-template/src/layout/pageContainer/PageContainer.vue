@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import { CSSProperties, ref, watchEffect } from 'vue';
-import Modal from './modal/Modal.vue';
-import Toast from './toast/Toast.vue';
-import { useModal } from './useModal';
-import { useToast } from './useToast';
+import { CSSProperties } from 'vue';
+import WdMessageBox from '~/uni_modules/wot-design-uni/components/wd-message-box/wd-message-box.vue';
+import WdToast from '~/uni_modules/wot-design-uni/components/wd-toast/wd-toast.vue';
 
 interface IPageContainerProps {
   /** 是否是tabbar页面 */
@@ -11,42 +9,6 @@ interface IPageContainerProps {
   styles?: CSSProperties | string;
   className?: string;
 }
-
-/** toast 全局注入
- *
- * 使用方法：
- *  外层包裹 PageContainer 组件
- * const toastStore = useToast();
-    toastStore?.showToast({ message: '子组件', duration: 1000 });
- *
- * */
-const toastStore = useToast();
-const toast = ref<any>();
-watchEffect(() => {
-  if (toastStore?.toastParmas) {
-    toast?.value?.show({
-      ...toastStore?.toastParmas,
-      complete: () => {
-        toastStore?.toastParmas?.complete && toastStore?.toastParmas?.complete();
-        toastStore?.showToast(undefined);
-      }
-    });
-  }
-});
-
-/** modal 全局注入
- *
- * 使用方法：
- *  外层包裹 PageContainer 组件
- * const modalStore = useModal();
-    modalStore?.showModal({ content: '子组件', title: '提示' });
- *
- * */
-const modalStore = useModal();
-const modal = ref<any>();
-watchEffect(() => {
-  modal?.value?.showModal(modalStore?.modalParmas);
-});
 
 /** 父传子参数 */
 const props = defineProps<IPageContainerProps>();
@@ -57,9 +19,9 @@ const props = defineProps<IPageContainerProps>();
     <slot />
   </view>
   <!-- 全局提示 -->
-  <Toast ref="toast" />
-  <!-- 全局Modal -->
-  <Modal ref="modal" />
+  <WdToast />
+  <!-- 全局Message -->
+  <WdMessageBox />
 </template>
 
 <style lang="scss" scoped>

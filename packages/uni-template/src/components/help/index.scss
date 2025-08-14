@@ -18,7 +18,7 @@
   flex-direction: column;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: calc(100vw - 80px);
   padding: 50rpx 30rpx 30rpx 30rpx;
 
   .modal_title {
@@ -99,7 +99,7 @@
 }
 
 .help_switch_tab {
-  width: 100%;
+  width: calc(100vw - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;

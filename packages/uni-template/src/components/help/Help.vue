@@ -4,10 +4,9 @@ import { isDev } from '~/config';
 import { useToast } from '~/layout/pageContainer/useToast';
 import { routeNames } from '~/routes';
 import { useGlobalStore } from '~/state/useGlobalStore';
-import TnPopup from '~/uni_modules/tuniaoui-vue3/components/popup/src/popup.vue';
-import TnSubsectionItem from '~/uni_modules/tuniaoui-vue3/components/subsection/src/subsection-item.vue';
-import TnSubsection from '~/uni_modules/tuniaoui-vue3/components/subsection/src/subsection.vue';
+import WdSegmented from '~/uni_modules/wot-design-uni/components/wd-segmented/wd-segmented.vue';
 import { cleanToken, copyToken } from './tool';
+import WdPopup from '~/uni_modules/wot-design-uni/components/wd-popup/wd-popup.vue';
 
 const globalStore = useGlobalStore(); // 全局状态
 const toastStore = useToast();
@@ -22,7 +21,7 @@ const close = () => {
   visible.value = false;
 };
 // 当前选中的标签索引
-const currentTabIndex = ref(0);
+const currentTab = ref('切换用户');
 
 /** 切换用户 id */
 const useId = ref<string>(uni.getStorageSync('userInfo')?.id || '');
@@ -61,29 +60,26 @@ const changeUseId = async () => {
     <view class="help" @click="open">
       测
     </view>
-    
+
     <!-- 调试工具 -->
-    <TnPopup v-model="visible" width="590" :radius="20" open-direction="center" bg-color="transparent" @close="close" @open="open">
+    <WdPopup v-model="visible" @close="close" @open="open">
       <view v-if="visible" class="help_switch_tab">
         <view class="modal_title">
           调试工具🔨
         </view>
-        <TnSubsection v-model="currentTabIndex" mode="button" active-color="#497cd8" radius="16">
-          <!-- <TnSubsectionItem title="切换环境" /> -->
-          <TnSubsectionItem title="切换用户" />
-        </TnSubsection>
+        <WdSegmented v-model:value="currentTab" :options="['切换用户']" :vibrateShort="true" />
         <view class="switchTab">
-          <view v-if="currentTabIndex === 0" class="help_list">
+          <view v-if="currentTab === '切换用户'" class="help_list">
             <text v-for="item in userList" :key="item?.value" class="help_list_item" @click="changeSwitch(item?.value)">
               {{ item?.text }}
             </text>
           </view>
         </view>
       </view>
-    </TnPopup>
+    </WdPopup>
 
     <!-- 修改用户Id -->
-    <TnPopup v-model="switchShow" width="590" :radius="20" open-direction="center" @close="switchShow = false" @open="switchShow = true">
+    <WdPopup v-model="switchShow" @close="switchShow = false" @open="switchShow = true">
       <view v-if="switchShow" class="modal_view">
         <text class="modal_title">
           修改用户Id
@@ -100,7 +96,7 @@ const changeUseId = async () => {
           </view>
         </view>
       </view>
-    </TnPopup>
+    </WdPopup>
   </view>
 </template>
 

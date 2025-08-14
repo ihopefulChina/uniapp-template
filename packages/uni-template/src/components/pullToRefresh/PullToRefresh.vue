@@ -3,7 +3,7 @@ import { CSSProperties, ComputedRef, Ref, computed, getCurrentInstance, onMounte
 import Gap from '~/components/common/gap/Gap.vue';
 import { useLockFn } from '~/hooks';
 import { useSystemInfo } from '~/state/useSystemInfo';
-import TnLoadmore from '~/uni_modules/tuniaoui-vue3/components/loadmore/src/loadmore.vue';
+import WdLoadmore from '~/uni_modules/wot-design-uni/components/wd-loadmore/wd-loadmore.vue';
 import { selectRect } from '~/utils/uniApi';
 import { MMPullToRefreshState } from './const';
 
@@ -67,11 +67,11 @@ onMounted(() => {
 });
 
 /** 加载更多status */
-const status = computed<'loading' | 'nomore' | undefined>(() => {
+const status = computed<'loading' | 'finished' |  undefined>(() => {
   if (state?.value === MMPullToRefreshState.pushing) {
     return 'loading';
   } else if (state.value !== MMPullToRefreshState.refreshing && noMore) {
-    return 'nomore';
+    return 'finished';
   }
   return undefined;
 });
@@ -106,7 +106,7 @@ const scrolltolower = () => {
   <view class="MMPullToRefresh" :style="{ height: `${scollViewHeight}px` }">
     <view id="MMPullToRefreshTop" />
     <!-- <view class="pullHead" v-if="refresherTriggered">
-            <TnLoadmore size="36" status="loading" color="#999" :loadingText="false" loadingIconMode="flower" />
+          <WdLoadmore size="36" status="loading" color="#999" :loadingText="false" loadingIconMode="flower" />
         </view> -->
     <scroll-view
       scroll-y
@@ -125,13 +125,13 @@ const scrolltolower = () => {
     >
       <!-- <slot name="refresher">
         <view class="pullHead">
-          <TnLoadmore size="36" status="loading" color="#999" :loading-text="false" loading-icon-mode="flower" />
+          <WdLoadmore size="36" status="loading" color="#999" :loading-text="false" loading-icon-mode="flower" />
         </view>
       </slot>  -->
       <slot />
 
-      <view v-if="!isEmpty && (status !== 'nomore' || (status === 'nomore' && !props.hiddeNoMoreText))" class="noMore">
-        <TnLoadmore v-if="status" :status="status" color="#999" loading-icon-mode="flower" />
+      <view v-if="!isEmpty && (status !== 'finished' || (status === 'finished' && !props.hiddeNoMoreText))" class="noMore">
+        <WdLoadmore v-if="status" :status="status" />
       </view>
       <Gap v-if="props?.footerSpace" :height="props?.footerSpace" :styles="{ width: '100%' }" />
     </scroll-view>

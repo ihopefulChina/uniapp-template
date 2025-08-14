@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app';
 import { computed, toRefs } from 'vue';
-import TnLoadmore from '~/uni_modules/tuniaoui-vue3/components/loadmore/src/loadmore.vue';
+import WdLoadmore from '~/uni_modules/wot-design-uni/components/wd-loadmore/wd-loadmore.vue';
 import { MMPullToRefreshState } from './const';
 
 export interface IMMPullToRefreshProps {
@@ -43,11 +43,11 @@ onReachBottom(() => {
   }
 });
 
-const status: any = computed(() => {
+const status = computed<'loading' | 'finished' |  undefined>(() => {
   if (state?.value === MMPullToRefreshState.pushing) {
     return 'loading';
   } else if (state.value !== MMPullToRefreshState.refreshing && noMore) {
-    return 'nomore';
+    return 'finished';
   }
   return undefined;
 });
@@ -57,7 +57,7 @@ const status: any = computed(() => {
   <view class="refreshList">
     <slot />
     <view v-if="!isEmpty && status" class="noMore">
-      <TnLoadmore :status="status" color="#999" />
+      <WdLoadmore v-if="status" :status="status" />
     </view>
   </view>
 </template>

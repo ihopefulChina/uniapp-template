@@ -43,7 +43,9 @@ const onNav = async () => {
     <view class="statusBar" :style="{ height: `${systemInfo?.statusBarHeight}px` }" />
     <view class="navMenu" :style="{ height: `${systemInfo?.navMenuHeight}px` }">
       <view v-if="!props?.isTab" class="left" @click="onNav">
-        <image :src="props.type && [MMNavigationType.Transparent_white, MMNavigationType.Blue].includes(props.type) ? icon_navbar_back_white : icon_navbar_back_black" class="icon_navbar_back_black" />
+        <image
+          :src="props.type && [MMNavigationType.Transparent_white, MMNavigationType.Blue].includes(props.type) ? icon_navbar_back_white : icon_navbar_back_black"
+          class="icon_navbar_back_black" />
       </view>
       <slot name="customTitle" />
       <view class="title" :style="{ color: navTypeStyle?.color }">

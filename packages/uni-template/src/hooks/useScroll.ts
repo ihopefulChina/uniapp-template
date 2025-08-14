@@ -1,6 +1,6 @@
 import { nextTick, ref } from 'vue'
 import { IOptionItem } from '~/enums/type'
-import { useSystemInfo } from '~/state/useSystemInfo'
+import { useSystemInfo } from '~/store/common/useSystemInfo'
 import { selectorQueryClientRect } from '~/utils/uniApi'
 
 interface IUseScrollOptions {

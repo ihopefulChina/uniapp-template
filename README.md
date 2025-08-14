@@ -8,12 +8,15 @@
 - 📱 **跨平台** - 支持微信小程序、H5、App 等多个平台
 - 🔧 **TypeScript** - 完整的 TypeScript 支持
 - 📦 **Pinia** - 现代化的状态管理
-- 🎨 **Sass/SCSS** - CSS 预处理器支持，已优化为px单位
+- 🎨 **Sass/SCSS** - CSS 预处理器支持
 - 📡 **API 管理** - 集成 Swagger API 模板生成
-- 🔍 **ESLint** - 代码质量检查
+- 🔍 **ESLint + Prettier** - 代码质量检查和格式化
 - 📁 **Monorepo** - 使用 pnpm workspace 管理多包项目
 - 🎯 **Wot Design Uni** - 集成完整的UI组件库
 - 🛠️ **开发工具** - 自动路由生成、页面监听等插件
+- 🔐 **权限管理** - 完整的登录授权和token管理
+- 📤 **文件上传** - 集成阿里云OSS文件上传功能
+- 📊 **状态管理** - 丰富的Vue 3 Hooks和状态管理工具
 
 ## 项目结构
 
@@ -31,18 +34,12 @@ uniapp-template/
 │       │   │   └── template/     # 模板页面
 │       │   ├── components/       # 组件
 │       │   │   ├── common/       # 公共组件
-│       │   │   │   ├── ellipsis/     # 文本省略组件
-│       │   │   │   ├── imageUpload/  # 图片上传组件
-│       │   │   │   ├── poster/       # 海报生成组件
-│       │   │   │   ├── pullToRefresh/# 下拉刷新组件
-│       │   │   │   ├── refreshList/  # 列表刷新组件
-│       │   │   │   └── richText/     # 富文本组件
 │       │   │   ├── help/         # 帮助组件
 │       │   │   └── request/      # 请求相关组件
 │       │   ├── layout/           # 布局组件
 │       │   │   ├── navigation/   # 导航栏组件
 │       │   │   └── pageContainer/# 页面容器组件
-│       │   ├── state/            # Pinia 状态管理
+│       │   ├── store/            # Pinia 状态管理
 │       │   ├── request/          # API 请求封装
 │       │   ├── utils/            # 工具函数
 │       │   ├── hooks/            # Vue 3 Hooks
@@ -91,6 +88,10 @@ pnpm dev:app
 pnpm dev:mp-alipay    # 支付宝小程序
 pnpm dev:mp-baidu     # 百度小程序
 pnpm dev:mp-qq        # QQ 小程序
+pnpm dev:mp-toutiao   # 字节跳动小程序
+pnpm dev:mp-kuaishou  # 快手小程序
+pnpm dev:mp-jd        # 京东小程序
+pnpm dev:mp-lark      # 飞书小程序
 ```
 
 ### 构建命令
@@ -121,29 +122,30 @@ pnpm api
 
 ## 核心组件
 
-### 公共组件
-
-- **Ellipsis** - 文本省略组件，支持多行省略
-- **ImageUpload** - 图片上传组件，支持多图上传和预览
-- **Poster** - 海报生成组件，支持自定义模板
-- **PullToRefresh** - 下拉刷新组件，支持自定义刷新逻辑
-- **RefreshList** - 列表刷新组件，集成上拉加载更多
-- **RichText** - 富文本组件，支持HTML内容渲染
-
 ### 布局组件
 
-- **Navigation** - 自定义导航栏组件
+- **Navigation** - 自定义导航栏组件，支持状态栏高度适配
 - **PageContainer** - 页面容器组件，统一页面布局
+
+### 公共组件
+
+- **ImageUpload** - 图片上传组件，支持多图上传、预览、删除
+- **Poster** - 海报生成组件，支持Canvas绘制和图片合成
+- **PullToRefresh** - 下拉刷新组件，支持自定义刷新逻辑
+- **RefreshList** - 列表刷新组件，集成下拉刷新和上拉加载
+- **RichText** - 富文本组件，支持HTML内容渲染
+- **Ellipsis** - 文本省略组件，支持多行文本截断
 
 ### UI 组件库
 
 项目集成了 **Wot Design Uni** 组件库，包含：
 
-- 基础组件：Button、Cell、Icon、Input 等
-- 表单组件：Form、Checkbox、Radio、Switch 等
-- 反馈组件：Toast、Dialog、Loading、Notify 等
-- 展示组件：Card、Tag、Badge、Progress 等
-- 导航组件：Tabs、Tabbar、Navbar、Sidebar 等
+- 基础组件：Button、Cell、Icon、Input、Gap、Divider等
+- 表单组件：Form、Checkbox、Radio、Switch、InputNumber等
+- 反馈组件：Toast、Dialog、Loading、Notify、MessageBox等
+- 展示组件：Card、Tag、Badge、Progress、Circle等
+- 导航组件：Tabs、Tabbar、Navbar、Sidebar、IndexBar等
+- 数据录入：DatetimePicker、Calendar、ColPicker、PasswordInput等
 
 ### 样式文件组织
 
@@ -205,9 +207,6 @@ pnpm route
 #### 页面监听插件 (`watch-pages.mjs`)
 
 ```bash
-# 进入项目目录
-cd packages/uni-template
-
 # 开发模式下自动运行（包含在 dev 命令中）
 pnpm dev
 ```
@@ -230,68 +229,157 @@ pnpm dev
 
 ### Pinia Store
 
-使用 Pinia 进行状态管理，store 文件放在 `src/state/` 目录下：
+使用 Pinia 进行状态管理，store 文件放在 `src/store/` 目录下：
 
 ```typescript
-// src/state/useGlobalStore.ts
-export const useGlobalStore = defineStore('global', {
-  state: () => ({
-    userInfo: null,
-    theme: 'light'
-  }),
-  actions: {
-    setUserInfo(info: UserInfo) {
-      this.userInfo = info
-    }
+// src/store/common/useGlobalStore.ts
+export const useGlobalStore = defineStore('globalStore', () => {
+  const userInfo = ref<MemberDto>()
+
+  const getUserInfo = async () => {
+    const { data, code } = await api.get['/api/member/v1/member/getUserInfo']()
+    data && setUserInfo(data)
+    return { data, code }
   }
+
+  return { userInfo, getUserInfo }
 })
 ```
 
-### 组合式函数
+**主要Store：**
+
+- `useGlobalStore` - 全局状态管理，用户信息、登录状态等
+- `useSystemInfo` - 系统信息管理，设备信息、屏幕尺寸等
+- `useGetAccountInfo` - 小程序环境信息管理
+
+### 组合式函数 (Hooks)
 
 项目提供了多个实用的组合式函数：
 
-- `useBoolean` - 布尔值状态管理
-- `useFormService` - 表单服务封装
-- `useRequest` - 请求状态管理
-- `useStorage` - 本地存储封装
+#### 状态管理类
+
+- `useBoolean` - 布尔值状态管理，支持setTrue/setFalse/toggle等操作
+- `useToggle` - 切换状态管理，支持两个值之间的切换
+- `useState` - 受控/非受控状态管理，类似React的useState
+- `useUpdate` - 强制更新组件
+
+#### 表单和数据处理
+
+- `useFormService` - 表单服务封装，支持表单数据管理和重置
+- `useMutate` - 数据获取和状态管理，支持数据格式化
+- `usePullToRefresh` - 下拉刷新和上拉加载更多
+- `useModify` - 页面数据修改和更新
+
+#### 页面和导航
+
+- `useNavigation` - 页面导航管理，支持各种跳转方式
+- `useParams` - 页面参数获取，支持场景值解析
+- `useGetParams` - 组件中获取页面参数
+- `useScroll` - 滚动监听和吸顶效果
+
+#### 工具类
+
+- `useLockFn` - 函数防抖和锁定，防止重复调用
+- `useNetworkStatus` - 网络状态监听
+- `useUpdateEffect` - 忽略首次执行的effect
 
 ## API 请求
 
 ### 请求封装
 
-使用 api-request 封装的请求库，配置文件在 `src/request/` 目录下：
+使用自定义封装的请求库，配置文件在 `src/request/` 目录下：
 
 ```typescript
 // 使用请求
-const data = await api.get['/api/member/v1/activity/activity']
+const data = await api.get['/api/member/v1/activity/activity']()
+const result = await api.post['/api/auth/login']({ username, password })
 ```
+
+**特性：**
+
+- 支持动态路径参数替换
+- 自动token管理和静默授权
+- 统一的错误处理和响应拦截
+- 支持请求和响应拦截器
+- 自动处理FormData和查询参数
+
+### 请求实例
+
+```typescript
+// src/request/instance.ts
+const instance = Request.create({ baseUrl: apiUrl })
+
+// 请求拦截器 - 自动添加token
+instance.requestInterceptors.use(async (config) => {
+  let token = getAuthorization()
+  if (!token && silentAuthorization) {
+    const { data } = await getToken(silentAuthorizationUrl)
+    token = data
+    setAuthorization(token)
+  }
+  config.headers = { ...config.headers, Authorization: token }
+  return config
+})
+
+// 响应拦截器 - 统一错误处理
+instance.responseInterceptors.use((res) => {
+  if ([403, 40003, 401].indexOf(res.data.code) !== -1) {
+    // token过期处理
+    removeAuthorization()
+    loginUrl && uni.navigateTo({ url: loginUrl })
+    throw new Error()
+  }
+  return res.data
+})
+```
+
+## 工具函数
+
+### 文件处理
+
+- **阿里云OSS上传** - 支持图片、文件上传到阿里云OSS
+- **图片处理** - 图片压缩、裁剪、格式转换等
+- **文件类型检测** - 自动识别图片、视频、音频、PDF等文件类型
+
+### 数据处理
+
+- **高精度计算** - 解决JavaScript浮点数精度问题
+- **数据格式化** - 金额格式化、电话号码脱敏等
+- **数组操作** - 去重、排序、转换等工具函数
+
+### 平台适配
+
+- **设备信息** - 获取设备型号、屏幕尺寸、状态栏高度等
+- **平台检测** - 自动识别当前运行平台
+- **网络状态** - 监听网络状态变化
 
 ## 支持平台
 
-- ✅ 微信小程序
-- ✅ H5
+- ✅ 微信小程序 (MP-WEIXIN)
+- ✅ H5 (H5)
 - ✅ App (Android/iOS)
-- ✅ 支付宝小程序
-- ✅ 百度小程序
-- ✅ QQ 小程序
-- ✅ 字节跳动小程序
-- ✅ 快手小程序
-- ✅ 京东小程序
-- ✅ 飞书小程序
+- ✅ 支付宝小程序 (MP-ALIPAY)
+- ✅ 百度小程序 (MP-BAIDU)
+- ✅ QQ 小程序 (MP-QQ)
+- ✅ 字节跳动小程序 (MP-TOUTIAO)
+- ✅ 快手小程序 (MP-KUAISHOU)
+- ✅ 京东小程序 (MP-JD)
+- ✅ 飞书小程序 (MP-LARK)
+- ✅ 快应用 (QUICKAPP-WEBVIEW)
 
 ## 技术栈
 
-- **框架**: UniApp 3.x
-- **前端**: Vue 3 + TypeScript
-- **状态管理**: Pinia
-- **样式**: Sass/SCSS
-- **构建工具**: Vite
-- **代码规范**: ESLint + TypeScript ESLint
+- **框架**: UniApp 3.x + Vue 3.5.11
+- **前端**: Vue 3 + TypeScript 5.9.2
+- **状态管理**: Pinia 2.3.1
+- **样式**: Sass 1.66.1
+- **构建工具**: Vite 5.2.11
+- **代码规范**: ESLint 8.57.1 + Prettier 3.6.2
 - **包管理**: pnpm workspace
-- **API 工具**: api-request + 自定义 Swagger 模板
+- **API 工具**: 自定义请求封装 + Swagger 模板生成
 - **UI 组件**: Wot Design Uni
 - **开发工具**: 自动路由生成、页面监听等插件
+- **工具库**: dayjs 1.11.13 (日期处理)
 
 ## 开发指南
 
@@ -326,12 +414,13 @@ defineProps<Props>()
 - `src/types/` - 全局类型定义
 - `src/enums/` - 枚举定义
 - `src/request/types/` - 请求相关类型
+- `src/components/request/types/` - 请求组件类型
 
 ## 配置说明
 
 ### 环境配置
 
-- `src/config.ts` - 应用配置
+- `src/config.ts` - 应用配置，API地址、登录配置等
 - `src/manifest.json` - 应用清单文件
 - `vite.config.ts` - Vite 构建配置
 - `tsconfig.json` - TypeScript 配置
@@ -373,6 +462,10 @@ defineProps<Props>()
 
 确保正确引入了 Wot Design Uni 的样式文件，检查 `src/main.ts` 中的导入。
 
+### 请求失败
+
+检查 `src/config.ts` 中的API地址配置，确保网络环境正常。
+
 ## 贡献指南
 
 1. Fork 本仓库
@@ -385,12 +478,15 @@ defineProps<Props>()
 
 ### v3.0.0
 
-- 初始版本发布
+- Monorepo + pnpm workspace 构建
 - 集成 Vue 3 + TypeScript + Pinia
 - 集成 Wot Design Uni 组件库
 - 添加自动路由生成插件
 - 添加页面监听插件
-- 统一样式单位为 px
+- 完整的请求封装和拦截器
+- 丰富的Vue 3 Hooks工具库
+- 阿里云OSS文件上传集成
+- 完整的权限管理和登录流程
 
 ## 许可证
 

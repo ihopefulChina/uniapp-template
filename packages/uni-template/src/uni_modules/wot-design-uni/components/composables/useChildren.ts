@@ -1,13 +1,4 @@
-import {
-  provide,
-  reactive,
-  getCurrentInstance,
-  type VNode,
-  type InjectionKey,
-  type VNodeNormalizedChildren,
-  type ComponentPublicInstance,
-  type ComponentInternalInstance
-} from 'vue'
+import { provide, reactive, getCurrentInstance, type VNode, type InjectionKey, type VNodeNormalizedChildren, type ComponentPublicInstance, type ComponentInternalInstance } from 'vue'
 
 // 小程序端不支持从vue导出的isVNode方法，参考uni-mp-vue的实现
 function isVNode(value: any): value is VNode {
@@ -50,11 +41,7 @@ const findVNodeIndex = (vnodes: VNode[], vnode: VNode) => {
 }
 
 // sort children instances by vnodes order
-export function sortChildren(
-  parent: ComponentInternalInstance,
-  publicChildren: ComponentPublicInstance[],
-  internalChildren: ComponentInternalInstance[]
-) {
+export function sortChildren(parent: ComponentInternalInstance, publicChildren: ComponentPublicInstance[], internalChildren: ComponentInternalInstance[]) {
   const vnodes = parent && parent.subTree && parent.subTree.children ? flattenVNodes(parent.subTree.children) : []
 
   internalChildren.sort((a, b) => findVNodeIndex(vnodes, a.vnode) - findVNodeIndex(vnodes, b.vnode))

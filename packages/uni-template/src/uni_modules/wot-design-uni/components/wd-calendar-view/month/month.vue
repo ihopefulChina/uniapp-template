@@ -8,9 +8,7 @@
           <view
             v-for="(item, index) in days"
             :key="index"
-            :class="`wd-month__day ${item.disabled ? 'is-disabled' : ''} ${item.isLastRow ? 'is-last-row' : ''} ${
-              item.type ? dayTypeClass(item.type) : ''
-            }`"
+            :class="`wd-month__day ${item.disabled ? 'is-disabled' : ''} ${item.isLastRow ? 'is-last-row' : ''} ${item.type ? dayTypeClass(item.type) : ''}`"
             :style="index === 0 ? firstDayStyle : ''"
             @click="handleDateClick(index)"
           >
@@ -41,18 +39,7 @@ export default {
 <script lang="ts" setup>
 import wdToast from '../../wd-toast/wd-toast.vue'
 import { computed, ref, watch, type CSSProperties } from 'vue'
-import {
-  compareDate,
-  formatMonthTitle,
-  getDateByDefaultTime,
-  getDayByOffset,
-  getDayOffset,
-  getItemClass,
-  getMonthEndDay,
-  getNextDay,
-  getPrevDay,
-  getWeekRange
-} from '../utils'
+import { compareDate, formatMonthTitle, getDateByDefaultTime, getDayByOffset, getDayOffset, getItemClass, getMonthEndDay, getNextDay, getPrevDay, getWeekRange } from '../utils'
 import { useToast } from '../../wd-toast'
 import { deepClone, isArray, isFunction, objToStyle } from '../../common/util'
 import { useTranslate } from '../../composables/useTranslate'

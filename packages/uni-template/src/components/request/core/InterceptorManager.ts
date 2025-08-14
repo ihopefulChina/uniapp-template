@@ -1,11 +1,11 @@
 interface IHandler<T> {
-  fulfilled: T;
-  rejected: any;
+  fulfilled: T
+  rejected: any
 }
 
 export default class InterceptorManager<T> {
   // 处理函数
-  private handlers: IHandler<T>[] = [];
+  private handlers: IHandler<T>[] = []
 
   /**
    * 新增一个拦截器函数
@@ -16,17 +16,17 @@ export default class InterceptorManager<T> {
    * @memberof InterceptorManager
    */
   public use(fulfilled: T, rejected?: any) {
-    this.handlers.push({ fulfilled, rejected });
-    return this.handlers.length - 1;
+    this.handlers.push({ fulfilled, rejected })
+    return this.handlers.length - 1
   }
 
   public remove(id: number) {
     if (this.handlers[id]) {
-      this.handlers.splice(id, 1);
+      this.handlers.splice(id, 1)
     }
   }
 
   public getAllHandler() {
-    return this.handlers;
+    return this.handlers
   }
 }

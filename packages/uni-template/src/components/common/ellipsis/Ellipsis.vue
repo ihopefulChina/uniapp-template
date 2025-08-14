@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import { CSSProperties, computed, getCurrentInstance, nextTick, ref, watchEffect } from 'vue';
-import { selectRect } from '~/utils/uniApi';
+import { CSSProperties, computed, getCurrentInstance, nextTick, ref, watchEffect } from 'vue'
+import { selectRect } from '~/utils/uniApi'
 
 interface IEllipsisProps {
   /**
    * 文本内容
    */
-  text?: string;
+  text?: string
 
   /**
    * 最大显示行数
    * @default 2
    */
-  lines?: number;
+  lines?: number
   /**
    * 展开按钮文本
    */
-  expandText?: string;
+  expandText?: string
   /**
    * 收起按钮文本
    */
-  collapseText?: string;
+  collapseText?: string
   /**
    * key
    *
    * */
-  keyValue: string;
+  keyValue: string
 }
 
 const props = withDefaults(defineProps<IEllipsisProps>(), {
@@ -33,29 +33,29 @@ const props = withDefaults(defineProps<IEllipsisProps>(), {
   text: '',
   collapseText: '收起',
   expandText: '展开'
-});
-const instance = getCurrentInstance(); // 获取组件实例
+})
+const instance = getCurrentInstance() // 获取组件实例
 
-const expand = ref(false);
+const expand = ref(false)
 
 const emits = defineEmits<{
-  (e: 'change', data: boolean): void;
-}>();
+  (e: 'change', data: boolean): void
+}>()
 
 /** 最大行数 */
-const maxLines = computed(() => (expand.value ? 'inherit' : props.lines));
+const maxLines = computed(() => (expand.value ? 'inherit' : props.lines))
 /** 最大高度 */
-const maxHeight = computed(() => (props?.lines ?? 0) * 18);
+const maxHeight = computed(() => (props?.lines ?? 0) * 18)
 /** 是否显示展开收起按钮 */
-const action = ref(false);
+const action = ref(false)
 watchEffect(async () => {
   if (props?.text !== undefined && props?.keyValue !== undefined) {
     nextTick(async () => {
-      const rectInfo = await selectRect(`.ellipsis_${props?.keyValue}`, instance!);
-      action.value = (rectInfo?.height ?? 0) > maxHeight.value;
-    });
+      const rectInfo = await selectRect(`.ellipsis_${props?.keyValue}`, instance!)
+      action.value = (rectInfo?.height ?? 0) > maxHeight.value
+    })
   }
-});
+})
 
 // 样式变化
 const acitonStyle = computed<CSSProperties>(() => {
@@ -63,13 +63,13 @@ const acitonStyle = computed<CSSProperties>(() => {
     display: expand.value ? 'inline' : 'block',
     position: expand.value ? 'static' : 'absolute',
     paddingLeft: expand.value ? '5px' : '5px'
-  };
-});
+  }
+})
 
 const handleChange = () => {
-  expand.value = !expand.value;
-  emits('change', expand.value);
-};
+  expand.value = !expand.value
+  emits('change', expand.value)
+}
 </script>
 
 <template>
@@ -82,9 +82,7 @@ const handleChange = () => {
       {{ props?.text ?? '-' }}
     </view>
     <view v-if="action" class="ellipsis_action" :style="acitonStyle">
-      <text v-if="!expand" class="ellipsis_action_block">
-        ...
-      </text>
+      <text v-if="!expand" class="ellipsis_action_block"> ... </text>
       <text class="ellipsis_action_text">
         {{ expand ? props?.collapseText : props?.expandText }}
       </text>

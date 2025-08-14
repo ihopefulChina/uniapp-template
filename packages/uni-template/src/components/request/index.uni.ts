@@ -72,10 +72,7 @@ export const getToken = merge(async (url: string) => {
  * @param param1
  * @returns
  */
-export async function takeTokenRequestInterceptor(
-  config: IUniRequestConfig,
-  { silentAuthorization, silentAuthorizationUrl }: { silentAuthorization: boolean; silentAuthorizationUrl: string }
-) {
+export async function takeTokenRequestInterceptor(config: IUniRequestConfig, { silentAuthorization, silentAuthorizationUrl }: { silentAuthorization: boolean; silentAuthorizationUrl: string }) {
   let token = uni.getStorageSync('token')
   // 静默授权
   if (!token && silentAuthorization) {

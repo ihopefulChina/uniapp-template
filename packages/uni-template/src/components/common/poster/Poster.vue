@@ -1,45 +1,45 @@
 <script lang="ts" setup>
-import { CSSProperties, computed, getCurrentInstance, ref, watchEffect } from 'vue';
-import { drawImage, drawRect, drawText, getImageInfo, getStyle } from './tool';
+import { CSSProperties, computed, getCurrentInstance, ref, watchEffect } from 'vue'
+import { drawImage, drawRect, drawText, getImageInfo, getStyle } from './tool'
 
 export interface IPosterProps {
-  dataList?: any[];
-  width?: number;
-  height?: number;
+  dataList?: any[]
+  width?: number
+  height?: number
 }
-const dpr = 2;
+const dpr = 2
 
 /** 父传子参数 */
-const { dataList = [], width = 200, height = 200 } = defineProps<IPosterProps>();
+const { dataList = [], width = 200, height = 200 } = defineProps<IPosterProps>()
 const emits = defineEmits<{
-  (e: 'setImgSrc', data?: string): void;
-}>();
-const instance = getCurrentInstance();
-const isDrawing = ref(false); // 绘制中状态
-const isReDraw = ref(false); // 是否需要重绘，当 canvas 在绘制中的时候 dataList 更新了，那么本次绘制会跳过，等绘制结束了开始重绘
-const drawCount = ref(0); // 绘制计数，当绘制失败时重新绘制
-const src = ref('');
+  (e: 'setImgSrc', data?: string): void
+}>()
+const instance = getCurrentInstance()
+const isDrawing = ref(false) // 绘制中状态
+const isReDraw = ref(false) // 是否需要重绘，当 canvas 在绘制中的时候 dataList 更新了，那么本次绘制会跳过，等绘制结束了开始重绘
+const drawCount = ref(0) // 绘制计数，当绘制失败时重新绘制
+const src = ref('')
 
 // 图片尺寸
 const style = computed(() => {
-  const sty: CSSProperties = {};
-  if (width) sty.width = `${width}px`;
-  if (height) sty.height = `${height}px`;
+  const sty: CSSProperties = {}
+  if (width) sty.width = `${width}px`
+  if (height) sty.height = `${height}px`
 
-  return sty;
-});
+  return sty
+})
 // canvas 尺寸，为了清晰度一般会比原图大
 const canvasStyle = computed(() => {
-  const sty: CSSProperties = {};
-  if (width) sty.width = `${width * dpr}px`;
-  if (height) sty.height = `${height * dpr}px`;
+  const sty: CSSProperties = {}
+  if (width) sty.width = `${width * dpr}px`
+  if (height) sty.height = `${height * dpr}px`
 
-  return sty;
-});
+  return sty
+})
 
 const onLoad = async () => {
-  const query = uni.createSelectorQuery().in(instance);
-  isDrawing.value = true;
+  const query = uni.createSelectorQuery().in(instance)
+  isDrawing.value = true
 
   query
     .select('#myCanvas')
@@ -47,39 +47,42 @@ const onLoad = async () => {
     .exec(async (res: any) => {
       if (!res) {
         if (drawCount.value < 10) {
-          setTimeout(() => {
-            onLoad();
-          }, Math.pow(drawCount.value++, 3));
+          setTimeout(
+            () => {
+              onLoad()
+            },
+            Math.pow(drawCount.value++, 3)
+          )
         }
-        return;
+        return
       }
 
-      drawCount.value = 0;
+      drawCount.value = 0
 
-      const canvas = res[0]?.node;
-      const ctx = canvas?.getContext('2d');
+      const canvas = res[0]?.node
+      const ctx = canvas?.getContext('2d')
 
-      canvas.width = res[0]?.width * dpr;
-      canvas.height = res[0]?.height * dpr;
-      ctx.scale(dpr, dpr);
-      ctx.clearRect(0, 0, 9999, 9999);
+      canvas.width = res[0]?.width * dpr
+      canvas.height = res[0]?.height * dpr
+      ctx.scale(dpr, dpr)
+      ctx.clearRect(0, 0, 9999, 9999)
       // 将图片先挑出来用 canvas.createImage() 转成 img
-      const imgsList = dataList.filter((item) => item.type === 2);
-      await Promise.all(imgsList.map((it) => getImageInfo(it.value, canvas)));
+      const imgsList = dataList.filter((item) => item.type === 2)
+      await Promise.all(imgsList.map((it) => getImageInfo(it.value, canvas)))
       // 依次渲染
       dataList.forEach((item) => {
-        const newElement = { ...item, style: getStyle(item.style) };
+        const newElement = { ...item, style: getStyle(item.style) }
         if (newElement.background) {
-          newElement.background.style = getStyle(item.background.style);
+          newElement.background.style = getStyle(item.background.style)
         }
         if (item.type === 0) {
-          drawText(newElement, ctx, canvas);
+          drawText(newElement, ctx, canvas)
         } else if (item.type === 2) {
-          drawImage(newElement, ctx, canvas);
+          drawImage(newElement, ctx, canvas)
         } else if (item.type === 3) {
-          drawRect(newElement, ctx, canvas);
+          drawRect(newElement, ctx, canvas)
         }
-      });
+      })
       // canvas 转成 img
       setTimeout(() => {
         uni.canvasToTempFilePath({
@@ -93,32 +96,32 @@ const onLoad = async () => {
           canvas,
           canvasId: 'myCanvas',
           success: (res1) => {
-            src.value = res1.tempFilePath;
-            emits('setImgSrc', res1.tempFilePath);
+            src.value = res1.tempFilePath
+            emits('setImgSrc', res1.tempFilePath)
           },
           complete: () => {
-            isDrawing.value = false;
+            isDrawing.value = false
           }
-        });
-      }, 50);
-    });
-};
+        })
+      }, 50)
+    })
+}
 
 watchEffect(() => {
   if (dataList.length) {
     if (isDrawing.value) {
-      isReDraw.value = true;
+      isReDraw.value = true
     } else {
-      onLoad();
+      onLoad()
     }
   }
-});
+})
 watchEffect(() => {
   if (src.value && isReDraw.value) {
-    isReDraw.value = false;
-    onLoad();
+    isReDraw.value = false
+    onLoad()
   }
-});
+})
 </script>
 
 <template>

@@ -108,17 +108,7 @@ export function useUpload(): UseUploadReturn {
    * 开始上传文件
    */
   const startUpload = (file: UploadFileItem, options: UseUploadOptions) => {
-    const {
-      uploadMethod,
-      formData = {},
-      action,
-      name = 'file',
-      header = {},
-      fileType = 'image',
-      statusCode = 200,
-      statusKey = 'status',
-      abortPrevious = false
-    } = options
+    const { uploadMethod, formData = {}, action, name = 'file', header = {}, fileType = 'image', statusCode = 200, statusKey = 'status', abortPrevious = false } = options
 
     // 设置上传中状态
     file[statusKey] = UPLOAD_STATUS.LOADING
@@ -219,17 +209,7 @@ export function useUpload(): UseUploadReturn {
   /**
    * 选择文件
    */
-  function chooseFile({
-    multiple,
-    sizeType,
-    sourceType,
-    maxCount,
-    accept,
-    compressed,
-    maxDuration,
-    camera,
-    extension
-  }: ChooseFileOption): Promise<ChooseFile[]> {
+  function chooseFile({ multiple, sizeType, sourceType, maxCount, accept, compressed, maxDuration, camera, extension }: ChooseFileOption): Promise<ChooseFile[]> {
     return new Promise((resolve, reject) => {
       switch (accept) {
         case 'image':

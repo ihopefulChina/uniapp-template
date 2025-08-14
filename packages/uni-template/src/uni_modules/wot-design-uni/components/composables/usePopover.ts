@@ -18,19 +18,7 @@ export function usePopover(visibleArrow = true) {
   function noop() {}
 
   function init(
-    placement:
-      | 'top'
-      | 'top-start'
-      | 'top-end'
-      | 'bottom'
-      | 'bottom-start'
-      | 'bottom-end'
-      | 'left'
-      | 'left-start'
-      | 'left-end'
-      | 'right'
-      | 'right-start'
-      | 'right-end',
+    placement: 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end',
     visibleArrow: boolean,
     selector: string
   ) {
@@ -64,19 +52,7 @@ export function usePopover(visibleArrow = true) {
   }
 
   function control(
-    placement:
-      | 'top'
-      | 'top-start'
-      | 'top-end'
-      | 'bottom'
-      | 'bottom-start'
-      | 'bottom-end'
-      | 'left'
-      | 'left-start'
-      | 'left-end'
-      | 'right'
-      | 'right-start'
-      | 'right-end',
+    placement: 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end',
     offset: number | number[] | Record<'x' | 'y', number>
   ) {
     // arrow size
@@ -108,64 +84,25 @@ export function usePopover(visibleArrow = true) {
     const placements = new Map([
       // 上
       ['top', [`left: ${verticalX}px; bottom: ${verticalY}px; transform: translateX(-50%);`, 'left: 50%;']],
-      [
-        'top-start',
-        [
-          `left: ${offsetX}px; bottom: ${verticalY}px;`,
-          `left: ${(popWidth.value >= width.value ? width.value / 2 : popWidth.value - 25) - offsetX}px;`
-        ]
-      ],
-      [
-        'top-end',
-        [
-          `right: ${offsetX}px; bottom: ${verticalY}px;`,
-          `right: ${(popWidth.value >= width.value ? width.value / 2 : popWidth.value - 25) - offsetX}px; transform: translateX(50%);`
-        ]
-      ],
+      ['top-start', [`left: ${offsetX}px; bottom: ${verticalY}px;`, `left: ${(popWidth.value >= width.value ? width.value / 2 : popWidth.value - 25) - offsetX}px;`]],
+      ['top-end', [`right: ${offsetX}px; bottom: ${verticalY}px;`, `right: ${(popWidth.value >= width.value ? width.value / 2 : popWidth.value - 25) - offsetX}px; transform: translateX(50%);`]],
       // 下
       ['bottom', [`left: ${verticalX}px; top: ${verticalY}px; transform: translateX(-50%);`, 'left: 50%;']],
-      [
-        'bottom-start',
-        [`left: ${offsetX}px; top: ${verticalY}px;`, `left: ${(popWidth.value >= width.value ? width.value / 2 : popWidth.value - 25) - offsetX}px;`]
-      ],
-      [
-        'bottom-end',
-        [
-          `right: ${offsetX}px; top: ${verticalY}px;`,
-          `right: ${(popWidth.value >= width.value ? width.value / 2 : popWidth.value - 25) - offsetX}px; transform: translateX(50%);`
-        ]
-      ],
+      ['bottom-start', [`left: ${offsetX}px; top: ${verticalY}px;`, `left: ${(popWidth.value >= width.value ? width.value / 2 : popWidth.value - 25) - offsetX}px;`]],
+      ['bottom-end', [`right: ${offsetX}px; top: ${verticalY}px;`, `right: ${(popWidth.value >= width.value ? width.value / 2 : popWidth.value - 25) - offsetX}px; transform: translateX(50%);`]],
       // 左
       ['left', [`right: ${horizontalX}px; top: ${horizontalY}px; transform: translateY(-50%);`, 'top: 50%']],
-      [
-        'left-start',
-        [
-          `right: ${horizontalX}px; top: ${offsetY}px;`,
-          `top: ${(popHeight.value >= height.value ? height.value / 2 : popHeight.value - 20) - offsetY}px;`
-        ]
-      ],
+      ['left-start', [`right: ${horizontalX}px; top: ${offsetY}px;`, `top: ${(popHeight.value >= height.value ? height.value / 2 : popHeight.value - 20) - offsetY}px;`]],
       [
         'left-end',
-        [
-          `right: ${horizontalX}px; bottom: ${offsetY}px;`,
-          `bottom: ${(popHeight.value >= height.value ? height.value / 2 : popHeight.value - 20) - offsetY}px; transform: translateY(50%);`
-        ]
+        [`right: ${horizontalX}px; bottom: ${offsetY}px;`, `bottom: ${(popHeight.value >= height.value ? height.value / 2 : popHeight.value - 20) - offsetY}px; transform: translateY(50%);`]
       ],
       // 右
       ['right', [`left: ${horizontalX}px; top: ${horizontalY}px; transform: translateY(-50%);`, 'top: 50%']],
-      [
-        'right-start',
-        [
-          `left: ${horizontalX}px; top: ${offsetY}px;`,
-          `top: ${(popHeight.value >= height.value ? height.value / 2 : popHeight.value - 20) - offsetY}px;`
-        ]
-      ],
+      ['right-start', [`left: ${horizontalX}px; top: ${offsetY}px;`, `top: ${(popHeight.value >= height.value ? height.value / 2 : popHeight.value - 20) - offsetY}px;`]],
       [
         'right-end',
-        [
-          `left: ${horizontalX}px; bottom: ${offsetY}px;`,
-          `bottom: ${(popHeight.value >= height.value ? height.value / 2 : popHeight.value - 20) - offsetY}px; transform: translateY(50%);`
-        ]
+        [`left: ${horizontalX}px; bottom: ${offsetY}px;`, `bottom: ${(popHeight.value >= height.value ? height.value / 2 : popHeight.value - 20) - offsetY}px; transform: translateY(50%);`]
       ]
     ])
     popStyle.value = placements.get(placement)![0]

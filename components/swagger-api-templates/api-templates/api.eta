@@ -22,7 +22,7 @@ const routesObj = route.routes.reduce((obj, route) => {
 }, {}))
 
 %>
-import { IUniRequestConfig } from "@/components/request/types/uni-type";
+import { IUniRequestConfig } from "~/components/request/types/uni-type";
 import * as DC from "./<%~ config.fileNames.dataContracts %>"
 <% if (dataContracts.length) { %>
 <% /* import { <%~ dataContracts.join(", ") %> } from "./<%~ config.fileNames.dataContracts %>" */ %>

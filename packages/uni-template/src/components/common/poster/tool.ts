@@ -46,7 +46,9 @@ export const getStyle = (() => {
     top: multipleSize(style.top),
     fontSize: multipleSize(style.fontSize),
     lineHeight: multipleSize(style.lineHeight),
-    borderRadius: Array.isArray(style.borderRadius) ? style.borderRadius.map((it: any) => multipleSize(it)) : multipleSize(style.borderRadius)
+    borderRadius: Array.isArray(style.borderRadius)
+      ? style.borderRadius.map((it: any) => multipleSize(it))
+      : multipleSize(style.borderRadius)
   })
 })()
 
@@ -80,10 +82,30 @@ export const drawImage = (data: any, ctx: any, canvas: any) => {
     const rateWidth = (w * height) / h // 按比例算出来的宽度
     if (rateWidth >= width) {
       // 高度要切
-      ctx.drawImage(img, 0, (height - (width * h) / w) / 2, width, (width * h) / w, style.left, style.top, style.width, style.height)
+      ctx.drawImage(
+        img,
+        0,
+        (height - (width * h) / w) / 2,
+        width,
+        (width * h) / w,
+        style.left,
+        style.top,
+        style.width,
+        style.height
+      )
     } else {
       // 切宽度
-      ctx.drawImage(img, (width - rateWidth) / 2, 0, rateWidth, height, style.left, style.top, style.width, style.height)
+      ctx.drawImage(
+        img,
+        (width - rateWidth) / 2,
+        0,
+        rateWidth,
+        height,
+        style.left,
+        style.top,
+        style.width,
+        style.height
+      )
     }
   } else {
     ctx.drawImage(img, style.left, style.top, style.width, style.height)
@@ -126,7 +148,8 @@ export const drawText = async (data: any, ctx: any, canvas: any) => {
   const { style, background } = data
 
   ctx.font = `${style.fontWeight || 'normal'} ${style.fontSize || 12}px ${style.fontFamily || 'sans-serif'}`
-  const width = style.width || ctx.measureText(data.value !== undefined ? data.value.toString() : '').width
+  const width =
+    style.width || ctx.measureText(data.value !== undefined ? data.value.toString() : '').width
 
   if (background) {
     const newBackground = { ...background }

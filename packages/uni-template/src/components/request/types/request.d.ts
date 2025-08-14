@@ -1,5 +1,3 @@
-import Taro from '../../index'
-
 type IAnyObject = Record<string, any>
 interface CallbackResult {
   /** 错误信息 */

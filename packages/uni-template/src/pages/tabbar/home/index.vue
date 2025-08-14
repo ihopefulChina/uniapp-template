@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Help from '~/components/help/Help.vue';
-import Navigation from '~/layout/navigation/Navigation.vue';
-import PageContainer from '~/layout/pageContainer/PageContainer.vue';
-import { useGlobalStore } from '~/state/useGlobalStore';
-import { useMessage, useToast } from '~/uni_modules/wot-design-uni';
-import WdButton from '~/uni_modules/wot-design-uni/components/wd-button/wd-button.vue';
+import Help from '~/components/help/Help.vue'
+import Navigation from '~/layout/navigation/Navigation.vue'
+import PageContainer from '~/layout/pageContainer/PageContainer.vue'
+import { useGlobalStore } from '~/store/common/useGlobalStore'
+import { useMessage, useToast } from '~/uni_modules/wot-design-uni'
+import WdButton from '~/uni_modules/wot-design-uni/components/wd-button/wd-button.vue'
 
-const globalStore = useGlobalStore();
+const globalStore = useGlobalStore()
 
 /** message */
 const message = useMessage()
@@ -20,27 +20,20 @@ function confirm() {
     .then(() => {
       globalStore.getUserInfo()
     })
-    .catch(() => {
-
-    })
+    .catch(() => {})
 }
 
 function showToast() {
   toast.show('提示文案')
 }
-
 </script>
 <template>
   <PageContainer isTab>
     <view class="home">
       <Navigation title="首页" isTab />
 
-      <WdButton @click="confirm">
-        点击对话框
-      </WdButton>
-      <WdButton @click="showToast">
-        点击totst
-      </WdButton>
+      <WdButton @click="confirm"> 点击对话框 </WdButton>
+      <WdButton @click="showToast"> 点击totst </WdButton>
 
       <Help />
     </view>

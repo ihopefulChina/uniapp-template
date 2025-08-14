@@ -55,29 +55,15 @@
           </wd-tabs>
         </view>
         <view v-if="shortcuts.length > 0" class="wd-calendar__shortcuts">
-          <wd-tag
-            v-for="(item, index) in shortcuts"
-            :key="index"
-            custom-class="wd-calendar__tag"
-            type="primary"
-            plain
-            round
-            @click="handleShortcutClick(index)"
-          >
+          <wd-tag v-for="(item, index) in shortcuts" :key="index" custom-class="wd-calendar__tag" type="primary" plain round @click="handleShortcutClick(index)">
             {{ item.text }}
           </wd-tag>
         </view>
         <wd-icon custom-class="wd-calendar__close" name="add" @click="close" />
       </view>
-      <view
-        v-if="inited"
-        :class="`wd-calendar__view  ${currentType.indexOf('range') > -1 ? 'is-range' : ''} ${showConfirm ? 'is-show-confirm' : ''}`"
-      >
+      <view v-if="inited" :class="`wd-calendar__view  ${currentType.indexOf('range') > -1 ? 'is-range' : ''} ${showConfirm ? 'is-show-confirm' : ''}`">
         <view v-if="range(type)" :class="`wd-calendar__range-label ${type === 'monthrange' ? 'is-monthrange' : ''}`">
-          <view
-            :class="`wd-calendar__range-label-item ${!calendarValue || !isArray(calendarValue) || !calendarValue[0] ? 'is-placeholder' : ''}`"
-            style="text-align: right"
-          >
+          <view :class="`wd-calendar__range-label-item ${!calendarValue || !isArray(calendarValue) || !calendarValue[0] ? 'is-placeholder' : ''}`" style="text-align: right">
             {{ rangeLabel[0] }}
           </view>
           <view class="wd-calendar__range-sperator">/</view>
@@ -379,11 +365,7 @@ function handleTypeChange({ index }: { index: number }) {
 function getConfirmBtnStatus(value: number | number[] | null) {
   let confirmBtnDisabled = false
   // 范围选择未选择满，或者多日期选择未选择日期，按钮置灰不可点击
-  if (
-    (props.type.indexOf('range') > -1 && (!isArray(value) || !value[0] || !value[1] || !value)) ||
-    (props.type === 'dates' && (!isArray(value) || value.length === 0 || !value)) ||
-    !value
-  ) {
+  if ((props.type.indexOf('range') > -1 && (!isArray(value) || !value[0] || !value[1] || !value)) || (props.type === 'dates' && (!isArray(value) || value.length === 0 || !value)) || !value) {
     confirmBtnDisabled = true
   }
 

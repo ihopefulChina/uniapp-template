@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { onLoad } from '@dcloudio/uni-app';
-import PageContainer from '~/layout/pageContainer/PageContainer.vue';
-import AppLogin from './components/appLogin.vue';
+import { onLoad } from '@dcloudio/uni-app'
+import PageContainer from '~/layout/pageContainer/PageContainer.vue'
+import AppLogin from './components/appLogin.vue'
 
 onLoad(() => {
-  uni.removeStorageSync('loginLock');
-});
+  uni.removeStorageSync('loginLock')
+})
 </script>
 
 <template>

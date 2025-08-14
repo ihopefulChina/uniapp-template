@@ -20,9 +20,7 @@
       <view
         :class="`wd-action-sheet ${customClass}`"
         :style="`${
-          (actions && actions.length) || (panels && panels.length)
-            ? 'margin: 0 10px calc(var(--window-bottom) + 10px) 10px; border-radius: 16px;'
-            : 'margin-bottom: var(--window-bottom);'
+          (actions && actions.length) || (panels && panels.length) ? 'margin: 0 10px calc(var(--window-bottom) + 10px) 10px; border-radius: 16px;' : 'margin-bottom: var(--window-bottom);'
         } ${customStyle}`"
       >
         <view v-if="title" :class="`wd-action-sheet__header ${customHeaderClass}`">
@@ -33,9 +31,7 @@
           <button
             v-for="(action, rowIndex) in actions"
             :key="rowIndex"
-            :class="`wd-action-sheet__action ${action.disabled ? 'wd-action-sheet__action--disabled' : ''}  ${
-              action.loading ? 'wd-action-sheet__action--loading' : ''
-            }`"
+            :class="`wd-action-sheet__action ${action.disabled ? 'wd-action-sheet__action--disabled' : ''}  ${action.loading ? 'wd-action-sheet__action--loading' : ''}`"
             :style="`color: ${action.color}`"
             @click="select(rowIndex, 'action')"
           >

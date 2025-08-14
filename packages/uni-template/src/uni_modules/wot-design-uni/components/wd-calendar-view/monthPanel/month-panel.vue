@@ -152,10 +152,7 @@ const months = computed<MonthInfo[]>(() => {
 watch(
   () => props.type,
   (val) => {
-    if (
-      (val === 'datetime' && props.value) ||
-      (val === 'datetimerange' && isArray(props.value) && props.value && props.value.length > 0 && props.value[0])
-    ) {
+    if ((val === 'datetime' && props.value) || (val === 'datetimerange' && isArray(props.value) && props.value && props.value.length > 0 && props.value[0])) {
       setTime(props.value, 'start')
     }
   },

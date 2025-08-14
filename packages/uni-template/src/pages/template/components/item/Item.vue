@@ -1,37 +1,35 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { ResActivityPlayGoodsDto } from '~/request/data-contracts';
+import { ref } from 'vue'
+import { ResActivityPlayGoodsDto } from '~/request/data-contracts'
 
 interface IDetailProps {
-  detail?: ResActivityPlayGoodsDto;
+  detail?: ResActivityPlayGoodsDto
 }
 /** 子传父事件 */
 const emits = defineEmits<{
-  (e: 'onChange', data?: ResActivityPlayGoodsDto): void;
-}>();
+  (e: 'onChange', data?: ResActivityPlayGoodsDto): void
+}>()
 /** 父传子参数 */
-const props = defineProps<IDetailProps>();
+const props = defineProps<IDetailProps>()
 
-const total = ref<number>(0);
+const total = ref<number>(0)
 /** 点击事件 */
 const handleClick = () => {
-  total.value += 1;
-  emits('onChange', props?.detail);
-};
+  total.value += 1
+  emits('onChange', props?.detail)
+}
 
 /** 传递给父 */
 defineExpose({
   getValues: () => {
     return {
       total: total.value
-    };
+    }
   }
-});
+})
 </script>
 <template>
-  <view class="wc_notice_item" @click="handleClick">
-    111111
-  </view>
+  <view class="wc_notice_item" @click="handleClick"> 111111 </view>
 </template>
 
 <style lang="scss" scoped>

@@ -1,25 +1,25 @@
 /**
  * request实例。此入口基于fetch api进行封装。支持web、RN端使用
  */
-import FetchRequest from './core/FetchRequest';
-import { IRequestConfig, IResponse } from './types/fetch-type';
-import { IRequestOption } from './types';
-import { createInstance } from './helper/createInstance';
+import FetchRequest from './core/FetchRequest'
+import { IRequestConfig, IResponse } from './types/fetch-type'
+import { IRequestOption } from './types'
+import { createInstance } from './helper/createInstance'
 
 export interface IInstance extends Omit<FetchRequest, 'request'> {
-  create(config?: IRequestOption): IInstance;
-  <T>(config: IRequestConfig): Promise<IResponse<T>>;
+  create(config?: IRequestOption): IInstance
+  <T>(config: IRequestConfig): Promise<IResponse<T>>
 }
 
 function create(config: IRequestOption = {}) {
-  const ins = createInstance(config, FetchRequest, ['request', 'mergeResponse', 'getErrorResponse', 'getResponseData']) as IInstance;
-  ins.create = create;
-  return ins;
+  const ins = createInstance(config, FetchRequest, ['request', 'mergeResponse', 'getErrorResponse', 'getResponseData']) as IInstance
+  ins.create = create
+  return ins
 }
 
-const instance = create();
+const instance = create()
 
-export default instance;
+export default instance
 
 /**
  * 请求统一携带token
@@ -30,21 +30,21 @@ export default instance;
  * @returns
  */
 export async function takeTokenRequestInterceptor(config: IRequestConfig) {
-  const Authorization = window.localStorage.getItem('Authorization');
+  const Authorization = window.localStorage.getItem('Authorization')
   if (Authorization) {
-    config.headers = { ...config.headers, Authorization };
+    config.headers = { ...config.headers, Authorization }
   }
-  return config;
+  return config
 }
 
 interface IResOption {
-  notification: any;
+  notification: any
 
-  message: any;
+  message: any
 
-  history: any;
+  history: any
 
-  loginUrl: string;
+  loginUrl: string
 }
 
 /**
@@ -56,29 +56,29 @@ interface IResOption {
  * @returns
  */
 export async function requestInterceptorHanlder(res: any, option: IResOption) {
-  const { status, data = {} } = res;
-  let description: string | null = null;
+  const { status, data = {} } = res
+  let description: string | null = null
 
   if (status === 403 || data.code === 403) {
     // 没有权限
-    option.message.warn(data.msg || '无权访问该资源');
-    description = '';
+    option.message.warn(data.msg || '无权访问该资源')
+    description = ''
   } else if (data.code === 401 || data.code === 40003) {
     // 未登录 或者 用户token过期、错误
     if (!/\/login\?/.test(window.location.pathname)) {
-      option.history.replace({ pathname: option.loginUrl });
+      option.history.replace({ pathname: option.loginUrl })
     }
-    description = '';
+    description = ''
   } else if (status !== 200 || data.code !== 0) {
-    description = data.msg;
+    description = data.msg
   }
 
   if (description !== null) {
     if (description) {
-      option.notification.error({ message: description });
+      option.notification.error({ message: description })
     }
-    throw new Error();
+    throw new Error()
   }
 
-  return res.data;
+  return res.data
 }

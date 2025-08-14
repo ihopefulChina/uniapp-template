@@ -1,7 +1,7 @@
 /* eslint-disable object-shorthand */
 /* eslint-disable max-lines */
 /* eslint-disable id-length */
-import { IUniRequestConfig } from '@/components/request/types/uni-type'
+import { IUniRequestConfig } from '~/components/request/types/uni-type'
 import * as DC from './data-contracts'
 
 type RequestConfig = Partial<IUniRequestConfig>
@@ -61,23 +61,17 @@ export interface APIGET {
    * @summary 新分页查询
    * @tags 活动玩法绑定表 管理接口-3
    */
-  '/api/sys/v1/activityPlay/list': (
-    query: DC.ApiSysV1ActivityPlayListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayDto>
+  '/api/sys/v1/activityPlay/list': (query: DC.ApiSysV1ActivityPlayListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayDto>
   /**
    * @summary 玩法票档-1
    * @tags 活动玩法绑定表 管理接口-3
    */
-  '/api/sys/v1/activityPlay/queryFile': (
-    query: DC.ApiSysV1ActivityPlayQueryFileGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResActivityPlayTicketingFilesDto>
+  '/api/sys/v1/activityPlay/queryFile': (query: DC.ApiSysV1ActivityPlayQueryFileGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResActivityPlayTicketingFilesDto>
   /**
    * @summary 分页查询
    * @tags 活动玩法中奖商品 管理接口
    */
-  '/api/sys/v1/activityPlayGoods': (
-    query: DC.ApiSysV1ActivityPlayGoodsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayGoodsDto>
+  '/api/sys/v1/activityPlayGoods': (query: DC.ApiSysV1ActivityPlayGoodsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayGoodsDto>
   /**
    * @summary 简要信息
    * @tags 活动玩法中奖商品 管理接口
@@ -87,9 +81,7 @@ export interface APIGET {
    * @summary 分页查询
    * @tags 活动玩法任务 管理接口
    */
-  '/api/sys/v1/activityPlayTask': (
-    query: DC.ApiSysV1ActivityPlayTaskGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayTaskDto>
+  '/api/sys/v1/activityPlayTask': (query: DC.ApiSysV1ActivityPlayTaskGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayTaskDto>
   /**
    * @summary 简要信息
    * @tags 活动玩法任务 管理接口
@@ -99,9 +91,7 @@ export interface APIGET {
    * @summary 分页查询
    * @tags 活动玩法投票规则 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotes': (
-    query: DC.ApiSysV1ActivityPlayVotesGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayVotesDto>
+  '/api/sys/v1/activityPlayVotes': (query: DC.ApiSysV1ActivityPlayVotesGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayVotesDto>
   /**
    * @summary 简要信息
    * @tags 活动玩法投票规则 管理接口-3
@@ -111,9 +101,7 @@ export interface APIGET {
    * @summary 分页查询
    * @tags 投票轮次 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotesTurm': (
-    query: DC.ApiSysV1ActivityPlayVotesTurmGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayVotesTurmDto>
+  '/api/sys/v1/activityPlayVotesTurm': (query: DC.ApiSysV1ActivityPlayVotesTurmGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayVotesTurmDto>
   /**
    * @summary 简要信息
    * @tags 投票轮次 管理接口-3
@@ -123,16 +111,12 @@ export interface APIGET {
    * @summary 查询-3
    * @tags 投票轮次 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotesTurm/list': (
-    query: DC.ApiSysV1ActivityPlayVotesTurmListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayVotesTurmDto>
+  '/api/sys/v1/activityPlayVotesTurm/list': (query: DC.ApiSysV1ActivityPlayVotesTurmListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayVotesTurmDto>
   /**
    * @summary 地址列表
    * @tags 收货地址接口
    */
-  '/api/sys/v1/address/getList': (
-    query: DC.ApiSysV1AddressGetListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResMemberAddressDto>
+  '/api/sys/v1/address/getList': (query: DC.ApiSysV1AddressGetListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResMemberAddressDto>
   /**
    * @summary 分页查询
    * @tags banner
@@ -157,9 +141,7 @@ export interface APIGET {
    * @summary 根据多个键值查询，多个按逗号分割
    * @tags 系统配置
    */
-  '/api/sys/v1/config/queryByMultipleKey': (
-    query: DC.ApiSysV1ConfigQueryByMultipleKeyGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultMapStringString>
+  '/api/sys/v1/config/queryByMultipleKey': (query: DC.ApiSysV1ConfigQueryByMultipleKeyGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultMapStringString>
   /**
    * @summary 分页查询
    * @tags 内容管理 管理接口
@@ -174,9 +156,7 @@ export interface APIGET {
    * @summary 分页查询
    * @tags 常用联系人 管理接口-1
    */
-  '/api/sys/v1/frequentContacts': (
-    query: DC.ApiSysV1FrequentContactsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResFrequentContactsDto>
+  '/api/sys/v1/frequentContacts': (query: DC.ApiSysV1FrequentContactsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResFrequentContactsDto>
   /**
    * @summary 简要信息
    * @tags 常用联系人 管理接口-1
@@ -206,9 +186,7 @@ export interface APIGET {
    * @summary 分页查询
    * @tags 邀请码 管理接口-1
    */
-  '/api/sys/v1/invitationCode': (
-    query: DC.ApiSysV1InvitationCodeGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResInvitationCodeDto>
+  '/api/sys/v1/invitationCode': (query: DC.ApiSysV1InvitationCodeGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResInvitationCodeDto>
   /**
    * @summary 导出-1
    * @tags 邀请码 管理接口-1
@@ -273,9 +251,7 @@ export interface APIGET {
    * @summary 分页查询
    * @tags 用户抽奖记录 管理接口
    */
-  '/api/sys/v1/memberLottery': (
-    query: DC.ApiSysV1MemberLotteryGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResMemberLotteryDto>
+  '/api/sys/v1/memberLottery': (query: DC.ApiSysV1MemberLotteryGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResMemberLotteryDto>
   /**
    * @summary 导出
    * @tags 用户抽奖记录 管理接口
@@ -285,9 +261,7 @@ export interface APIGET {
    * @summary 导出
    * @tags 用户抽奖记录 管理接口
    */
-  '/api/sys/v1/memberLottery/exportMember': (
-    query: DC.ApiSysV1MemberLotteryExportMemberGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.CharSequence>
+  '/api/sys/v1/memberLottery/exportMember': (query: DC.ApiSysV1MemberLotteryExportMemberGetParams & { requestConfig?: RequestConfig }) => Promise<DC.CharSequence>
   /**
    * @summary 简要信息
    * @tags 用户抽奖记录 管理接口
@@ -302,9 +276,7 @@ export interface APIGET {
    * @summary 分页查询
    * @tags 操作日志
    */
-  '/api/sys/v1/operationLog': (
-    query: DC.ApiSysV1OperationLogGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultReqOperateLogsDTO>
+  '/api/sys/v1/operationLog': (query: DC.ApiSysV1OperationLogGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultReqOperateLogsDTO>
   /**
    * @summary 分页查询
    * @tags 票务预约记录 管理接口-1
@@ -314,9 +286,7 @@ export interface APIGET {
    * @summary 参与人订单查询-1
    * @tags 票务预约记录 管理接口-1
    */
-  '/api/sys/v1/orders/contactsOrder': (
-    query: DC.ApiSysV1OrdersContactsOrderGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResOrderFrequentContactsDto>
+  '/api/sys/v1/orders/contactsOrder': (query: DC.ApiSysV1OrdersContactsOrderGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResOrderFrequentContactsDto>
   /**
    * @summary 导出数据-1
    * @tags 票务预约记录 管理接口-1
@@ -346,23 +316,17 @@ export interface APIGET {
    * @summary 预约详情-1
    * @tags 票务预约记录 管理接口-1
    */
-  '/api/sys/v1/orders/getContactsByOrderId': (
-    query: DC.ApiSysV1OrdersGetContactsByOrderIdGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResOrderFrequentContactsDto>
+  '/api/sys/v1/orders/getContactsByOrderId': (query: DC.ApiSysV1OrdersGetContactsByOrderIdGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResOrderFrequentContactsDto>
   /**
    * @summary 查询核销信息-1
    * @tags 票务预约记录 管理接口-1
    */
-  '/api/sys/v1/orders/getOrderContacts': (
-    query: DC.ApiSysV1OrdersGetOrderContactsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResOrderFrequentContactsDto>
+  '/api/sys/v1/orders/getOrderContacts': (query: DC.ApiSysV1OrdersGetOrderContactsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResOrderFrequentContactsDto>
   /**
    * @summary 票务活动数据统计-1
    * @tags 票务预约记录 管理接口-1
    */
-  '/api/sys/v1/orders/statistics': (
-    query: DC.ApiSysV1OrdersStatisticsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResOrdersstatisticsDto>
+  '/api/sys/v1/orders/statistics': (query: DC.ApiSysV1OrdersStatisticsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResOrdersstatisticsDto>
   /**
    * @summary 分页查询
    * @tags 页面
@@ -457,9 +421,7 @@ export interface APIGET {
    * @summary 分页查询
    * @tags 票务玩法配置 管理接口-1
    */
-  '/api/sys/v1/ticketingConfig': (
-    query: DC.ApiSysV1TicketingConfigGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResTicketingConfigDto>
+  '/api/sys/v1/ticketingConfig': (query: DC.ApiSysV1TicketingConfigGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResTicketingConfigDto>
   /**
    * @summary 简要信息
    * @tags 票务玩法配置 管理接口-1
@@ -469,9 +431,7 @@ export interface APIGET {
    * @summary 票务玩法详情-1
    * @tags 票务玩法配置 管理接口-1
    */
-  '/api/sys/v1/ticketingConfig/getTicketingPlayId': (
-    query: DC.ApiSysV1TicketingConfigGetTicketingPlayIdGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResPlayTicketingDto>
+  '/api/sys/v1/ticketingConfig/getTicketingPlayId': (query: DC.ApiSysV1TicketingConfigGetTicketingPlayIdGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResPlayTicketingDto>
   /**
    * @summary 分页查询
    * @tags 用户
@@ -521,16 +481,12 @@ export interface APIGET {
    * @summary 抽奖用户名单-3
    * @tags 投票记录 管理接口-3
    */
-  '/api/sys/v1/votesRecord/lotteryList': (
-    query: DC.ApiSysV1VotesRecordLotteryListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListMemberDto>
+  '/api/sys/v1/votesRecord/lotteryList': (query: DC.ApiSysV1VotesRecordLotteryListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListMemberDto>
   /**
    * @summary 投票统计-3
    * @tags 投票记录 管理接口-3
    */
-  '/api/sys/v1/votesRecord/statistics': (
-    query: DC.ApiSysV1VotesRecordStatisticsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResVotesRecordStatisticsDto>
+  '/api/sys/v1/votesRecord/statistics': (query: DC.ApiSysV1VotesRecordStatisticsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResVotesRecordStatisticsDto>
   /**
    * @summary 分页查询
    * @tags 票务核销人员关联表 管理接口-1
@@ -545,9 +501,7 @@ export interface APIGET {
    * @summary 可选择人员查询-1
    * @tags 票务核销人员关联表 管理接口-1
    */
-  '/api/sys/v1/writeOff/queryAllMember': (
-    query: DC.ApiSysV1WriteOffQueryAllMemberGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultMemberDto>
+  '/api/sys/v1/writeOff/queryAllMember': (query: DC.ApiSysV1WriteOffQueryAllMemberGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultMemberDto>
   /**
    * @summary 获取活动详情内容
    * @tags 活动
@@ -557,37 +511,27 @@ export interface APIGET {
    * @summary 根据经纬度计算是否在范围内-3
    * @tags 活动
    */
-  '/api/member/v1/activity/addressDistance': (
-    query: DC.ApiMemberV1ActivityAddressDistanceGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultBoolean>
+  '/api/member/v1/activity/addressDistance': (query: DC.ApiMemberV1ActivityAddressDistanceGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultBoolean>
   /**
    * @summary 核销人员可核销活动-1
    * @tags 活动
    */
-  '/api/member/v1/activity/getActivityList': (
-    query: DC.ApiMemberV1ActivityGetActivityListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResActivityDto>
+  '/api/member/v1/activity/getActivityList': (query: DC.ApiMemberV1ActivityGetActivityListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResActivityDto>
   /**
    * @summary 查询活动任务抽奖记录
    * @tags 活动
    */
-  '/api/member/v1/activity/getLotteryList': (
-    query: DC.ApiMemberV1ActivityGetLotteryListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedScrollResultResMemberLotteryDto>
+  '/api/member/v1/activity/getLotteryList': (query: DC.ApiMemberV1ActivityGetLotteryListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedScrollResultResMemberLotteryDto>
   /**
    * @summary 最近中奖数据
    * @tags 活动
    */
-  '/api/member/v1/activity/getNowLottery': (
-    query: DC.ApiMemberV1ActivityGetNowLotteryGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResMemberLotteryDto>
+  '/api/member/v1/activity/getNowLottery': (query: DC.ApiMemberV1ActivityGetNowLotteryGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResMemberLotteryDto>
   /**
    * @summary 任务资格明细
    * @tags 活动
    */
-  '/api/member/v1/activity/getRewardList': (
-    query: DC.ApiMemberV1ActivityGetRewardListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedScrollResultResMemberRewardDto>
+  '/api/member/v1/activity/getRewardList': (query: DC.ApiMemberV1ActivityGetRewardListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedScrollResultResMemberRewardDto>
   /**
    * @summary 用户可领取中奖数量
    * @tags 活动
@@ -609,9 +553,7 @@ export interface APIGET {
    * @summary 地址详情
    * @tags 收货地址接口
    */
-  '/api/member/v1/address/getById': (
-    query: DC.ApiMemberV1AddressGetByIdGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResMemberAddressDto>
+  '/api/member/v1/address/getById': (query: DC.ApiMemberV1AddressGetByIdGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResMemberAddressDto>
   /**
    * @summary 默认收货地址
    * @tags 收货地址接口
@@ -626,9 +568,7 @@ export interface APIGET {
    * @summary 助力列表
    * @tags 助力
    */
-  '/api/member/v1/assist/getAssistList': (
-    query: DC.ApiMemberV1AssistGetAssistListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedScrollResultResMemberAssistDto>
+  '/api/member/v1/assist/getAssistList': (query: DC.ApiMemberV1AssistGetAssistListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedScrollResultResMemberAssistDto>
   /**
    * @summary 查询banner金刚区列表
    * @tags Banner
@@ -643,9 +583,7 @@ export interface APIGET {
    * @summary 根据keys查询，多个按逗号分割
    * @tags 系统配置
    */
-  '/api/member/v1/config/getByMultipleKey': (
-    query: DC.ApiMemberV1ConfigGetByMultipleKeyGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultMapStringString>
+  '/api/member/v1/config/getByMultipleKey': (query: DC.ApiMemberV1ConfigGetByMultipleKeyGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultMapStringString>
   /**
    * @summary 查询所有配置项
    * @tags 系统配置
@@ -665,9 +603,7 @@ export interface APIGET {
    * @summary 根据id查询联系人-1
    * @tags 常用联系人-1
    */
-  '/api/member/v1/frequentContacts/getById': (
-    query: DC.ApiMemberV1FrequentContactsGetByIdGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResFrequentContactsDto>
+  '/api/member/v1/frequentContacts/getById': (query: DC.ApiMemberV1FrequentContactsGetByIdGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResFrequentContactsDto>
   /**
    * @summary 判断用户手机号是否注册过
    * @tags 会员
@@ -687,9 +623,7 @@ export interface APIGET {
    * @summary 中奖名单-3
    * @tags 中奖记录-3
    */
-  '/api/member/v1/memberLottery/getLotteryMember': (
-    query: DC.ApiMemberV1MemberLotteryGetLotteryMemberGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResMemberLotteryDto>
+  '/api/member/v1/memberLottery/getLotteryMember': (query: DC.ApiMemberV1MemberLotteryGetLotteryMemberGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResMemberLotteryDto>
   /**
    * @summary 预约列表分页-1
    * @tags 预约记录-1
@@ -704,30 +638,22 @@ export interface APIGET {
    * @summary 查询核销信息-1
    * @tags 预约记录-1
    */
-  '/api/member/v1/orders/getOrderContacts': (
-    query: DC.ApiMemberV1OrdersGetOrderContactsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResOrderFrequentContactsDto>
+  '/api/member/v1/orders/getOrderContacts': (query: DC.ApiMemberV1OrdersGetOrderContactsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResOrderFrequentContactsDto>
   /**
    * @summary 核销详情-1
    * @tags 预约记录-1
    */
-  '/api/member/v1/orders/orderContactsDetail': (
-    query: DC.ApiMemberV1OrdersOrderContactsDetailGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResOrderFrequentContactsDto>
+  '/api/member/v1/orders/orderContactsDetail': (query: DC.ApiMemberV1OrdersOrderContactsDetailGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResOrderFrequentContactsDto>
   /**
    * @summary 核销预约列表分页-1
    * @tags 预约记录-1
    */
-  '/api/member/v1/orders/pageContacts': (
-    query: DC.ApiMemberV1OrdersPageContactsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedScrollResultResOrderFrequentContactsDto>
+  '/api/member/v1/orders/pageContacts': (query: DC.ApiMemberV1OrdersPageContactsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedScrollResultResOrderFrequentContactsDto>
   /**
    * @summary 票务活动数据统计-1
    * @tags 预约记录-1
    */
-  '/api/member/v1/orders/statistics': (
-    query: DC.ApiMemberV1OrdersStatisticsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResOrdersstatisticsDto>
+  '/api/member/v1/orders/statistics': (query: DC.ApiMemberV1OrdersStatisticsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResOrdersstatisticsDto>
   /**
    * @summary 获取自定义页面内容
    * @tags 自定义页面
@@ -845,9 +771,7 @@ export interface APIPOST {
    * @summary 修改轮次状态-3
    * @tags 投票轮次 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotesTurm/updateStatus': (
-    body: DC.ReqActivityPlayVotesTurmUpdateStatusDto & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlayVotesTurm/updateStatus': (body: DC.ReqActivityPlayVotesTurmUpdateStatusDto & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 添加
    * @tags banner
@@ -1022,9 +946,7 @@ export interface APIPOST {
    * @summary 修改票务玩法-1
    * @tags 票务玩法配置 管理接口-1
    */
-  '/api/sys/v1/ticketingConfig/updateTicketingConfig': (
-    body: DC.ReqPlayTicketingAddOrUpdateDto & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/ticketingConfig/updateTicketingConfig': (body: DC.ReqPlayTicketingAddOrUpdateDto & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 添加
    * @tags 用户
@@ -1099,10 +1021,7 @@ export interface APIPOST {
    * @summary 根据经纬度计算是否在范围内-3
    * @tags 用户地址授权 管理接口
    */
-  '/api/member/v1/memberAddressAuthorize/add': (option: {
-    query: DC.ApiMemberV1MemberAddressAuthorizeAddPostParams
-    requestConfig?: RequestConfig
-  }) => Promise<DC.JsonResultVoid>
+  '/api/member/v1/memberAddressAuthorize/add': (option: { query: DC.ApiMemberV1MemberAddressAuthorizeAddPostParams; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 取消预约-1
    * @tags 预约记录-1
@@ -1127,9 +1046,7 @@ export interface APIPOST {
    * @summary 验证邀请码-1
    * @tags 预约记录-1
    */
-  '/api/member/v1/orders/verifyInvitationCode': (
-    body: DC.ReqVerifyInvitationCodeDto & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResInvitationCodeDto>
+  '/api/member/v1/orders/verifyInvitationCode': (body: DC.ReqVerifyInvitationCodeDto & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResInvitationCodeDto>
   /**
    * @summary 核销-1
    * @tags 预约记录-1
@@ -1149,10 +1066,7 @@ export interface APIPOST {
    * @summary 订阅-3
    * @tags 投票记录 管理接口
    */
-  '/api/member/v1/votesRecord/update': (option: {
-    query: DC.ApiMemberV1VotesRecordUpdatePostParams
-    requestConfig?: RequestConfig
-  }) => Promise<DC.JsonResultLong>
+  '/api/member/v1/votesRecord/update': (option: { query: DC.ApiMemberV1VotesRecordUpdatePostParams; requestConfig?: RequestConfig }) => Promise<DC.JsonResultLong>
   /**
    * @summary 统一登录
    * @tags public/授权, 账号/手机号 登录 Api
@@ -1356,37 +1270,27 @@ export interface APIPUT {
    * @summary 编辑
    * @tags 活动玩法绑定表 管理接口-3
    */
-  '/api/sys/v1/activityPlay/update/{id}': (
-    body: DC.ReqActivityPlayUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlay/update/{id}': (body: DC.ReqActivityPlayUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 编辑
    * @tags 活动玩法中奖商品 管理接口
    */
-  '/api/sys/v1/activityPlayGoods/update/{id}': (
-    body: DC.ReqActivityPlayGoodsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlayGoods/update/{id}': (body: DC.ReqActivityPlayGoodsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 编辑
    * @tags 活动玩法任务 管理接口
    */
-  '/api/sys/v1/activityPlayTask/update/{id}': (
-    body: DC.ReqActivityPlayTaskUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlayTask/update/{id}': (body: DC.ReqActivityPlayTaskUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 编辑
    * @tags 活动玩法投票规则 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotes/update/{id}': (
-    body: DC.ReqActivityPlayVotesUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlayVotes/update/{id}': (body: DC.ReqActivityPlayVotesUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 编辑
    * @tags 投票轮次 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotesTurm/update/{id}': (
-    body: DC.ReqActivityPlayVotesTurmUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlayVotesTurm/update/{id}': (body: DC.ReqActivityPlayVotesTurmUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 编辑
    * @tags banner
@@ -1406,9 +1310,7 @@ export interface APIPUT {
    * @summary 编辑
    * @tags 常用联系人 管理接口-1
    */
-  '/api/sys/v1/frequentContacts/update/{id}': (
-    body: DC.ReqFrequentContactsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/frequentContacts/update/{id}': (body: DC.ReqFrequentContactsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 编辑
    * @tags 权益表(奖品商品) 管理接口
@@ -1418,9 +1320,7 @@ export interface APIPUT {
    * @summary 编辑
    * @tags 邀请码 管理接口-1
    */
-  '/api/sys/v1/invitationCode/update/{id}': (
-    body: DC.ReqInvitationCodeUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/invitationCode/update/{id}': (body: DC.ReqInvitationCodeUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 移动
    * @tags 素材库
@@ -1435,16 +1335,12 @@ export interface APIPUT {
    * @summary 编辑
    * @tags 素材库分组
    */
-  '/api/sys/v1/material/group/update/{id}': (
-    body: DC.MaterialGroupUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/material/group/update/{id}': (body: DC.MaterialGroupUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 编辑
    * @tags 用户抽奖记录 管理接口
    */
-  '/api/sys/v1/memberLottery/update/{id}': (
-    body: DC.ReqMemberLotteryUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/memberLottery/update/{id}': (body: DC.ReqMemberLotteryUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 编辑
    * @tags 票务预约记录 管理接口-1
@@ -1499,9 +1395,7 @@ export interface APIPUT {
    * @summary 编辑
    * @tags 票务玩法配置 管理接口-1
    */
-  '/api/sys/v1/ticketingConfig/update/{id}': (
-    body: DC.ReqTicketingConfigUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/ticketingConfig/update/{id}': (body: DC.ReqTicketingConfigUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 修改当前用户密码
    * @tags 用户
@@ -1526,9 +1420,7 @@ export interface APIPUT {
    * @summary 编辑
    * @tags 投票记录 管理接口-3
    */
-  '/api/sys/v1/votesRecord/update/{id}': (
-    body: DC.ReqVotesRecordUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/votesRecord/update/{id}': (body: DC.ReqVotesRecordUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 编辑
    * @tags 票务核销人员关联表 管理接口-1
@@ -1548,10 +1440,7 @@ export interface APIPUT {
    * @summary 保存用户信息（昵称、头像）
    * @tags 会员
    */
-  '/api/member/v1/member/saveUserInfo': (option: {
-    query: DC.ApiMemberV1MemberSaveUserInfoPutParams
-    requestConfig?: RequestConfig
-  }) => Promise<DC.JsonResultVoid>
+  '/api/member/v1/member/saveUserInfo': (option: { query: DC.ApiMemberV1MemberSaveUserInfoPutParams; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @summary 用户修改手机号
    * @tags 会员
@@ -1673,9 +1562,7 @@ export interface API {
    * @summary 编辑
    * @tags 活动主表 管理接口
    */
-  '/api/sys/v1/activity/update/{id}_PUT': (
-    body: DC.ReqActivityUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activity/update/{id}_PUT': (body: DC.ReqActivityUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.put方式调用
    * @summary 活动修改状态
@@ -1711,25 +1598,19 @@ export interface API {
    * @summary 新分页查询
    * @tags 活动玩法绑定表 管理接口-3
    */
-  '/api/sys/v1/activityPlay/list_GET': (
-    query: DC.ApiSysV1ActivityPlayListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayDto>
+  '/api/sys/v1/activityPlay/list_GET': (query: DC.ApiSysV1ActivityPlayListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 玩法票档-1
    * @tags 活动玩法绑定表 管理接口-3
    */
-  '/api/sys/v1/activityPlay/queryFile_GET': (
-    query: DC.ApiSysV1ActivityPlayQueryFileGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResActivityPlayTicketingFilesDto>
+  '/api/sys/v1/activityPlay/queryFile_GET': (query: DC.ApiSysV1ActivityPlayQueryFileGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResActivityPlayTicketingFilesDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.put方式调用
    * @summary 编辑
    * @tags 活动玩法绑定表 管理接口-3
    */
-  '/api/sys/v1/activityPlay/update/{id}_PUT': (
-    body: DC.ReqActivityPlayUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlay/update/{id}_PUT': (body: DC.ReqActivityPlayUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 修改活动玩法详情-3
@@ -1741,9 +1622,7 @@ export interface API {
    * @summary 分页查询
    * @tags 活动玩法中奖商品 管理接口
    */
-  '/api/sys/v1/activityPlayGoods_GET': (
-    query: DC.ApiSysV1ActivityPlayGoodsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayGoodsDto>
+  '/api/sys/v1/activityPlayGoods_GET': (query: DC.ApiSysV1ActivityPlayGoodsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayGoodsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 添加
@@ -1767,17 +1646,13 @@ export interface API {
    * @summary 编辑
    * @tags 活动玩法中奖商品 管理接口
    */
-  '/api/sys/v1/activityPlayGoods/update/{id}_PUT': (
-    body: DC.ReqActivityPlayGoodsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlayGoods/update/{id}_PUT': (body: DC.ReqActivityPlayGoodsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
    * @tags 活动玩法任务 管理接口
    */
-  '/api/sys/v1/activityPlayTask_GET': (
-    query: DC.ApiSysV1ActivityPlayTaskGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayTaskDto>
+  '/api/sys/v1/activityPlayTask_GET': (query: DC.ApiSysV1ActivityPlayTaskGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayTaskDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 添加
@@ -1801,17 +1676,13 @@ export interface API {
    * @summary 编辑
    * @tags 活动玩法任务 管理接口
    */
-  '/api/sys/v1/activityPlayTask/update/{id}_PUT': (
-    body: DC.ReqActivityPlayTaskUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlayTask/update/{id}_PUT': (body: DC.ReqActivityPlayTaskUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
    * @tags 活动玩法投票规则 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotes_GET': (
-    query: DC.ApiSysV1ActivityPlayVotesGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayVotesDto>
+  '/api/sys/v1/activityPlayVotes_GET': (query: DC.ApiSysV1ActivityPlayVotesGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayVotesDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 添加
@@ -1835,9 +1706,7 @@ export interface API {
    * @summary 编辑
    * @tags 活动玩法投票规则 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotes/update/{id}_PUT': (
-    body: DC.ReqActivityPlayVotesUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlayVotes/update/{id}_PUT': (body: DC.ReqActivityPlayVotesUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 揭晓获胜队伍-3
@@ -1849,9 +1718,7 @@ export interface API {
    * @summary 分页查询
    * @tags 投票轮次 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotesTurm_GET': (
-    query: DC.ApiSysV1ActivityPlayVotesTurmGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResActivityPlayVotesTurmDto>
+  '/api/sys/v1/activityPlayVotesTurm_GET': (query: DC.ApiSysV1ActivityPlayVotesTurmGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResActivityPlayVotesTurmDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 添加
@@ -1869,9 +1736,7 @@ export interface API {
    * @summary 简要信息
    * @tags 投票轮次 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotesTurm/get/{id}_GET': (
-    query: { id: number } & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResActivityPlayVotesTurmDto>
+  '/api/sys/v1/activityPlayVotesTurm/get/{id}_GET': (query: { id: number } & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResActivityPlayVotesTurmDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 查询-3
@@ -1885,25 +1750,19 @@ export interface API {
    * @summary 编辑
    * @tags 投票轮次 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotesTurm/update/{id}_PUT': (
-    body: DC.ReqActivityPlayVotesTurmUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlayVotesTurm/update/{id}_PUT': (body: DC.ReqActivityPlayVotesTurmUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 修改轮次状态-3
    * @tags 投票轮次 管理接口-3
    */
-  '/api/sys/v1/activityPlayVotesTurm/updateStatus_POST': (
-    body: DC.ReqActivityPlayVotesTurmUpdateStatusDto & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/activityPlayVotesTurm/updateStatus_POST': (body: DC.ReqActivityPlayVotesTurmUpdateStatusDto & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 地址列表
    * @tags 收货地址接口
    */
-  '/api/sys/v1/address/getList_GET': (
-    query: DC.ApiSysV1AddressGetListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResMemberAddressDto>
+  '/api/sys/v1/address/getList_GET': (query: DC.ApiSysV1AddressGetListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResMemberAddressDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
@@ -1963,9 +1822,7 @@ export interface API {
    * @summary 根据多个键值查询，多个按逗号分割
    * @tags 系统配置
    */
-  '/api/sys/v1/config/queryByMultipleKey_GET': (
-    query: DC.ApiSysV1ConfigQueryByMultipleKeyGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultMapStringString>
+  '/api/sys/v1/config/queryByMultipleKey_GET': (query: DC.ApiSysV1ConfigQueryByMultipleKeyGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultMapStringString>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
@@ -1995,9 +1852,7 @@ export interface API {
    * @summary 编辑
    * @tags 内容管理 管理接口
    */
-  '/api/sys/v1/contents/update/{id}_PUT': (
-    body: DC.ReqContentsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/contents/update/{id}_PUT': (body: DC.ReqContentsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 修改
@@ -2009,9 +1864,7 @@ export interface API {
    * @summary 分页查询
    * @tags 常用联系人 管理接口-1
    */
-  '/api/sys/v1/frequentContacts_GET': (
-    query: DC.ApiSysV1FrequentContactsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResFrequentContactsDto>
+  '/api/sys/v1/frequentContacts_GET': (query: DC.ApiSysV1FrequentContactsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResFrequentContactsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 添加
@@ -2035,9 +1888,7 @@ export interface API {
    * @summary 编辑
    * @tags 常用联系人 管理接口-1
    */
-  '/api/sys/v1/frequentContacts/update/{id}_PUT': (
-    body: DC.ReqFrequentContactsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/frequentContacts/update/{id}_PUT': (body: DC.ReqFrequentContactsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
@@ -2085,17 +1936,13 @@ export interface API {
    * @summary 状态变更
    * @tags 权益表(奖品商品) 管理接口
    */
-  '/api/sys/v1/goods/{id}/changeStatus_POST': (
-    body: DC.PublicStatusDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/goods/{id}/changeStatus_POST': (body: DC.PublicStatusDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
    * @tags 邀请码 管理接口-1
    */
-  '/api/sys/v1/invitationCode_GET': (
-    query: DC.ApiSysV1InvitationCodeGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResInvitationCodeDto>
+  '/api/sys/v1/invitationCode_GET': (query: DC.ApiSysV1InvitationCodeGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResInvitationCodeDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 添加
@@ -2131,9 +1978,7 @@ export interface API {
    * @summary 编辑
    * @tags 邀请码 管理接口-1
    */
-  '/api/sys/v1/invitationCode/update/{id}_PUT': (
-    body: DC.ReqInvitationCodeUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/invitationCode/update/{id}_PUT': (body: DC.ReqInvitationCodeUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
@@ -2199,17 +2044,13 @@ export interface API {
    * @summary 树列表
    * @tags 素材库分组
    */
-  '/api/sys/v1/material/group/tree_GET': (
-    query: DC.ApiSysV1MaterialGroupTreeGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListTreeLong>
+  '/api/sys/v1/material/group/tree_GET': (query: DC.ApiSysV1MaterialGroupTreeGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListTreeLong>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.put方式调用
    * @summary 编辑
    * @tags 素材库分组
    */
-  '/api/sys/v1/material/group/update/{id}_PUT': (
-    body: DC.MaterialGroupUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/material/group/update/{id}_PUT': (body: DC.MaterialGroupUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询-1
@@ -2257,9 +2098,7 @@ export interface API {
    * @summary 状态变更
    * @tags 会员
    */
-  '/api/sys/v1/member/{id}/changeStatus_POST': (
-    body: DC.PublicStatusDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/member/{id}/changeStatus_POST': (body: DC.PublicStatusDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 压测
@@ -2271,9 +2110,7 @@ export interface API {
    * @summary 分页查询
    * @tags 用户抽奖记录 管理接口
    */
-  '/api/sys/v1/memberLottery_GET': (
-    query: DC.ApiSysV1MemberLotteryGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResMemberLotteryDto>
+  '/api/sys/v1/memberLottery_GET': (query: DC.ApiSysV1MemberLotteryGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResMemberLotteryDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 添加
@@ -2297,9 +2134,7 @@ export interface API {
    * @summary 导出
    * @tags 用户抽奖记录 管理接口
    */
-  '/api/sys/v1/memberLottery/exportMember_GET': (
-    query: DC.ApiSysV1MemberLotteryExportMemberGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.CharSequence>
+  '/api/sys/v1/memberLottery/exportMember_GET': (query: DC.ApiSysV1MemberLotteryExportMemberGetParams & { requestConfig?: RequestConfig }) => Promise<DC.CharSequence>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 简要信息
@@ -2323,9 +2158,7 @@ export interface API {
    * @summary 编辑
    * @tags 用户抽奖记录 管理接口
    */
-  '/api/sys/v1/memberLottery/update/{id}_PUT': (
-    body: DC.ReqMemberLotteryUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/memberLottery/update/{id}_PUT': (body: DC.ReqMemberLotteryUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 修改发货
@@ -2337,9 +2170,7 @@ export interface API {
    * @summary 中奖名单-3
    * @tags 用户抽奖记录 管理接口
    */
-  '/api/sys/v1/memberLottery/lotteryMember_POST': (
-    body: DC.ReqActivityPlayVotesWinDto & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListMemberDto>
+  '/api/sys/v1/memberLottery/lotteryMember_POST': (body: DC.ReqActivityPlayVotesWinDto & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListMemberDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 消息-3
@@ -2351,9 +2182,7 @@ export interface API {
    * @summary 分页查询
    * @tags 操作日志
    */
-  '/api/sys/v1/operationLog_GET': (
-    query: DC.ApiSysV1OperationLogGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultReqOperateLogsDTO>
+  '/api/sys/v1/operationLog_GET': (query: DC.ApiSysV1OperationLogGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultReqOperateLogsDTO>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
@@ -2371,9 +2200,7 @@ export interface API {
    * @summary 参与人订单查询-1
    * @tags 票务预约记录 管理接口-1
    */
-  '/api/sys/v1/orders/contactsOrder_GET': (
-    query: DC.ApiSysV1OrdersContactsOrderGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResOrderFrequentContactsDto>
+  '/api/sys/v1/orders/contactsOrder_GET': (query: DC.ApiSysV1OrdersContactsOrderGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResOrderFrequentContactsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.delete方式调用
    * @summary 删除
@@ -2397,17 +2224,13 @@ export interface API {
    * @summary 票务核销明细导出-1
    * @tags 票务预约记录 管理接口-1
    */
-  '/api/sys/v1/orders/exportContactsAll_GET': (
-    query: DC.ApiSysV1OrdersExportContactsAllGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.CharSequence>
+  '/api/sys/v1/orders/exportContactsAll_GET': (query: DC.ApiSysV1OrdersExportContactsAllGetParams & { requestConfig?: RequestConfig }) => Promise<DC.CharSequence>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 参与人订单导出-1
    * @tags 票务预约记录 管理接口-1
    */
-  '/api/sys/v1/orders/exportContactsList_GET': (
-    query: DC.ApiSysV1OrdersExportContactsListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.CharSequence>
+  '/api/sys/v1/orders/exportContactsList_GET': (query: DC.ApiSysV1OrdersExportContactsListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.CharSequence>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 简要信息
@@ -2419,25 +2242,19 @@ export interface API {
    * @summary 预约详情-1
    * @tags 票务预约记录 管理接口-1
    */
-  '/api/sys/v1/orders/getContactsByOrderId_GET': (
-    query: DC.ApiSysV1OrdersGetContactsByOrderIdGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResOrderFrequentContactsDto>
+  '/api/sys/v1/orders/getContactsByOrderId_GET': (query: DC.ApiSysV1OrdersGetContactsByOrderIdGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResOrderFrequentContactsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 查询核销信息-1
    * @tags 票务预约记录 管理接口-1
    */
-  '/api/sys/v1/orders/getOrderContacts_GET': (
-    query: DC.ApiSysV1OrdersGetOrderContactsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResOrderFrequentContactsDto>
+  '/api/sys/v1/orders/getOrderContacts_GET': (query: DC.ApiSysV1OrdersGetOrderContactsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResOrderFrequentContactsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 票务活动数据统计-1
    * @tags 票务预约记录 管理接口-1
    */
-  '/api/sys/v1/orders/statistics_GET': (
-    query: DC.ApiSysV1OrdersStatisticsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResOrdersstatisticsDto>
+  '/api/sys/v1/orders/statistics_GET': (query: DC.ApiSysV1OrdersStatisticsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResOrdersstatisticsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.put方式调用
    * @summary 编辑
@@ -2569,9 +2386,7 @@ export interface API {
    * @summary 编辑
    * @tags 玩法奖品 管理接口
    */
-  '/api/sys/v1/playGoods/update/{id}_PUT': (
-    body: DC.ReqPlayGoodsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/playGoods/update/{id}_PUT': (body: DC.ReqPlayGoodsUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
@@ -2601,9 +2416,7 @@ export interface API {
    * @summary 编辑
    * @tags 玩法任务 管理接口
    */
-  '/api/sys/v1/playTask/update/{id}_PUT': (
-    body: DC.ReqPlayTaskUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/playTask/update/{id}_PUT': (body: DC.ReqPlayTaskUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
@@ -2735,9 +2548,7 @@ export interface API {
    * @summary 分页查询
    * @tags 票务玩法配置 管理接口-1
    */
-  '/api/sys/v1/ticketingConfig_GET': (
-    query: DC.ApiSysV1TicketingConfigGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResTicketingConfigDto>
+  '/api/sys/v1/ticketingConfig_GET': (query: DC.ApiSysV1TicketingConfigGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResTicketingConfigDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 添加
@@ -2749,9 +2560,7 @@ export interface API {
    * @summary 新增票务玩法-1
    * @tags 票务玩法配置 管理接口-1
    */
-  '/api/sys/v1/ticketingConfig/addTicketingConfig_POST': (
-    body: DC.ReqPlayTicketingAddOrUpdateDto & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/ticketingConfig/addTicketingConfig_POST': (body: DC.ReqPlayTicketingAddOrUpdateDto & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.delete方式调用
    * @summary 删除
@@ -2769,25 +2578,19 @@ export interface API {
    * @summary 票务玩法详情-1
    * @tags 票务玩法配置 管理接口-1
    */
-  '/api/sys/v1/ticketingConfig/getTicketingPlayId_GET': (
-    query: DC.ApiSysV1TicketingConfigGetTicketingPlayIdGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResPlayTicketingDto>
+  '/api/sys/v1/ticketingConfig/getTicketingPlayId_GET': (query: DC.ApiSysV1TicketingConfigGetTicketingPlayIdGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResPlayTicketingDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.put方式调用
    * @summary 编辑
    * @tags 票务玩法配置 管理接口-1
    */
-  '/api/sys/v1/ticketingConfig/update/{id}_PUT': (
-    body: DC.ReqTicketingConfigUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/ticketingConfig/update/{id}_PUT': (body: DC.ReqTicketingConfigUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 修改票务玩法-1
    * @tags 票务玩法配置 管理接口-1
    */
-  '/api/sys/v1/ticketingConfig/updateTicketingConfig_POST': (
-    body: DC.ReqPlayTicketingAddOrUpdateDto & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/ticketingConfig/updateTicketingConfig_POST': (body: DC.ReqPlayTicketingAddOrUpdateDto & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
@@ -2907,9 +2710,7 @@ export interface API {
    * @summary 分页查询
    * @tags 投票记录 管理接口-3
    */
-  '/api/sys/v1/votesRecord_GET': (
-    query: DC.ApiSysV1VotesRecordGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultResVotesRecordDto>
+  '/api/sys/v1/votesRecord_GET': (query: DC.ApiSysV1VotesRecordGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultResVotesRecordDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 添加
@@ -2933,25 +2734,19 @@ export interface API {
    * @summary 抽奖用户名单-3
    * @tags 投票记录 管理接口-3
    */
-  '/api/sys/v1/votesRecord/lotteryList_GET': (
-    query: DC.ApiSysV1VotesRecordLotteryListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListMemberDto>
+  '/api/sys/v1/votesRecord/lotteryList_GET': (query: DC.ApiSysV1VotesRecordLotteryListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListMemberDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 投票统计-3
    * @tags 投票记录 管理接口-3
    */
-  '/api/sys/v1/votesRecord/statistics_GET': (
-    query: DC.ApiSysV1VotesRecordStatisticsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResVotesRecordStatisticsDto>
+  '/api/sys/v1/votesRecord/statistics_GET': (query: DC.ApiSysV1VotesRecordStatisticsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResVotesRecordStatisticsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.put方式调用
    * @summary 编辑
    * @tags 投票记录 管理接口-3
    */
-  '/api/sys/v1/votesRecord/update/{id}_PUT': (
-    body: DC.ReqVotesRecordUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/votesRecord/update/{id}_PUT': (body: DC.ReqVotesRecordUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 分页查询
@@ -2981,17 +2776,13 @@ export interface API {
    * @summary 可选择人员查询-1
    * @tags 票务核销人员关联表 管理接口-1
    */
-  '/api/sys/v1/writeOff/queryAllMember_GET': (
-    query: DC.ApiSysV1WriteOffQueryAllMemberGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedResultMemberDto>
+  '/api/sys/v1/writeOff/queryAllMember_GET': (query: DC.ApiSysV1WriteOffQueryAllMemberGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedResultMemberDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.put方式调用
    * @summary 编辑
    * @tags 票务核销人员关联表 管理接口-1
    */
-  '/api/sys/v1/writeOff/update/{id}_PUT': (
-    body: DC.ReqWriteOffUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/sys/v1/writeOff/update/{id}_PUT': (body: DC.ReqWriteOffUpdateDto & { query: { id: number }; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 获取活动详情内容
@@ -3003,9 +2794,7 @@ export interface API {
    * @summary 根据经纬度计算是否在范围内-3
    * @tags 活动
    */
-  '/api/member/v1/activity/addressDistance_GET': (
-    query: DC.ApiMemberV1ActivityAddressDistanceGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultBoolean>
+  '/api/member/v1/activity/addressDistance_GET': (query: DC.ApiMemberV1ActivityAddressDistanceGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultBoolean>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 完成活动
@@ -3017,33 +2806,25 @@ export interface API {
    * @summary 核销人员可核销活动-1
    * @tags 活动
    */
-  '/api/member/v1/activity/getActivityList_GET': (
-    query: DC.ApiMemberV1ActivityGetActivityListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResActivityDto>
+  '/api/member/v1/activity/getActivityList_GET': (query: DC.ApiMemberV1ActivityGetActivityListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResActivityDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 查询活动任务抽奖记录
    * @tags 活动
    */
-  '/api/member/v1/activity/getLotteryList_GET': (
-    query: DC.ApiMemberV1ActivityGetLotteryListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedScrollResultResMemberLotteryDto>
+  '/api/member/v1/activity/getLotteryList_GET': (query: DC.ApiMemberV1ActivityGetLotteryListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedScrollResultResMemberLotteryDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 最近中奖数据
    * @tags 活动
    */
-  '/api/member/v1/activity/getNowLottery_GET': (
-    query: DC.ApiMemberV1ActivityGetNowLotteryGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResMemberLotteryDto>
+  '/api/member/v1/activity/getNowLottery_GET': (query: DC.ApiMemberV1ActivityGetNowLotteryGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResMemberLotteryDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 任务资格明细
    * @tags 活动
    */
-  '/api/member/v1/activity/getRewardList_GET': (
-    query: DC.ApiMemberV1ActivityGetRewardListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedScrollResultResMemberRewardDto>
+  '/api/member/v1/activity/getRewardList_GET': (query: DC.ApiMemberV1ActivityGetRewardListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedScrollResultResMemberRewardDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 用户可领取中奖数量
@@ -3093,9 +2874,7 @@ export interface API {
    * @summary 地址详情
    * @tags 收货地址接口
    */
-  '/api/member/v1/address/getById_GET': (
-    query: DC.ApiMemberV1AddressGetByIdGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResMemberAddressDto>
+  '/api/member/v1/address/getById_GET': (query: DC.ApiMemberV1AddressGetByIdGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResMemberAddressDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 默认收货地址
@@ -3125,9 +2904,7 @@ export interface API {
    * @summary 助力列表
    * @tags 助力
    */
-  '/api/member/v1/assist/getAssistList_GET': (
-    query: DC.ApiMemberV1AssistGetAssistListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedScrollResultResMemberAssistDto>
+  '/api/member/v1/assist/getAssistList_GET': (query: DC.ApiMemberV1AssistGetAssistListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedScrollResultResMemberAssistDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 查询banner金刚区列表
@@ -3145,9 +2922,7 @@ export interface API {
    * @summary 根据keys查询，多个按逗号分割
    * @tags 系统配置
    */
-  '/api/member/v1/config/getByMultipleKey_GET': (
-    query: DC.ApiMemberV1ConfigGetByMultipleKeyGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultMapStringString>
+  '/api/member/v1/config/getByMultipleKey_GET': (query: DC.ApiMemberV1ConfigGetByMultipleKeyGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultMapStringString>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 查询所有配置项
@@ -3159,9 +2934,7 @@ export interface API {
    * @summary 所有内容
    * @tags 内容管理 管理接口
    */
-  '/api/member/v1/contents/list_GET': (
-    query: DC.ApiMemberV1ContentsListGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultListResContentsDto>
+  '/api/member/v1/contents/list_GET': (query: DC.ApiMemberV1ContentsListGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultListResContentsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 查询联系人-1
@@ -3185,25 +2958,19 @@ export interface API {
    * @summary 删除联系人-1
    * @tags 常用联系人-1
    */
-  '/api/member/v1/frequentContacts_DELETE': (
-    query: DC.ApiMemberV1FrequentContactsDeleteParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/member/v1/frequentContacts_DELETE': (query: DC.ApiMemberV1FrequentContactsDeleteParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 根据id查询联系人-1
    * @tags 常用联系人-1
    */
-  '/api/member/v1/frequentContacts/getById_GET': (
-    query: DC.ApiMemberV1FrequentContactsGetByIdGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResFrequentContactsDto>
+  '/api/member/v1/frequentContacts/getById_GET': (query: DC.ApiMemberV1FrequentContactsGetByIdGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResFrequentContactsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 判断用户手机号是否注册过
    * @tags 会员
    */
-  '/api/member/v1/member/existMobile_GET': (
-    query: DC.ApiMemberV1MemberExistMobileGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultBoolean>
+  '/api/member/v1/member/existMobile_GET': (query: DC.ApiMemberV1MemberExistMobileGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultBoolean>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 会员详情
@@ -3227,10 +2994,7 @@ export interface API {
    * @summary 保存用户信息（昵称、头像）
    * @tags 会员
    */
-  '/api/member/v1/member/saveUserInfo_PUT': (option: {
-    query: DC.ApiMemberV1MemberSaveUserInfoPutParams
-    requestConfig?: RequestConfig
-  }) => Promise<DC.JsonResultVoid>
+  '/api/member/v1/member/saveUserInfo_PUT': (option: { query: DC.ApiMemberV1MemberSaveUserInfoPutParams; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.put方式调用
    * @summary 用户修改手机号
@@ -3242,10 +3006,7 @@ export interface API {
    * @summary 根据经纬度计算是否在范围内-3
    * @tags 用户地址授权 管理接口
    */
-  '/api/member/v1/memberAddressAuthorize/add_POST': (option: {
-    query: DC.ApiMemberV1MemberAddressAuthorizeAddPostParams
-    requestConfig?: RequestConfig
-  }) => Promise<DC.JsonResultVoid>
+  '/api/member/v1/memberAddressAuthorize/add_POST': (option: { query: DC.ApiMemberV1MemberAddressAuthorizeAddPostParams; requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 中奖名单-3
@@ -3277,33 +3038,25 @@ export interface API {
    * @summary 查询核销信息-1
    * @tags 预约记录-1
    */
-  '/api/member/v1/orders/getOrderContacts_GET': (
-    query: DC.ApiMemberV1OrdersGetOrderContactsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResOrderFrequentContactsDto>
+  '/api/member/v1/orders/getOrderContacts_GET': (query: DC.ApiMemberV1OrdersGetOrderContactsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResOrderFrequentContactsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 核销详情-1
    * @tags 预约记录-1
    */
-  '/api/member/v1/orders/orderContactsDetail_GET': (
-    query: DC.ApiMemberV1OrdersOrderContactsDetailGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResOrderFrequentContactsDto>
+  '/api/member/v1/orders/orderContactsDetail_GET': (query: DC.ApiMemberV1OrdersOrderContactsDetailGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResOrderFrequentContactsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 核销预约列表分页-1
    * @tags 预约记录-1
    */
-  '/api/member/v1/orders/pageContacts_GET': (
-    query: DC.ApiMemberV1OrdersPageContactsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultPagedScrollResultResOrderFrequentContactsDto>
+  '/api/member/v1/orders/pageContacts_GET': (query: DC.ApiMemberV1OrdersPageContactsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultPagedScrollResultResOrderFrequentContactsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 票务活动数据统计-1
    * @tags 预约记录-1
    */
-  '/api/member/v1/orders/statistics_GET': (
-    query: DC.ApiMemberV1OrdersStatisticsGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResOrdersstatisticsDto>
+  '/api/member/v1/orders/statistics_GET': (query: DC.ApiMemberV1OrdersStatisticsGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResOrdersstatisticsDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 提交预约-1
@@ -3327,9 +3080,7 @@ export interface API {
    * @summary 验证邀请码-1
    * @tags 预约记录-1
    */
-  '/api/member/v1/orders/verifyInvitationCode_POST': (
-    body: DC.ReqVerifyInvitationCodeDto & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultResInvitationCodeDto>
+  '/api/member/v1/orders/verifyInvitationCode_POST': (body: DC.ReqVerifyInvitationCodeDto & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultResInvitationCodeDto>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 核销-1
@@ -3365,9 +3116,7 @@ export interface API {
    * @summary 验证短信验证码
    * @tags 短信服务
    */
-  '/api/member/v1/sms/verificationCode_GET': (
-    query: DC.ApiMemberV1SmsVerificationCodeGetParams & { requestConfig?: RequestConfig }
-  ) => Promise<DC.JsonResultVoid>
+  '/api/member/v1/sms/verificationCode_GET': (query: DC.ApiMemberV1SmsVerificationCodeGetParams & { requestConfig?: RequestConfig }) => Promise<DC.JsonResultVoid>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 获取订阅关系
@@ -3385,19 +3134,13 @@ export interface API {
    * @summary 投票-3
    * @tags 投票记录 管理接口
    */
-  '/api/member/v1/votesRecord/add_POST': (option: {
-    query: DC.ApiMemberV1VotesRecordAddPostParams
-    requestConfig?: RequestConfig
-  }) => Promise<DC.JsonResultLong>
+  '/api/member/v1/votesRecord/add_POST': (option: { query: DC.ApiMemberV1VotesRecordAddPostParams; requestConfig?: RequestConfig }) => Promise<DC.JsonResultLong>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.post方式调用
    * @summary 订阅-3
    * @tags 投票记录 管理接口
    */
-  '/api/member/v1/votesRecord/update_POST': (option: {
-    query: DC.ApiMemberV1VotesRecordUpdatePostParams
-    requestConfig?: RequestConfig
-  }) => Promise<DC.JsonResultLong>
+  '/api/member/v1/votesRecord/update_POST': (option: { query: DC.ApiMemberV1VotesRecordUpdatePostParams; requestConfig?: RequestConfig }) => Promise<DC.JsonResultLong>
   /**
    * @deprecated 此调用方式已废弃且会在下个主版本移除。请使用api.get方式调用
    * @summary 未命名接口

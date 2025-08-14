@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import Navigation from '~/layout/navigation/Navigation.vue';
-import PageContainer from '~/layout/pageContainer/PageContainer.vue';
-import { ResActivityPlayGoodsDto } from '~/request/data-contracts';
-import Item from './components/item/Item.vue';
-import { ref } from 'vue';
+import Navigation from '~/layout/navigation/Navigation.vue'
+import PageContainer from '~/layout/pageContainer/PageContainer.vue'
+import { ResActivityPlayGoodsDto } from '~/request/data-contracts'
+import Item from './components/item/Item.vue'
+import { ref } from 'vue'
 
-const detail = ref<ResActivityPlayGoodsDto>();
+const detail = ref<ResActivityPlayGoodsDto>()
 
 const onChange = () => {
-  detail.value = { id: 1 };
-};
+  detail.value = { id: 1 }
+}
 </script>
 
 <template>

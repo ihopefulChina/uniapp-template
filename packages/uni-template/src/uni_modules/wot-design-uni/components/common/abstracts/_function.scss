@@ -81,7 +81,7 @@ $default-theme: #4d80f0 !default; // 正常色
   $arg: $deg;
 
   @for $i from 1 through $len {
-    $arg: $arg + ","+ themeColor($theme-color, nth($set, $i), nth($color-list, $i)) + " "+ nth($per-list, $i);
+    $arg: $arg + "," + themeColor($theme-color, nth($set, $i), nth($color-list, $i)) + " " + nth($per-list, $i);
   }
 
   @return linear-gradient(unquote($arg));

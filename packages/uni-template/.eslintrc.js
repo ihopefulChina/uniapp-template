@@ -1,26 +1,69 @@
 module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
+  },
   globals: {
     uni: 'readonly',
     getCurrentPages: 'readonly',
     UniNamespace: 'readonly',
     plus: 'readonly'
   },
-  extends: [
-    // add more generic rulesets here, such as:
-    // 'eslint:recommended',
-    'plugin:vue/vue3-recommended'
-    // 'plugin:vue/recommended' // Use this if you are using Vue.js 2.x.
-  ],
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser'
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2021,
+    sourceType: 'module'
   },
+  extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
 
   rules: {
-    'vue/attribute-hyphenation': 'off',
-    'vue/multi-word-component-names': 0,
-    'vue/max-attributes-per-line': 0,
-    // override/add rules settings here, such as:
-    'vue/no-unused-vars': 'error'
+    // ---- Vue 模板相关 ----
+    'vue/html-indent': [
+      'error',
+      2,
+      {
+        // 缩进 2 空格
+        attribute: 1,
+        baseIndent: 1,
+        closeBracket: 0,
+        alignAttributesVertically: true
+      }
+    ],
+    'vue/first-attribute-linebreak': [
+      'error',
+      {
+        singleline: 'ignore',
+        multiline: 'below'
+      }
+    ],
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: 3,
+        multiline: { max: 1, allowFirstLine: false }
+      }
+    ],
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
+
+    // ---- TS & 代码风格 ----
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+
+    // ---- Prettier 相关 ----
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        semi: false,
+        trailingComma: 'none',
+        printWidth: 160,
+        tabWidth: 2,
+        endOfLine: 'auto'
+      }
+    ]
   }
 }

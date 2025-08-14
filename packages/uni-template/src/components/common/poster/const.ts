@@ -70,12 +70,32 @@ export interface MMPosterImageData {
   }
 }
 
-export type MMPosterData = MMPosterTextData | MMPosterImageData | MMPosterListData | MMPosterRectData
+export type MMPosterData =
+  | MMPosterTextData
+  | MMPosterImageData
+  | MMPosterListData
+  | MMPosterRectData
 export type MMPosterDataArray = MMPosterData[]
 
-type TypeGenImageFunc = (src: string, top: number, left: number, width: number, height: number, opts?: { [key: string]: any }, crop?: any) => MMPosterData
+type TypeGenImageFunc = (
+  src: string,
+  top: number,
+  left: number,
+  width: number,
+  height: number,
+  opts?: { [key: string]: any },
+  crop?: any
+) => MMPosterData
 // eslint-disable-next-line max-params
-export const genImage: TypeGenImageFunc = (src, top, left, width, height, opts = {}, crop?: any) => ({
+export const genImage: TypeGenImageFunc = (
+  src,
+  top,
+  left,
+  width,
+  height,
+  opts = {},
+  crop?: any
+) => ({
   type: MMPosterType.Image,
   value: src,
   crop,
@@ -88,7 +108,14 @@ export const genImage: TypeGenImageFunc = (src, top, left, width, height, opts =
   }
 })
 
-type TypeGenRectFunc = (top: number, left: number, width: number, height: number, backgroundColor: string, opts?: { [key: string]: any }) => MMPosterData
+type TypeGenRectFunc = (
+  top: number,
+  left: number,
+  width: number,
+  height: number,
+  backgroundColor: string,
+  opts?: { [key: string]: any }
+) => MMPosterData
 // eslint-disable-next-line max-params
 export const genRect: TypeGenRectFunc = (top, left, width, height, backgroundColor, opts = {}) => ({
   type: MMPosterType.Rect,
@@ -112,7 +139,15 @@ type TypeGenTextFunc = (
   opts?: { [key: string]: any }
 ) => MMPosterData
 // eslint-disable-next-line max-params
-export const genText: TypeGenTextFunc = (value, top, left, fontSize, color, isBold = false, opts = {}) => ({
+export const genText: TypeGenTextFunc = (
+  value,
+  top,
+  left,
+  fontSize,
+  color,
+  isBold = false,
+  opts = {}
+) => ({
   type: MMPosterType.Text,
   value,
   style: {

@@ -40,17 +40,19 @@
   >
     <view class="wd-button__content">
       <view v-if="loading" class="wd-button__loading">
-        <view class="wd-button__loading-svg" :style="loadingStyle"></view>
+        <view class="wd-button__loading-svg" :style="loadingStyle" />
       </view>
-      <wd-icon v-else-if="icon" custom-class="wd-button__icon" :name="icon" :classPrefix="classPrefix"></wd-icon>
-      <view class="wd-button__text"><slot /></view>
+      <wd-icon v-else-if="icon" custom-class="wd-button__icon" :name="icon" :classPrefix="classPrefix" />
+      <view class="wd-button__text">
+        <slot />
+      </view>
     </view>
   </button>
 </template>
 
 <script lang="ts">
 export default {
-  name: 'wd-button',
+  name: 'WdButton',
   options: {
     addGlobalClass: true,
     virtualHost: true,
@@ -60,10 +62,9 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import wdIcon from '../wd-icon/wd-icon.vue'
-import { computed, watch } from 'vue'
-import { ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import base64 from '../common/base64'
+import wdIcon from '../wd-icon/wd-icon.vue'
 import { buttonProps } from './types'
 
 const loadingIcon = (color = '#4D80F0', reverse = true) => {
@@ -76,17 +77,7 @@ const loadingIcon = (color = '#4D80F0', reverse = true) => {
   }"/><path d="M4.599 21c0 9.044 7.332 16.376 16.376 16.376 9.045 0 16.376-7.332 16.376-16.376" stroke="url(#a)" stroke-width="3.5" stroke-linecap="round"/></g></svg>`
 }
 const props = defineProps(buttonProps)
-const emit = defineEmits([
-  'click',
-  'getuserinfo',
-  'contact',
-  'getphonenumber',
-  'error',
-  'launchapp',
-  'opensetting',
-  'chooseavatar',
-  'agreeprivacyauthorization'
-])
+const emit = defineEmits(['click', 'getuserinfo', 'contact', 'getphonenumber', 'error', 'launchapp', 'opensetting', 'chooseavatar', 'agreeprivacyauthorization'])
 
 const hoverStartTime = ref<number>(20)
 const hoverStayTime = ref<number>(70)

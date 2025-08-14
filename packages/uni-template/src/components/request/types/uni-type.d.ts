@@ -1,5 +1,4 @@
 import { ICommoRequestConfig, IRequestOption } from '.'
-import { Method, RequestOptions, SuccessCallbackResult } from './request'
 
 // Uni Types
 export interface IUniRequestConfig extends Omit<UniNamespace.RequestOptions, 'header' | 'success' | 'fail'>, ICommoRequestConfig, IRequestOption {

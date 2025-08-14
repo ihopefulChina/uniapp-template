@@ -9,11 +9,7 @@ import { extendByOwnPropertyNames, extend } from '../core/utils'
  *
  * @param config 创建实例
  */
-export function createInstance<C extends IRequestOption | IUniRequestConfig, R extends typeof FetchRequest | typeof UniRequest>(
-  config: C,
-  Request: R,
-  ignores: string[] = []
-) {
+export function createInstance<C extends IRequestOption | IUniRequestConfig, R extends typeof FetchRequest | typeof UniRequest>(config: C, Request: R, ignores: string[] = []) {
   const context = new Request(config as any)
   const instance = bind(Request.prototype.request, context)
 

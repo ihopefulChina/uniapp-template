@@ -1,11 +1,7 @@
 <template>
   <view :class="['wd-badge', customClass]" :style="customStyle">
     <slot></slot>
-    <view
-      v-if="shouldShowBadge"
-      :class="['wd-badge__content', 'is-fixed', type ? 'wd-badge__content--' + type : '', isDot ? 'is-dot' : '']"
-      :style="contentStyle"
-    >
+    <view v-if="shouldShowBadge" :class="['wd-badge__content', 'is-fixed', type ? 'wd-badge__content--' + type : '', isDot ? 'is-dot' : '']" :style="contentStyle">
       {{ content }}
     </view>
   </view>

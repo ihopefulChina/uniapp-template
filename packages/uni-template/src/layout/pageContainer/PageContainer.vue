@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-import { CSSProperties } from 'vue';
-import WdMessageBox from '~/uni_modules/wot-design-uni/components/wd-message-box/wd-message-box.vue';
-import WdToast from '~/uni_modules/wot-design-uni/components/wd-toast/wd-toast.vue';
+import { CSSProperties } from 'vue'
+import WdMessageBox from '~/uni_modules/wot-design-uni/components/wd-message-box/wd-message-box.vue'
+import WdToast from '~/uni_modules/wot-design-uni/components/wd-toast/wd-toast.vue'
 
 interface IPageContainerProps {
   /** 是否是tabbar页面 */
-  isTab?: boolean;
-  styles?: CSSProperties | string;
-  className?: string;
+  isTab?: boolean
+  styles?: CSSProperties | string
+  className?: string
 }
 
 /** 父传子参数 */
-const props = defineProps<IPageContainerProps>();
+const props = defineProps<IPageContainerProps>()
 </script>
 
 <template>

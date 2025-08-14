@@ -1,56 +1,56 @@
 <script lang="ts" setup>
-import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app';
-import { computed, toRefs } from 'vue';
-import WdLoadmore from '~/uni_modules/wot-design-uni/components/wd-loadmore/wd-loadmore.vue';
-import { MMPullToRefreshState } from './const';
+import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
+import { computed, toRefs } from 'vue'
+import WdLoadmore from '~/uni_modules/wot-design-uni/components/wd-loadmore/wd-loadmore.vue'
+import { MMPullToRefreshState } from './const'
 
 export interface IMMPullToRefreshProps {
-  state: MMPullToRefreshState;
+  state: MMPullToRefreshState
   /** 没有更多 */
-  noMore: boolean;
+  noMore: boolean
   /** 是否空数据 */
-  isEmpty?: boolean;
+  isEmpty?: boolean
 }
 
 /** 子传父事件 */
 const emits = defineEmits<{
-  (e: 'onRefresh'): void;
+  (e: 'onRefresh'): void
   // eslint-disable-next-line @typescript-eslint/unified-signatures
-  (e: 'onReachBottom'): void;
-}>();
+  (e: 'onReachBottom'): void
+}>()
 /** 父传子参数 */
-const props = defineProps<IMMPullToRefreshProps>();
-const { noMore, state, isEmpty } = toRefs(props);
+const props = defineProps<IMMPullToRefreshProps>()
+const { noMore, state, isEmpty } = toRefs(props)
 
 // !!需要在页面添加配置 enablePullDownRefresh: true
 onPullDownRefresh(async () => {
   // uni.showLoading();
   try {
-    await emits('onRefresh');
+    await emits('onRefresh')
     setTimeout(() => {
-      uni.stopPullDownRefresh();
-    }, 500);
+      uni.stopPullDownRefresh()
+    }, 500)
   } catch (error) {
     // setTimeout(() => {
     //     uni?.hideLoading();
     // }, 500);
   }
-});
+})
 
 onReachBottom(() => {
   if (!noMore?.value) {
-    emits('onReachBottom');
+    emits('onReachBottom')
   }
-});
+})
 
-const status = computed<'loading' | 'finished' |  undefined>(() => {
+const status = computed<'loading' | 'finished' | undefined>(() => {
   if (state?.value === MMPullToRefreshState.pushing) {
-    return 'loading';
+    return 'loading'
   } else if (state.value !== MMPullToRefreshState.refreshing && noMore) {
-    return 'finished';
+    return 'finished'
   }
-  return undefined;
-});
+  return undefined
+})
 </script>
 
 <template>

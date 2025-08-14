@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    // Vue 3 开发必需
+    "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+
+    // TypeScript 支持
+    "ms-vscode.vscode-typescript-next",
+
+    // UniApp 开发
+    "uni-helper.uni-app-schemas",
+    "uni-helper.uni-app-snippets",
+    "uni-helper.uni-cloud-snippets",
+
+    // 代码质量
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ]
+}

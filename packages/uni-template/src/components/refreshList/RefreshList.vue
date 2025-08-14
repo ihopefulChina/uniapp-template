@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app';
 import { computed, toRefs } from 'vue';
-import { TnLoadmore } from '~/uni_modules/tuniaoui-vue3';
+import TnLoadmore from '~/uni_modules/tuniaoui-vue3/components/loadmore/src/loadmore.vue';
 import { MMPullToRefreshState } from './const';
 
 export interface IMMPullToRefreshProps {

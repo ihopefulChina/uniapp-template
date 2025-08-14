@@ -40,7 +40,6 @@ const onNav = async () => {
     <cover-view class="statusBar" :style="{ height: `${systemInfo?.statusBarHeight}px` }" />
     <cover-view class="navMenu" :style="{ height: `${systemInfo?.navMenuHeight}px` }">
       <cover-view v-if="!props?.isTab" class="left" @click="onNav">
-        <!-- <TnIcon name="left" size="40" /> -->
         <cover-image :src="props.type === MMNavigationType.Transparent_white ? './images/icon_navbar_back_white.png' : './images/icon_navbar_back_black.png'" class="icon_navbar_back_black" />
       </cover-view>
       <cover-view class="title" :style="{ color: navTypeStyle?.color }">

@@ -17,6 +17,7 @@ module.exports = {
   },
 
   rules: {
+    'vue/attribute-hyphenation': 'off',
     'vue/multi-word-component-names': 0,
     'vue/max-attributes-per-line': 0,
     // override/add rules settings here, such as:

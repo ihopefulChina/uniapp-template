@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { nextTick, ref } from 'vue';
 import Gap from '~/components/common/gap/Gap.vue';
-import { TnOverlay } from '~/uni_modules/tuniaoui-vue3';
+import TnOverlay from '~/uni_modules/tuniaoui-vue3/components/overlay/src/overlay.vue';
 import { isArray } from '~/utils/is';
 import { useModal } from '../useModal';
 import { ShowModalOptions } from './type';

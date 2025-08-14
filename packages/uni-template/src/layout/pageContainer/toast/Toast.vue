@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { TnOverlay } from '~/uni_modules/tuniaoui-vue3';
+import TnOverlay from '~/uni_modules/tuniaoui-vue3/components/overlay/src/overlay.vue';
 import { isArray } from '~/utils/is';
 import { UToastPramsVO } from './type';
 

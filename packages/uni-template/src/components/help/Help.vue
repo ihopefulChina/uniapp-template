@@ -4,7 +4,9 @@ import { isDev } from '~/config';
 import { useToast } from '~/layout/pageContainer/useToast';
 import { routeNames } from '~/routes';
 import { useGlobalStore } from '~/state/useGlobalStore';
-import { TnPopup, TnSubsectionItem, TnSubsection } from '~/uni_modules/tuniaoui-vue3';
+import TnPopup from '~/uni_modules/tuniaoui-vue3/components/popup/src/popup.vue';
+import TnSubsectionItem from '~/uni_modules/tuniaoui-vue3/components/subsection/src/subsection-item.vue';
+import TnSubsection from '~/uni_modules/tuniaoui-vue3/components/subsection/src/subsection.vue';
 import { cleanToken, copyToken } from './tool';
 
 const globalStore = useGlobalStore(); // 全局状态

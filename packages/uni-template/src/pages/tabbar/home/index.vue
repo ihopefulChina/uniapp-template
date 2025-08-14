@@ -16,7 +16,7 @@ const networkStatus = useNetworkStatus();
   <PageContainer is-tab>
     <view class="home">
       <Navigation title="首页" is-tab />
-    
+     
       <!-- 网络连接失败 -->
       <Empty v-if="networkStatus.networkType?.value === NetworkStatus.NONE" :margin-top="440" empty-str="网络连接失败" />
 

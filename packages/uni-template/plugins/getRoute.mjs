@@ -201,7 +201,7 @@ async function main() {
     for (const [key, tabBarObj] of tabbarPages.entries()) {
       const { pagePath, text } = tabBarObj
       routeLines.push(`  /** ${text} */`)
-      routeLines.push(`  { url: '/${pagePath}', text: "${text}" }${key + 1 !== tabbarPages.length ? ',' : ''}`)
+      routeLines.push(`  { text: '${text}', url: '/${pagePath}' }${key + 1 !== tabbarPages.length ? ',' : ''}`)
     }
 
     routeLines.push(']')
@@ -212,6 +212,7 @@ async function main() {
 
     routeLines.push('/** 路由key */')
     routeLines.push('export type RouteKey = keyof typeof routeNames')
+    routeLines.push('')
 
     await fs.writeFile(OUTPUT_ROUTE_TS, routeLines.join('\n'), 'utf-8')
 

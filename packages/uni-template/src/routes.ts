@@ -15,9 +15,9 @@ export const routeNames = {
 /** tabbar页面 */
 export const tabbar = [
   /** 首页 */
-  { url: '/pages/tabbar/home/index', text: '首页' },
+  { text: '首页', url: '/pages/tabbar/home/index' },
   /** 个人中心 */
-  { url: '/pages/tabbar/mine/index', text: '个人中心' }
+  { text: '个人中心', url: '/pages/tabbar/mine/index' }
 ]
 
 /** 路径 */

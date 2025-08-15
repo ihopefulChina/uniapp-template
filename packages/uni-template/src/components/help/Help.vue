@@ -58,7 +58,7 @@ const changeUseId = async () => {
     <view class="help" @click="open"> 测 </view>
 
     <!-- 调试工具 -->
-    <WdPopup v-model="visible" @close="close" @open="open">
+    <WdPopup v-model="visible" custom-style="border-radius:16px;" @close="close" @open="open">
       <view v-if="visible" class="help_switch_tab">
         <view class="modal_title"> 调试工具🔨 </view>
         <WdSegmented v-model:value="currentTab" :options="['切换用户']" :vibrateShort="true" />
@@ -73,7 +73,7 @@ const changeUseId = async () => {
     </WdPopup>
 
     <!-- 修改用户Id -->
-    <WdPopup v-model="switchShow" @close="switchShow = false" @open="switchShow = true">
+    <WdPopup v-model="switchShow" custom-style="border-radius:16px;" @close="switchShow = false" @open="switchShow = true">
       <view v-if="switchShow" class="modal_view">
         <text class="modal_title"> 修改用户Id </text>
         <view class="input_view">

@@ -116,7 +116,10 @@ pnpm build:app
 # 进入项目目录
 cd packages/uni-template
 
-# 根据 Swagger 文档生成 API 接口
+# 根据apifox/swagger 文档导出接口json地址，修改项目配置文件：swaggerApi.config.js
+projects: [{ name: '', url: 'http://127.0.0.1:4523/export/openapi/2?version=3.0' }]
+
+# 根据 apifox 文档生成 API 接口
 pnpm api
 ```
 
@@ -285,6 +288,8 @@ export const useGlobalStore = defineStore('globalStore', () => {
 
 ## API 请求
 
+项目使用自定义封装的请求库，支持根据swagger文档生成ts、自动token管理和静默授权，以及统一的错误处理和响应拦截。
+
 ### 请求封装
 
 使用自定义封装的请求库，配置文件在 `src/request/` 目录下：
@@ -297,7 +302,7 @@ const result = await api.post['/api/auth/login']({ username, password })
 
 **特性：**
 
-- 支持动态路径参数替换
+- 根据swagger文档生成ts
 - 自动token管理和静默授权
 - 统一的错误处理和响应拦截
 - 支持请求和响应拦截器

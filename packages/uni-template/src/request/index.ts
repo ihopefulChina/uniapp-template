@@ -1,4 +1,4 @@
-import * as Api from './Api'
+import * as Api from "./Api"
 import requestInstance from './instance'
 
 export * from './data-contracts'
@@ -16,7 +16,7 @@ export type UType = Api.API & {
   options: Api.APIOPTIONS
 }
 
-const METHODS = new Set(['get', 'post', 'del', 'put', 'options'])
+const METHODS = new Set(['get', 'post', 'del', 'put', 'options']);
 
 export const api: UType = new Proxy(
   {
@@ -50,8 +50,8 @@ function createMethodProxy(method: string) {
   )
 }
 
-const DYNAMIC_PATH_REGEX = /^\{.+\}$/ // 预编译
-const HYPHEN_REGEX = /-(\w)/g // 预编译（用于驼峰转换）
+const DYNAMIC_PATH_REGEX = /^\{.+\}$/; // 预编译
+const HYPHEN_REGEX = /-(\w)/g;        // 预编译（用于驼峰转换）
 
 function getterHandler(url: string, method: string) {
   return (args: any) => {
@@ -108,13 +108,10 @@ function getterHandler(url: string, method: string) {
 }
 
 function omitByKey(data: Record<string, any>, keys: string[]) {
-  return Object.keys(data).reduce(
-    (result, key) => {
-      keys.indexOf(key) === -1 && (result[key] = data[key])
-      return result
-    },
-    {} as Record<string, any>
-  )
+  return Object.keys(data).reduce((result,key)=> {
+    keys.indexOf(key) === -1 &&  (result[key] = data[key])
+    return result
+  }, {} as Record<string, any>)
 }
 
 function isSupportFormData() {
@@ -127,3 +124,4 @@ function isSupportFormData() {
 
   return support
 }
+

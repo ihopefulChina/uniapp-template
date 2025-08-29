@@ -2,7 +2,7 @@
   "name": "uni-template",
   "version": "0.0.0",
   "scripts": {
-    "api": "mmapi a",
+    "api": "getapi a",
     "/常用命令/": "",
     "dev": "uni -p mp-weixin & node ./plugins/watch-pages.mjs",
     "uat": "uni -p mp-weixin --mode uat",
